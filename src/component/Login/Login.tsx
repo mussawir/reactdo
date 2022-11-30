@@ -1,4 +1,6 @@
+
 import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -20,6 +22,8 @@ import "../Login/LoginStyle.css";
 import CheckBoxFlied from "./../CustomTextField/CheckBoxFlied";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import axios from "axios";
+
 
 type Values = {
   email: string;
@@ -42,39 +46,34 @@ const Login = () => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values, isCheckedA);
 
-    let result = await fetch('http://localhost:5000/auth/login', {
-      method: 'post',
-      body: JSON.stringify({ values }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    result = await result.json();
-    console.log(result);
+    await axios
+      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", { values })
+      
+      .then((res: any) => {
+        console.log("ResultResultResultResultResultResult", res);
+        console.log("token",res.data.token);
+        var token = res.data.token;
+      })
+      .catch((err: any) => {
+        console.log(err, "error");
+      });
 
-    if (result) {
-      localStorage.setItem('logintoken', JSON.stringify(result));
-       alert('success');
-       navigate('/dashboard');
-    } else {
-      alert('Not Valid Enter');
-      //history.push('login')
-    }
+      // if(){
+      //   navigate("/login");
+      // }else{
+      //   navigate("/dashboard");
+      // }
+
+     
+
   };
 
-
-  // useEffect(() => {
-  //   const auth = localStorage.getItem("logintoken");
-  //   if (auth) {
-  //     navigate("/dashboard");
-  //   }if(!auth){
-  //     navigate('/login')
-  //   }
-  // }, []);
+  
 
   return (
     <>

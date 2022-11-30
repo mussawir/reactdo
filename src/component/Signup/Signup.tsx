@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import {
@@ -53,14 +53,13 @@ const Signup = () => {
     event.preventDefault();
     console.log(values, isCheckedA, isCheckedB);
     await axios
-      .post("http://localhost:5000/auth/register", { values })
+      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/register", { values })
       .then((res: any) => {
         console.log(res, "Result");
       })
       .catch((err: any) => {
         console.log(err, "error");
       });
-      localStorage.setItem('user', JSON.stringify(values));
 
   };
 
@@ -111,20 +110,22 @@ const Signup = () => {
                 label={"Password"}
                 name={"password"}
               />
-
-              <Grid justifyContent="flex-start">
+ <p id="checkBox"></p>
+              <Grid justifyContent="flex-start" >
                 <CheckBoxFlied
                   label={check1}
                   handleChange={handleChangeA}
                   isChecked={isCheckedA}
+                 
                 />
                 <br />
-                <p></p>
+                <p id="checkBox"></p>
 
                 <CheckBoxFlied
                   label={check2}
                   handleChange={handleChangeB}
                   isChecked={isCheckedB}
+                
                 />
               </Grid>
 
