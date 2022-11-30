@@ -1,0 +1,122 @@
+
+#typoOffirstHeading {
+    font-size: 2.7rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 8%;
+    padding-right: 17%;
+
+}
+
+#typoOffirstHeading2 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    text-align: left;
+    margin-top: -1%;
+    padding-right: 3%;
+    padding-left: 21.1%;
+
+}
+
+#buttonsuccess {
+    align-items: center;
+    margin-left: 21.1%;
+    background-color: #028858;
+    ;
+    text-transform: none;
+}
+
+#imgGrid1 {
+    padding-left: 50px;
+    margin-top: 90px;
+}
+
+#image1 {
+    width: 98%;
+}
+
+#image2 {
+    width: 100%;
+    margin-bottom: -70.5%;
+
+}
+
+#imgGrid2 {
+    width: 400%;
+
+}
+
+#mainimg {
+    padding-top: 0%;
+
+}
+
+#boxofSec2 {
+    background-color: #034752;
+    width: 100%;
+    margin-top: 10%;
+}
+
+#Boxtypo2 {
+    color: white;
+    padding-top: 10%;
+    justify-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 2.5rem;
+    line-height: 4.2rem;
+
+}
+
+#Boxtypo3 {
+    color: white;
+    justify-content: center;
+    padding-left: 10%;
+    padding-top: 5%;
+    font: bold;
+
+}
+
+#Boxofsec3 {
+    color: #282828;
+    padding-top: 10%;
+    justify-content: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 2.2rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#Gridsec3 {
+    justify-content: center;
+}
+#boxofSEC3{
+    justify-content: center;   
+    text-align: center;
+}
+#paraofsec3{
+    text-align: start;
+    padding-right: 35%;
+    padding-top: 10%;
+    font-size: 1rem;
+}
+#HeadingTextforsec3{
+    text-align: start;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-top: 14%;
+    padding-left: 37%;
+    color: #282828;
+}
+#boxofSEC4{
+    background-color:#282828 ;
+}
+#image4{
+    width: 170vh;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    height: 70vh;
+}

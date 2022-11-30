@@ -1,0 +1,43 @@
+.trust-safety {
+    background: url("../images/blue-bg.png");
+    margin: 29px 0;
+    padding: 100px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.trust-safety-sec h2 {
+    font-family: "Circular-Air-Bold";
+    color: #fff;
+    font-size: 39px;
+    margin: 0;
+}
+.trust-safety-sec p {
+    color: #fff;
+    font-family: Circular-Air-Light;
+    font-size: 28px;
+    font-weight: 100;
+    margin: 20px 0;
+}
+.trust-safety-sec a {
+    color: #fff;
+    font-family: Circular-Air-medium;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px 0;
+    text-decoration: none;
+}
+.trust-safety-sec h3 {
+    color: #fff;
+    font-family: Circular-Air-medium;
+    font-size: 17px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 38px;
+    line-height: 29px;
+}
+.trust-safety-sec img {
+    position: absolute;
+    top: -10px;
+    left: -6px;
+}

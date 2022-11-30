@@ -1,0 +1,72 @@
+@font-face {font-family:"Circular-Air-Light";
+  src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
+@font-face {font-family:"Circular-Air-Medium";
+  src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
+  @font-face {font-family:"Circular-Air-Bold";
+    src:url('../fonts/Circular-Air-Bold.ttf') format('truetype') }
+    @font-face {font-family:"CircularStd-Black";
+      src:url('../fonts/CircularStd-Black.otf') format('opentype') }
+      @font-face {font-family:"CircularStd-Book";
+        src:url('../fonts/CircularStd-Book.otf') format('opentype') }
+
+  .what-to-expect-section h6 {
+    text-align: center;
+    color: #bdbdbd;
+    font-weight: 400;
+    font-size: 21px;
+    margin: 10px 0;
+}
+.what-to-expect-section h2 {
+    margin: 18px 0 0 0;
+    font-family: "Circular-Air-Bold";
+    color: #282828;
+    font-size: 22px;
+    text-align: left;
+}
+.what-to-expect-section h3 {
+  text-align: center;
+  margin: 0 0 22px 0;
+  font-family: "Circular-Air-Bold";
+  color: #282828;
+  font-size: 36px;
+}
+.what-to-expect-section h3 span {
+  color: #1b59c7;
+}
+.what-to-expect-section {
+  padding: 0 250px;
+}
+.what-to-expect-box h4 {
+  background: #1b59c7;
+  display: inline-block;
+  color: #fff;
+  font-family: "CircularStd-Black";
+  font-size: 20px;
+  padding: 10px 16px;
+  border-radius: 50px;
+  margin-bottom: 40px;
+}
+.what-to-expect-box {
+  padding: 0 0 100px 0;
+  position: relative;
+}
+.what-to-expect-box-shape h4::before {
+content: url(../images/shape-left.png);
+position: absolute;
+left: -290px;
+transform: scale(1.0);
+top: 0;
+}
+.what-to-expect-box-shape h4::after {
+  content: url(../images/shape-right.png);
+  position: absolute;
+  left: 35px;
+  transform: scale(1.0);
+  top: 49px;
+}
+.what-to-expect-box p {
+  font-family: "CircularStd-Book";
+  font-size: 16px;
+  font-weight: 200;
+  color: #bdbdbd;
+}

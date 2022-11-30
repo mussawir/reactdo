@@ -1,0 +1,68 @@
+#TopHeading {
+
+    padding-left: 2%;
+font-size: 4rem;
+}
+
+#id3{
+    margin-left: 5%;
+    font-size: 1.3rem;
+    padding-top: 3%;
+    color: blue;
+}
+
+#loginhead{
+    padding-top: 1%;
+  padding-right: 50%;
+  margin-left: 3%;
+   
+   
+    font-size: 1rem;
+}
+
+#TextField{
+    text-align: center;
+    padding-top: 3%;
+
+   
+}
+
+#textfield3{
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    margin-left: 46%;
+    border-radius: 20%;
+}
+
+
+
+#flex{
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+#id1{
+    float: right;
+    padding-left: 80%;
+}
+
+#id2{
+    float: right;
+    padding-left: 70%;
+}
+
+
+#tflex{
+    display: flex;
+}
+
+#thflex{
+    display: flex;
+   padding-top: 2%;
+    padding-left: 3%;
+}
+
+#fvflex{
+    padding-left: 2%;
+}

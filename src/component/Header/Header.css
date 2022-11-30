@@ -1,0 +1,48 @@
+@font-face {font-family:"CircularStd-Book";
+    src:url('../fonts/CircularStd-Book.otf') format('opentype') }
+    @font-face {font-family:"Circular-Air-Light";
+        src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
+        #bar1 {
+            background-color: white;
+            color: #494949;
+            /* font-family: "Circular-Air-Light"; */
+            box-shadow: none;
+            border-bottom: solid 1px #cccccc;
+        }
+#h1{
+    color: black;
+    text-align: center;
+}
+
+#mainLogo{
+    width:10%;
+}
+#a1{
+    color: #494949;
+    font-family: "CircularStd-Book";
+    text-decoration: none;
+    padding-right: 20px;
+}
+#h2{
+    text-align: center;
+    padding-left: 5%;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    color: #494949;
+    font-family:"CircularStd-Book";
+}
+#h3{
+    padding-left: 25%;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    color: #494949;
+    font-family:"CircularStd-Book";
+}
+
+#a3{
+    color: #494949;
+    font-family: "CircularStd-Book";
+    text-decoration: none;
+    padding-left: 20px;
+
+}
