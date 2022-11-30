@@ -1,3 +1,5 @@
+
+import React, { useEffect, useState } from "react";
 import React, {  useState } from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
@@ -48,6 +50,7 @@ const Login = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(values, isCheckedA);
+
     await axios
       .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", { values })
       
@@ -67,21 +70,10 @@ const Login = () => {
       // }
 
      
+
   };
 
   
-
-
-
-
-  // useEffect(() => {
-  //   const auth = localStorage.getItem("logintoken");
-  //   if (auth) {
-  //     navigate("/dashboard");
-  //   }if(!auth){
-  //     navigate('/login')
-  //   }
-  // }, []);
 
   return (
     <>

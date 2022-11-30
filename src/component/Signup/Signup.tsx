@@ -60,9 +60,7 @@ const Signup = () => {
       .catch((err: any) => {
         console.log(err, "error");
       });
-      localStorage.setItem('user', JSON.stringify(values));
-      alert("Your Are Register Now!");
-      navigate("/login");
+
   };
 
 
