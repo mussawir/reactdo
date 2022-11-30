@@ -1,0 +1,115 @@
+.footer {
+    background: #1b1b1b;
+    padding: 80px 0 40px;
+    margin-top: 20px;
+    color: #fff;
+}
+.socket {
+    border-top: solid 1px #323232;
+    background: #1b1b1b;
+    color: #fff;
+    padding-top: 10px;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+}
+.footer li {
+    list-style: none;
+    margin: 10px 0;
+}
+.footer ul {
+    padding: 0;
+}
+p#ftr-para {
+    color: #fff;
+    font-family: Circular-Air-Light;
+    font-size: 16px;
+    font-weight: 100;
+    margin: 20px 0;
+}
+.footer h2 {
+    margin: 5px 0px 28px;
+    font-family: "Circular-Air-Bold";
+    font-size: 27px;
+}
+#send1{
+    color: white;
+    background-color: rgb(27, 27, 94);
+  }
+.footer a svg {
+    position: absolute;
+    left: 0;
+}
+.footer a {
+    font-family: Circular-Air-Light;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 100;
+    margin: 0;
+    padding-left: 28px;
+    display: inline-block;
+}
+.socket-sec li:last-child {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.socket-sec li {
+    display: inline-block;
+    margin: 0 10px;
+    border-right: 1px solid #fff;
+    padding-right: 21px;
+}
+.socket-sec ul {
+    padding: 0;
+    float: right;
+}
+.socket-sec a {
+    font-family: "Circular-Air-medium";
+    text-decoration: none;
+    color: #fff !important;
+    font-size: 15px;
+    display: inline-block;
+    border-radius: 30px;
+}
+.socket-sec li {
+    display: inline-block;
+    margin-right: 14px;
+    border-right: 2px solid #fff;
+    padding-right: 17px;
+    line-height: 1;
+}
+.ftr-social-links li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+.ftr-social-links a {
+    color: #a3a3a3;
+    background: #fff;
+    display: inline-block;
+    padding: 23px;
+    text-align: center;
+    border-radius: 50px;
+}
+.ftr-social-links a svg {
+    position: absolute;
+    top: 10px;
+    left: 11px;
+    right: 0;
+}
+
+.ftr-social-links a {
+    color: #a3a3a3;
+    background: #fff;
+    display: inline-block;
+    padding: 23px;
+    text-align: center;
+    border-radius: 50px;
+    position: relative;
+}
+.ftr-social-links a:hover {
+    color: #fff;
+    background: linear-gradient(90deg, #5a288d 20%, #91218b 35%, #6d193d 100%);
+}

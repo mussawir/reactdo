@@ -1,0 +1,23 @@
+@font-face {font-family:"Circular-Air-Light";
+    src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
+  @font-face {font-family:"Circular-Air-Medium";
+    src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
+    @font-face {font-family:"Circular-Air-Bold";
+      src:url('../fonts/Circular-Air-Bold.ttf') format('truetype') }
+      @font-face {font-family:"CircularStd-Black";
+        src:url('../fonts/CircularStd-Black.otf') format('opentype') }
+        @font-face {font-family:"CircularStd-Book";
+          src:url('../fonts/CircularStd-Book.otf') format('opentype') }
+
+
+
+          .inverting-verse-project-updates-left-col img {
+            width: 100%;
+            margin-top: 30px;
+        }
+        
+        
+.inverting-verse-project-updates {
+    padding: 50px 0;
+    border-bottom: solid 1px #ededed;
+}

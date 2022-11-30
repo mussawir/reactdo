@@ -1,0 +1,77 @@
+@font-face {font-family:"Circular-Air-Bold";
+  src:url('../fonts/Circular-Air-Bold.ttf') format('opentype') }
+  @font-face {font-family:"Circular-Air-Medium";
+      src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
+
+*{
+  font-family: "Circular-Air-Medium" !important;
+}
+      a {
+  text-decoration: none !important;
+}
+.Login{
+    font-size: 25px !important;
+    font-weight: 400 !important;
+    font-weight: "Circular-Air-Bold";
+}
+#LoginFormContainer {
+  border: 1px !important;
+  padding: 18px !important;
+  width: 350px;
+  margin: 17px;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  left: 37%;
+  background-color: #ffffff !important;
+  box-shadow: 0px -9px 13px #ffffff, 3px 28px 23px rgb(0 0 0 / 9%);
+
+}
+.textDescribtion {
+  color: #656969;
+  font-size: 12px !important;
+  text-decoration: none;
+  margin: 10px 5px !important;
+}
+
+#register-link {
+  width: "100%";
+  margin-top: "12px";
+  height: "31px";
+  justify-content: "center";
+  color: #282828;
+  text-transform: "none";
+  text-decoration: none !important;
+  padding: 20px;
+}
+#register-text {
+  font-size: 14px;
+  display: flex;
+  justify-content: center !important;
+}
+#sign-up {
+  text-decoration: none !important;
+  color: #2752ff;
+}
+
+.textEnd {
+  margin: 10px 5px !important;
+  font-size: 12px !important;
+  color: "#9B9E9E" !important;
+}
+
+
+#signin-btn{
+  font-size: 12px;
+  margin-top: 16px;
+  padding: 18px;
+  height: 31px;
+  width: 100%;
+  background-color: #8E288F;
+  color: white;
+  border-color :#8E288F;
+  text-transform :none;
+  border-radius:0px;
+font-family: "CircularStd-Book";
+}
+

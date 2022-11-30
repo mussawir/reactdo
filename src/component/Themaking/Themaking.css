@@ -1,0 +1,45 @@
+@font-face {font-family:"Circular-Air-Light";
+    src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
+  @font-face {font-family:"Circular-Air-Medium";
+    src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
+    @font-face {font-family:"Circular-Air-Bold";
+      src:url('../fonts/Circular-Air-Bold.ttf') format('truetype') }
+      @font-face {font-family:"CircularStd-Black";
+        src:url('../fonts/CircularStd-Black.otf') format('opentype') }
+        @font-face {font-family:"CircularStd-Book";
+          src:url('../fonts/CircularStd-Book.otf') format('opentype') }
+
+
+
+
+
+
+
+.making-box img {
+    width: 100%;
+}
+.making-sec {
+    padding: 50px 0;
+}
+.making-box h2 {
+    margin: 18px 0 0 0;
+    font-family: "Circular-Air-Bold";
+    color: #282828;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.making-box p {
+    color: #282828;
+    font-family: Circular-Air-Light;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 100;
+    margin: 0;
+}
+.making-box a {
+    color: #282828;
+    font-family: "Circular-Air-Bold";
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
