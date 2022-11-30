@@ -53,7 +53,7 @@ const Signup = () => {
     event.preventDefault();
     console.log(values, isCheckedA, isCheckedB);
     await axios
-      .post("http://localhost:5000/auth/register", { values })
+      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/register", { values })
       .then((res: any) => {
         console.log(res, "Result");
       })
@@ -112,20 +112,22 @@ const Signup = () => {
                 label={"Password"}
                 name={"password"}
               />
-
-              <Grid justifyContent="flex-start">
+ <p id="checkBox"></p>
+              <Grid justifyContent="flex-start" >
                 <CheckBoxFlied
                   label={check1}
                   handleChange={handleChangeA}
                   isChecked={isCheckedA}
+                 
                 />
                 <br />
-                <p></p>
+                <p id="checkBox"></p>
 
                 <CheckBoxFlied
                   label={check2}
                   handleChange={handleChangeB}
                   isChecked={isCheckedB}
+                
                 />
               </Grid>
 

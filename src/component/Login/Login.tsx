@@ -49,7 +49,7 @@ const Login = () => {
     event.preventDefault();
     console.log(values, isCheckedA);
     await axios
-      .post("http://localhost:5000/auth/login", { values })
+      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", { values })
       
       .then((res: any) => {
         console.log("ResultResultResultResultResultResult", res);
