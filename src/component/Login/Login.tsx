@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link ,useNavigate} from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -59,13 +59,22 @@ const Login = () => {
     if (result) {
       localStorage.setItem('logintoken', JSON.stringify(result));
        alert('success');
-      navigate('/dashboard');
+       navigate('/dashboard');
     } else {
       alert('Not Valid Enter');
       //history.push('login')
     }
   };
 
+
+  // useEffect(() => {
+  //   const auth = localStorage.getItem("logintoken");
+  //   if (auth) {
+  //     navigate("/dashboard");
+  //   }if(!auth){
+  //     navigate('/login')
+  //   }
+  // }, []);
 
   return (
     <>
