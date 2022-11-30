@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import {
   Box,
@@ -22,63 +22,61 @@ import CheckBoxFlied from "../CustomTextField/CheckBoxFlied";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-type Props = {};
+type Values = {
+  name: string;
+  email: string;
+  password: any;
+};
 
-const Signup = (props: Props) => {
-  const [name, setName] = useState("");
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
-  const Navigate = useNavigate();
+const Signup = () => {
+  const [values, setValues] = useState<Values>({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   const [isCheckedA, setIsCheckedA] = useState(false);
   const handleChangeA = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsCheckedA(e.target.checked);
   };
+
+  const navigate = useNavigate();
   const [isCheckedB, setIsCheckedB] = useState(false);
   const handleChangeB = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsCheckedB(e.target.checked);
   };
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log(name, email,password, isCheckedA, isCheckedB);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [event.target.name]: event.target.value });
   };
-  axios
-    .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/register", {
-      name,
-      email,
-      password,
-    })
-    .then((res) => {
-      console.log(res, "Result");
-    })
-    .catch((err) => {
-      console.log(err, "error");
-    });
 
-  // const OnformSubmit = () => {
-  //   // alert("You'r Successfully Register");
-  //   if(name === ""){
-  //     alert("Name Filed Require");
-  //     Navigate('/login')
-  //   }if(email === ""){
-  //     alert("email Filed Require");
-  //     Navigate('/login')
-  //   }if(password === ""){
-  //     alert("password Filed Require");
-  //     Navigate('/login')
-  //   }else{
-  //     alert("You'r Successfully Register");
-  //     Navigate('/')
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(values, isCheckedA, isCheckedB);
+    await axios
+      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/register", { values })
+      .then((res: any) => {
+        console.log(res, "Result");
+      })
+      .catch((err: any) => {
+        console.log(err, "error");
+      });
+
+  };
+
+
+  // useEffect(() => {
+  //   const auth = localStorage.getItem("user");
+  //   if (auth) {
+  //     navigate("/login");
   //   }
-
-  // };
+  // }, []);
   const check1 =
     "Send me a weekly mix of handpicked projects,plus occasional Kickstarter news";
   const check2 = "Contact me about participating in Kickstarter research";
 
   return (
     <>
-      <Header />
+    <Header/>
       <Box id="mainFormContainer">
         <Grid>
           <Grid id="TopSection">
@@ -91,52 +89,34 @@ const Signup = (props: Props) => {
               </Link>
             </span>
           </Grid>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={(e) => handleSubmit(e)}>
             <Grid container direction="column" justifyContent="flex-start">
               <Typography className="Login">Signup</Typography>
 
-              <TextField
-                required
-                id="outlined-required"
-                label="Name"
-                type="text"
-                placeholder="Type Your Name"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
+              <NameField
+                changeHandler={handleChange}
+                label={"Name"}
+                name={"name"}
               />
-              <p></p>
 
-              <TextField
-                required
-                id="outlined-number"
-                label="Email"
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => {
-                  setemail(e.target.value);
-                }}
+              <EmailField
+                changeHandler={handleChange}
+                label={"Email"}
+                name={"email"}
               />
- <p></p>
-              <TextField
-                required
-                id="outlined-password-input"
-                label="Password"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => {
-                  setpassword(e.target.value);
-                }}
+
+              <PasswordField
+                changeHandler={handleChange}
+                label={"Password"}
+                name={"password"}
               />
-              <p id="checkBox"></p>
-              <Grid justifyContent="flex-start">
+ <p id="checkBox"></p>
+              <Grid justifyContent="flex-start" >
                 <CheckBoxFlied
                   label={check1}
                   handleChange={handleChangeA}
                   isChecked={isCheckedA}
+                 
                 />
                 <br />
                 <p id="checkBox"></p>
@@ -145,6 +125,7 @@ const Signup = (props: Props) => {
                   label={check2}
                   handleChange={handleChangeB}
                   isChecked={isCheckedB}
+                
                 />
               </Grid>
 
@@ -174,7 +155,7 @@ const Signup = (props: Props) => {
         </Grid>
       </Box>
 
-      <Footer />
+    <Footer/>
     </>
   );
 };
