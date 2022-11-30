@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import {
@@ -61,7 +61,8 @@ const Signup = () => {
         console.log(err, "error");
       });
       localStorage.setItem('user', JSON.stringify(values));
-
+      alert("Your Are Register Now!");
+      navigate("/login");
   };
 
 
