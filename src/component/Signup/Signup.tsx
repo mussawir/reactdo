@@ -60,17 +60,17 @@ const Signup = () => {
       .catch((err: any) => {
         console.log(err, "error");
       });
-     
+      localStorage.setItem('user', JSON.stringify(values));
 
   };
 
 
-  useEffect(() => {
-    const auth = localStorage.getItem("user");
-    if (auth) {
-      navigate("/login");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const auth = localStorage.getItem("user");
+  //   if (auth) {
+  //     navigate("/login");
+  //   }
+  // }, []);
   const check1 =
     "Send me a weekly mix of handpicked projects,plus occasional Kickstarter news";
   const check2 = "Contact me about participating in Kickstarter research";
