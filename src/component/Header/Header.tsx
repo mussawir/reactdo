@@ -12,9 +12,8 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import logo from "../images/logo.png";
-import { Link } from "react-router-dom";
 import DiscoverModal from "../DiscoverModal/DiscoverModal";
-
+import { Link} from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -102,13 +101,13 @@ const Header = (props: Props) => {
         </AppBar>
         <Stack direction="row" spacing={1} id="button1">
           <Typography variant="h6" id="h3">
-            Become an invester
+          <Link to="/discover">Become an invester</Link>  
           </Typography>
           <Typography variant="h6" id="h2">
-            Become a member
+           <Link to=''>Become a member</Link> 
           </Typography>
           <Typography variant="h6" id="h2">
-            Join the investingverse
+           <Link to="/signup">Join the investingverse</Link> 
           </Typography>
         </Stack>
       </Box>

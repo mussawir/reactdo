@@ -9,6 +9,8 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import '../Step3/LocationStyle.css';
 import { Link } from 'react-router-dom';
 import FormControl from '@mui/material/FormControl';
+import Header from './../Header/Header';
+import Footer from '../Footer/Footer';
 type Props = {};
 
 type Values = {
@@ -21,6 +23,7 @@ const Location = (props: Props) => {
 
   return (
     <>
+    <Header/>
       <Grid id="FirstGridForlocation">
         <Box>
           <Typography id="headingoflocation">
@@ -78,6 +81,7 @@ const Location = (props: Props) => {
           </Typography>
         </Box>
       </Grid>
+      <Footer/>
     </>
   );
 };
