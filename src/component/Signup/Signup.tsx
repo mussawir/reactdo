@@ -40,7 +40,7 @@ const Signup = (props: Props) => {
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(name, email,password, isCheckedA, isCheckedB);
+    // console.log(name, email,password, isCheckedA, isCheckedB);
   };
   axios
     .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/register", {
@@ -48,13 +48,14 @@ const Signup = (props: Props) => {
       email,
       password,
     })
+   
     .then((res) => {
       console.log(res, "Result");
     })
     .catch((err) => {
       console.log(err, "error");
     });
-
+    console.log(name, email,password, isCheckedA, isCheckedB);
   // const OnformSubmit = () => {
   //   // alert("You'r Successfully Register");
   //   if(name === ""){
