@@ -37,7 +37,7 @@ const SideBar = (props: Props) => {
           <Toolbar />
           <Box sx={{ overflow: "auto" }}>
             <List>
-              <Link to="funding">
+              <Link to="/funding">
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
@@ -79,6 +79,7 @@ const SideBar = (props: Props) => {
             <Divider />
 
             <List>
+            <Link to="/roi">
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -87,6 +88,8 @@ const SideBar = (props: Props) => {
                   <ListItemText primary="ROI" />
                 </ListItemButton>
               </ListItem>
+              
+</Link>
             </List>
             <Divider />
           </Box>
