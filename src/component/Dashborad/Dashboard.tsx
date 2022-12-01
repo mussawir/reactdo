@@ -13,7 +13,7 @@ import Fade from "@mui/material/Fade";
 import {Link,Outlet} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import SideBar from "./Sidbar/SideBar";
-
+import ListItemText from '@mui/material/ListItemText';
 import Funding from "./Layer/Funding/Funding";
 
 export default function Dashboard() {
@@ -78,8 +78,8 @@ export default function Dashboard() {
             >
               <MenuItem onClick={handleClose}>
                
-                
-            <Link to="myprojects">My Projects</Link>
+              <ListItemText><Link to="myprojects">My Projects</Link></ListItemText>
+            
         
               </MenuItem>
               <MenuItem onClick={handleClose}>
