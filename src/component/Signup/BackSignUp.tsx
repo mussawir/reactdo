@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import {
@@ -64,12 +64,12 @@ const Signup = () => {
   };
 
 
-  // useEffect(() => {
-  //   const auth = localStorage.getItem("user");
-  //   if (auth) {
-  //     navigate("/login");
-  //   }
-  // }, []);
+  useEffect(() => {
+    const auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/login");
+    }
+  }, []);
   const check1 =
     "Send me a weekly mix of handpicked projects,plus occasional Kickstarter news";
   const check2 = "Contact me about participating in Kickstarter research";

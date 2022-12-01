@@ -40,8 +40,8 @@ const Signup = (props: Props) => {
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    // console.log(name, email,password, isCheckedA, isCheckedB);
-  };
+ console.log(name, email,password, isCheckedA, isCheckedB);
+
   axios
     .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/register", {
       name,
@@ -55,7 +55,9 @@ const Signup = (props: Props) => {
     .catch((err) => {
       console.log(err, "error");
     });
-    console.log(name, email,password, isCheckedA, isCheckedB);
+
+  };
+    // console.log(name, email,password, isCheckedA, isCheckedB);
   // const OnformSubmit = () => {
   //   // alert("You'r Successfully Register");
   //   if(name === ""){
@@ -167,7 +169,7 @@ const Signup = (props: Props) => {
               </Divider>
             </Grid>
 
-            <Button id="Create-btn" variant="contained" type="submit">
+            <Button id="Create-btn" variant="contained" >
               <AppleIcon />
                Sign in with Apple
             </Button>
