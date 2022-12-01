@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import {
@@ -28,7 +28,7 @@ const Signup = (props: Props) => {
   const [name, setName] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [isCheckedA, setIsCheckedA] = useState(false);
   const handleChangeA = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,12 +51,22 @@ const Signup = (props: Props) => {
    
     .then((res) => {
       console.log(res, "Result");
+      navigate("/login");
     })
     .catch((err) => {
       console.log(err, "error");
     });
 
-  };
+
+  }
+
+
+  useEffect(() => {
+    let auth = localStorage.getItem("user");
+    if (auth) {
+      navigate("/login");
+    }
+  }, []);
     // console.log(name, email,password, isCheckedA, isCheckedB);
   // const OnformSubmit = () => {
   //   // alert("You'r Successfully Register");

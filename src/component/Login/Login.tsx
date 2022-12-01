@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -50,18 +50,29 @@ const Login = () => {
       .then((res: any) => {
         console.log("ResultResultResultResultResultResult", res);
         console.log("token", res.data.token);
-        var token = res.data.token;
+        localStorage.setItem("token" ,JSON.stringify(res.data.token));
+        // var token = res.data.token;
+        navigate("/dashboard");
       })
       .catch((err: any) => {
         console.log(err, "error");
       });
 
-    // if(){
-    //   navigate("/login");
-    // }else{
-    //   navigate("/dashboard");
-    // }
+    
+
+    if(localStorage.getItem("token")){
+      navigate("/dashboard");
+    }else{
+      navigate("/login");
+    }
   };
+
+  // useEffect(() => {
+  //  localStorage.setItem("token" ,JSON.stringify ());
+  //   if (auth) {
+  //     navigate("/dashboard");
+  //   }
+  // }, []);
 
   return (
     <>
