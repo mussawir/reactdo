@@ -10,11 +10,11 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import {Link,Outlet} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import SideBar from "./Sidbar/SideBar";
-import ListItemText from '@mui/material/ListItemText';
+import ListItemText from "@mui/material/ListItemText";
 import Funding from "./Layer/Funding/Funding";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Dashboard() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -27,11 +27,8 @@ export default function Dashboard() {
     setAnchorEl(null);
   };
 
-
   return (
     <>
-      
-
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
         <AppBar
@@ -51,7 +48,6 @@ export default function Dashboard() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Investing Verse Dashboard
             </Typography>
-            
 
             <Button
               id="fade-button"
@@ -77,10 +73,9 @@ export default function Dashboard() {
               TransitionComponent={Fade}
             >
               <MenuItem onClick={handleClose}>
-               
-              <ListItemText><Link to="myprojects">My Projects</Link></ListItemText>
-            
-        
+                <ListItemText>
+                  <Link to="myprojects">My Projects</Link>
+                </ListItemText>
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link to="myinvestment">My Investments </Link>
@@ -88,7 +83,7 @@ export default function Dashboard() {
               <MenuItem onClick={handleClose}>
                 <Link to="myaccount">My Acount</Link>
               </MenuItem>
-            
+
               <MenuItem onClick={handleClose}>
                 <Link to="login">Logout</Link>
               </MenuItem>
@@ -102,7 +97,6 @@ export default function Dashboard() {
           </>
         </Box>
       </Box>
-
     </>
   );
 }

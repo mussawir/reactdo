@@ -1,6 +1,5 @@
 import React from 'react'
-import Footer from '../../../Footer/Footer'
-import Header from '../../../Header/Header'
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,7 +9,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Button, Grid } from '@mui/material';
 
-import "../MyProjects/MyProjects.css";
+import "./MyProjects.css";
+import Header from '../../Header/Header';
+import Footer from '../../Footer/Footer';
 
 
 function createData(
