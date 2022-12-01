@@ -18,9 +18,10 @@ import PrivateCopmonent from './component/PrivatComponent/PrivateCopmonent';
 import Categories from './component/Step1/Categories';
 import Subcategory from './component/Step2/Subcategory';
 import Location from './component/Step3/Location';
-import MyProjects from './component/Dashborad/DropDownDashborad/MyProjects/MyProjects';
-import MyInvestment from './component/Dashborad/DropDownDashborad/MyInvestment/MyInvestment';
-import MyAcount from './component/Dashborad/DropDownDashborad/MyAcount/MyAcount';
+import MyProjects from "./component/DashboradDropDown/MyProjects/MyProjects";
+import MyInvestment from "./component/DashboradDropDown/MyInvestment/MyInvestment";
+import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
+
 
 function App() {
   return (
