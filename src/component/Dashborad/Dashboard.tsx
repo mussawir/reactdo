@@ -10,7 +10,7 @@ import DashboardIcon from "@mui/icons-material/Dashboard";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import {Link,} from "react-router-dom";
+import {Link,Outlet} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import SideBar from "./Sidbar/SideBar";
 
@@ -77,7 +77,10 @@ export default function Dashboard() {
               TransitionComponent={Fade}
             >
               <MenuItem onClick={handleClose}>
-                <Link to="/myprojects">My Projects</Link>
+               
+                
+            <Link to="myprojects">My Projects</Link>
+        
               </MenuItem>
               <MenuItem onClick={handleClose}>
                 <Link to="myinvestment">My Investments </Link>

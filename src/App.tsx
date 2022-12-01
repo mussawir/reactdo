@@ -30,7 +30,8 @@ function App() {
       <Routes>
       
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="login" element={<Login />} />
+        <Route path="dashboard/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/discover" element={<Discover />} />
        
@@ -40,15 +41,17 @@ function App() {
         <Route path="/project/categories/subcategory" element={<Subcategory />} />
         <Route path="/project/categories/subcategory/location" element={<Location />} />
 
-        <Route path="/myprojects" element={<MyProjects />} />
-        <Route path="/myinvestment" element={<MyInvestment />} />
+        
+        <Route path="myprojects" element={<MyProjects />} />
+        <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} />
         <Route element={<PrivateCopmonent/>}>
-        <Route path="/dashboard" element={<Dashboard />}/>
+        <Route path="dashboard" element={<Dashboard />}/>
         <Route path="/disbursment"  element={<Disbursment />} />
           <Route path="/funding" element={<Funding />} />
           <Route path="/promotion" element={<Promotion />} />
           <Route path="/roi" element={<Roi />} />
+        
         
           </Route>
           {/* <Route index element={<Dashboard />} /> */}
