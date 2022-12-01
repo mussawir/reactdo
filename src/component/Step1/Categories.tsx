@@ -7,6 +7,8 @@ import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import '../Step1/CategoriesStyle.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 type Props = {};
 
 type Values = {
@@ -40,6 +42,7 @@ const Categories = (props: Props) => {
 
   return (
     <>
+    <Header/>
       <Grid id="FirstGridForCategory">
         <Box>
           <Typography id="headingofCatergoryscreen">
@@ -97,6 +100,8 @@ const Categories = (props: Props) => {
           </Typography>
         </Box>
       </Grid>
+    
+    <Footer/>
     </>
   );
 };

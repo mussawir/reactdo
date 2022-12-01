@@ -9,6 +9,8 @@ import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
+import Footer from './../Footer/Footer';
 
 type Props = {};
 
@@ -20,6 +22,7 @@ const Subcategory = (props: Props) => {
 
   return (
     <>
+    <Header/>
       <Grid id="FirstGridForSubCategory">
         <Box>
           <Typography id="headingofCatergoryscreen2">
@@ -73,6 +76,8 @@ const Subcategory = (props: Props) => {
           </Typography>
         </Box>
       </Grid>
+
+      <Footer/>
     </>
   );
 };
