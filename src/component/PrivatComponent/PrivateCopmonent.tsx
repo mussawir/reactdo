@@ -5,7 +5,7 @@ import Login from './../Login/Login';
 type Props = {};
 
 const PrivateCopmonent = (props: Props) => {
-  const auth = localStorage.getItem("user");
+  const auth = localStorage.getItem("token");
   return auth ? <Outlet /> : <Login/>;
 };
 
