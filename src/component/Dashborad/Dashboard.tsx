@@ -1,36 +1,19 @@
 import * as React from "react";
-import { useState } from "react";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
-import Drawer from "@mui/material/Drawer";
 import AppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import Grid from "@mui/material/Grid";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import {
-  Link,
-  Route,
-  Routes,
-  Router,
-  useNavigate,
-  Outlet,
-} from "react-router-dom";
+import {Link,} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import SideBar from "./Sidbar/SideBar";
-import Disbursment from "./Layer/Disbursment/Disbursment";
+
 import Funding from "./Layer/Funding/Funding";
 
 export default function Dashboard() {
@@ -43,17 +26,11 @@ export default function Dashboard() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  //   const [funding, setfunding] = useState(false);
 
-  //   const fundingHandle = () => {
-  //     if (!funding === true) {
-  //       history.push('project');
-  //     }
-  //   };
 
   return (
     <>
-      {/* <SideBar/> */}
+      
 
       <Box sx={{ display: "flex" }}>
         <CssBaseline />
@@ -74,7 +51,7 @@ export default function Dashboard() {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               Investing Verse Dashboard
             </Typography>
-            {/* <Button color="inherit">Login</Button> */}
+            
 
             <Button
               id="fade-button"
@@ -100,17 +77,15 @@ export default function Dashboard() {
               TransitionComponent={Fade}
             >
               <MenuItem onClick={handleClose}>
-                <Link to="">My Projects</Link>
+                <Link to="/myprojects">My Projects</Link>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Link to="">My Investments </Link>
+                <Link to="myinvestment">My Investments </Link>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Link to="">My Acount</Link>
+                <Link to="myaccount">My Acount</Link>
               </MenuItem>
-              <MenuItem onClick={handleClose}>
-                <Link to="">My Settings</Link>
-              </MenuItem>
+            
               <MenuItem onClick={handleClose}>
                 <Link to="login">Logout</Link>
               </MenuItem>
@@ -125,7 +100,6 @@ export default function Dashboard() {
         </Box>
       </Box>
 
-      {/* <Outlet /> */}
     </>
   );
 }

@@ -1,0 +1,67 @@
+#FirstGridForCategory {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+#headingofCatergoryscreen {
+  text-align: center;
+  font-size: 1.7rem;
+  padding-top: 20px;
+}
+#busyu {
+  justify-content: center;
+}
+#pafterhead {
+  text-align: center;
+  color: rgb(128, 128, 128);
+}
+#boxofdropdowns {
+  padding-top: 7%;
+}
+#Dropdownn1 {
+  width: 100% !important;
+  border-radius: 0px;
+}
+
+#divider {
+  padding-top: 10%;
+}
+
+#Grid2ndForCategory {
+  padding-top: 20px;
+}
+
+#buttoncolorofCategory {
+  background-color: #1b59c7;
+  border-radius: 0px;
+  color: white;
+  padding-left: 8%;
+  margin-left: 18%;
+  text-transform: none;
+}
+
+#buttoncolorofCategory:hover {
+  background-color: rgb(2, 2, 2);
+  border-radius: 0px;
+  color: white;
+}
+
+#TypoGrid2ofCategory {
+  color: grey;
+  font-size: 0.9rem;
+  padding-top: 5px;
+}
+
+#lineinbottomofGrid {
+  font-size: 0.8rem;
+  color: rgb(168, 167, 167);
+  padding-top: 10%;
+  font-weight: 100;
+  text-align: center;
+}
+#buttoncolorofCategoryLink{
+  color: white !important;
+}

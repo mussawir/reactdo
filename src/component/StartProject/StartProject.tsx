@@ -9,7 +9,7 @@ import projectimage3 from "../images/projectimage3.jpg";
 import projectimage4 from "../images/projectimage4.png";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-
+import { Link } from "react-router-dom";
 
 
 import "../StartProject/StartProjectStyle.css";
@@ -28,7 +28,8 @@ const StartProject = () => {
         <Typography id="typoOffirstHeading2">to life.</Typography>
 
         <Button variant="contained" color="success" id="buttonsuccess">
-          Start a project
+         <Link  to="/project/categories" id="starProject"> 
+         Start a project</Link> 
         </Button>
         <Grid>
           <Box sx={{ flexGrow: 1 }}>
