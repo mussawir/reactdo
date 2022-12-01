@@ -74,18 +74,18 @@ export default function Dashboard() {
             >
               <MenuItem onClick={handleClose}>
                 <ListItemText>
-                  <Link to="myprojects">My Projects</Link>
+                  <Link to="/myprojects">My Project</Link>
                 </ListItemText>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Link to="myinvestment">My Investments </Link>
+                <Link to="/myinvestment">My Investments </Link>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Link to="myaccount">My Acount</Link>
+                <Link to="/myaccount">My Acount</Link>
               </MenuItem>
 
               <MenuItem onClick={handleClose}>
-                <Link to="login">Logout</Link>
+                <Link to="/login">Logout</Link>
               </MenuItem>
             </Menu>
           </Toolbar>
