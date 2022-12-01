@@ -30,6 +30,7 @@ const Funding = (props: Props) => {
  
     <Grid id="mainpic">
         <Grid xs={12} sm={10} md={8} lg={6}>
+          <br/>
           <Typography id="id3">Funding</Typography>
             <Typography id="TopHeading">
             Smart Class Kit
