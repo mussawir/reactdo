@@ -1,12 +1,14 @@
 import React from 'react'
-import Dashboard from '../../Dashboard'
 import  Typography from '@mui/material/Typography';
+import TopBar from './../../TopBar/TopBar';
+import SideBar from './../../Sidbar/SideBar';
 
 type Props = {}
 
 const Disbursment = (props: Props) => (
   <>
-    {/* <Dashboard /> */}
+  <TopBar/>
+ <SideBar />
 
 
     <Typography >
