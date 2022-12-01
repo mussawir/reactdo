@@ -12,7 +12,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import Avatar from "@mui/material/Avatar";
 import ListItemText from "@mui/material/ListItemText";
-import { Link, Outlet } from "react-router-dom";
+// import { Link, Outlet } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 type Props = {};
 
@@ -36,15 +37,17 @@ function TopBar({}: Props) {
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >
         <Toolbar>
+        <Link to="/dashboard">
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
-          >
-            <DashboardIcon />
+          > 
+          <DashboardIcon />
           </IconButton>
+          </Link>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Investing Verse Dashboard
           </Typography>
