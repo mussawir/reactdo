@@ -1,48 +1,73 @@
-import React, { useState } from 'react';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import CustomDropDown from '../Form/CustomDropDown/CustomDropDown';
-import Divider from '@mui/material/Divider';
-import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import '../Step1/CategoriesStyle.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-type Props = {};
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import "../Step1/CategoriesStyle.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import axios from "axios";
+type Props = {
 
-type Values = {
-  age: string;
 };
 
-const ages = [
-  { value: '20-40', label: 'art' },
-  { value: '40-50', label: 'Food' },
-  { value: '40-50', label: 'comics' },
-  { value: '40-50', label: 'crafts' },
-  { value: '40-50', label: 'film and video' },
-  { value: '40-50', label: 'Music' },
-  { value: '40-50', label: 'Photography' },
-  { value: '40-50', label: 'Theater' },
-  { value: '40-50', label: 'crafts' },
-  { value: '40-50', label: 'Technology' },
-  { value: '40-50', label: 'Publishing' },
-  { value: '40-50', label: 'Games' },
-  { value: '40-50', label: 'Journalism' },
-];
-
 const Categories = (props: Props) => {
-  const [values, setValues] = useState<Values>({
-    age: '',
-  });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
+  const [select, setSelect] = React.useState("");
+  const [subSelect, setsubSelect] = React.useState("");
+  //const [data, setData] = React.useState([]);
+  const handlesubSelect = (event: SelectChangeEvent) => {
+    setsubSelect(event.target.value as string);
   };
 
+  const handleChange = (event: SelectChangeEvent) => {
+    setSelect(event.target.value as string);
+
+    console.log(select);
+
+    axios
+      .get("https://sea-lion-app-en7u9.ondigitalocean.app/project_categories")
+
+      .then((res) => {
+        console.log(res,"Respose Cheched");
+       
+        let ApiResponse = res?.data;
+        
+        //  setData(ApiResponse)
+        console.log(ApiResponse, "Api Call Success!");
+
+        //console.log(data,"usestate Data")
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+  };
+
+  const students = [  
+    {  
+      'id': 1,   
+      'name': "Jack",   
+      'email': 'jack@gmail.com'  
+    },  
+    {  
+      'id': 2,   
+      'name': 'Mary',   
+      'email': "mary@gmail.com",  
+    },  
+    {  
+      'id': 3,   
+      'name': 'John',   
+      'email': 'john@gmail.com'  
+    },  
+];
   return (
     <>
-    <Header/>
+      <Header />
       <Grid id="FirstGridForCategory">
         <Box>
           <Typography id="headingofCatergoryscreen">
@@ -60,20 +85,92 @@ const Categories = (props: Props) => {
             <Grid container spacing={2} columns={16} id="busyu">
               <Grid item xs={12} sm={6} md={6} lg={8}>
                 <Grid id="Dropdownn1">
-                  <CustomDropDown
-                   
-                  />
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Select
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={select}
+                      label="Age"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+              
                 </Grid>
               </Grid>
               <Grid item xs={12} sm={6} md={6} lg={8}>
                 <Grid id="Dropdownn2">
-                  <CustomDropDown
-                  
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Sub Select
+                    </InputLabel>
                     
-                  />
+                    
+                    
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={subSelect}
+                      label="Age"
+                      onChange={handlesubSelect}
+                    >
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
                 </Grid>
               </Grid>
             </Grid>
+
+
+<Grid>
+  <>
+  {/* <table className="table table-bordered">  
+            <tr>  
+                <th>ID</th>  
+                <th>Name</th>  
+                <th>Email</th>  
+            </tr>  
+    
+            {res?.data?.map((name) => (  
+              <tr >  
+                <td>{name._id}</td>  
+                <td>{name}</td>  
+                  
+              </tr>  
+            ))}  
+    
+        </table>   */}
+
+
+  {/* {students.map(name => (  
+          <h1>  
+            {name}  
+          </h1>  
+        ))}  */}
+  {/* {data.map((_id, name) => {
+                      return (
+                        <tr key={name}>
+                          <th scope="row">{_id}</th>
+                      
+                        </tr>
+                      );
+                    })} */}
+                  </>
+                  <Grid>
+                    {/* <Typography>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam eum molestiae ea voluptate, rem explicabo corporis. Soluta corrupti incidunt minima laborum perspiciatis ullam ipsam magni, dolorem dolor, repudiandae, dicta beatae!
+                    </Typography> */}
+                  </Grid>
+</Grid>
+
             <Divider id="divider" />
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2} columns={16} id="Grid2ndForCategory">
@@ -85,10 +182,13 @@ const Categories = (props: Props) => {
                 <Grid item xs={12} sm={6} md={6} lg={8}>
                   <Grid>
                     <Button variant="contained" id="buttoncolorofCategory">
-                      <Link to="/project/categories/subcategory" id="buttoncolorofCategoryLink">
-                        Next: Additional Subcategory</Link>
+                      <Link
+                        to="/project/categories/subcategory"
+                        id="buttoncolorofCategoryLink"
+                      >
+                        Next: Additional Subcategory
+                      </Link>
                     </Button>
-
                   </Grid>
                 </Grid>
               </Grid>
@@ -100,8 +200,8 @@ const Categories = (props: Props) => {
           </Typography>
         </Box>
       </Grid>
-    
-    <Footer/>
+
+      <Footer />
     </>
   );
 };
