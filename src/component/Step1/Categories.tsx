@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -18,53 +18,46 @@ type Props = {
 };
 
 const Categories = (props: Props) => {
-  const [select, setSelect] = React.useState("");
-  const [subSelect, setsubSelect] = React.useState("");
-  //const [data, setData] = React.useState([]);
+  const [select, setSelect] = React.useState<any>("");
+  const [subSelect, setsubSelect] = React.useState<any>("");
+
+
+  const [data, setData] = React.useState<any[]>([]);
   const handlesubSelect = (event: SelectChangeEvent) => {
     setsubSelect(event.target.value as string);
   };
 
-  const handleChange = (event: SelectChangeEvent) => {
+  // const handSelect = (event: SelectChangeEvent) => {
+  //   setSelect(event.target.value as string);
+  // };
+  //  console.log(select);
+
+  const handSelect = (event: SelectChangeEvent) => {
     setSelect(event.target.value as string);
 
-    console.log(select);
-
-    axios
-      .get("https://sea-lion-app-en7u9.ondigitalocean.app/project_categories")
-
-      .then((res) => {
-        console.log(res,"Respose Cheched");
-       
-        let ApiResponse = res?.data;
-        
-        //  setData(ApiResponse)
-        console.log(ApiResponse, "Api Call Success!");
-
-        //console.log(data,"usestate Data")
-      })
-      .catch((err) => {
-        console.log(err, "error");
-      });
+   console.log(select,"ID-GET-YOU_SELECTED");
+   
   };
 
-  const students = [  
-    {  
-      'id': 1,   
-      'name': "Jack",   
-      'email': 'jack@gmail.com'  
-    },  
-    {  
-      'id': 2,   
-      'name': 'Mary',   
-      'email': "mary@gmail.com",  
-    },  
-    {  
-      'id': 3,   
-      'name': 'John',   
-      'email': 'john@gmail.com'  
-    },  
-];
+  useEffect(() => {
+    axios.get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
+    .then((res) => {
+    console.log(res,"Respose Cheched");
+      let  ApiResponse  = res?.data;
+      
+       setData(ApiResponse)
+ 
+
+      //console.log(data,"usestate Data")
+    })
+    .catch((err) => {
+      console.log(err, "error");
+    });
+  
+    
+  }, []);
+  
+
   return (
     <>
       <Header />
@@ -89,16 +82,18 @@ const Categories = (props: Props) => {
                     <InputLabel id="demo-simple-select-label">
                       Select
                     </InputLabel>
+         
+       
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={select}
                       label="Age"
-                      onChange={handleChange}
+                      onChange={handSelect}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {data.map((item:any) => (
+                      <MenuItem value={item?.categoryId}>{item?.name}</MenuItem>
+                      ))} 
                     </Select>
                   </FormControl>
               
@@ -111,7 +106,24 @@ const Categories = (props: Props) => {
                       Sub Select
                     </InputLabel>
                     
-                    
+                      
+              
+                {/* <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={subSelect}
+                      label="Age"
+                      onChange={handlesubSelect}
+                    >
+                      {data.map((item) => (
+                      <MenuItem value={item?.name}>{item?.name}</MenuItem>
+                      ))} 
+                    </Select> */}
+                
+        
+                
+              
+           
                     
                     <Select
                       labelId="demo-simple-select-label"
@@ -132,22 +144,21 @@ const Categories = (props: Props) => {
 
 <Grid>
   <>
-  {/* <table className="table table-bordered">  
-            <tr>  
-                <th>ID</th>  
-                <th>Name</th>  
-                <th>Email</th>  
-            </tr>  
+  <table className="table table-bordered">  
+            
     
-            {res?.data?.map((name) => (  
+            {/* {data.map((item) => (  
+              //const ={categoryId,name} = item;
               <tr >  
-                <td>{name._id}</td>  
-                <td>{name}</td>  
+                
+                
+                <td>{item?.name}</td>  
+                <td>{item?.categoryId}</td>  
                   
               </tr>  
-            ))}  
+            ))}   */}
     
-        </table>   */}
+        </table>  
 
 
   {/* {students.map(name => (  
