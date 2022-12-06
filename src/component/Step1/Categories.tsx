@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -13,58 +13,62 @@ import "../Step1/CategoriesStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
-type Props = {
-
-};
+type Props = {};
 
 const Categories = (props: Props) => {
-  const [select, setSelect] = React.useState("");
-  const [subSelect, setsubSelect] = React.useState("");
-  //const [data, setData] = React.useState([]);
-  const handlesubSelect = (event: SelectChangeEvent) => {
-    setsubSelect(event.target.value as string);
+  ////Category ////
+  const [GetCatData, SetCatData] = React.useState<any[]>([]);
+  const [catId, setCatId] = React.useState<any>("");
+
+  const GetCats = (event: SelectChangeEvent) => {
+    setCatId(event.target.value as string);
+    console.log(catId,"Category");
+
+    
   };
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setSelect(event.target.value as string);
-
-    console.log(select);
-
+  useEffect(() => {
     axios
-      .get("https://sea-lion-app-en7u9.ondigitalocean.app/project_categories")
-
+      .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
       .then((res) => {
-        console.log(res,"Respose Cheched");
-       
-        let ApiResponse = res?.data;
-        
-        //  setData(ApiResponse)
-        console.log(ApiResponse, "Api Call Success!");
-
+        console.log(res, "categories Cheched");
+        let CategoryApi = res?.data;
+        SetCatData(CategoryApi);
         //console.log(data,"usestate Data")
       })
       .catch((err) => {
         console.log(err, "error");
       });
-  };
+  }, []);
+  ////Category End////
 
-  const students = [  
-    {  
-      'id': 1,   
-      'name': "Jack",   
-      'email': 'jack@gmail.com'  
-    },  
-    {  
-      'id': 2,   
-      'name': 'Mary',   
-      'email': "mary@gmail.com",  
-    },  
-    {  
-      'id': 3,   
-      'name': 'John',   
-      'email': 'john@gmail.com'  
-    },  
-];
+  /////////////////Sub-Category //////////////
+
+  const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
+
+  const [SubcatId, setSubCatId] = React.useState<any>("");
+
+  const GetSubCats = (event: SelectChangeEvent) => {
+    setSubCatId(event.target.value as string);
+    console.log(SubcatId,"sub Cat_categories Cheched");
+
+    if(SubcatId ===  catId ){
+      axios
+     // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+      .get("http://localhost:5000/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+      .then((res) => {
+        console.log(res, "sub_categories Cheched");
+        let SubCategoryApi = res?.data;
+        SetSubCatData(SubCategoryApi);
+        console.log(SubCatData, "sub_categories Data");
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+    } 
+  };
+  ////Sub Category End////
+
   return (
     <>
       <Header />
@@ -89,19 +93,21 @@ const Categories = (props: Props) => {
                     <InputLabel id="demo-simple-select-label">
                       Select
                     </InputLabel>
+
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      value={select}
-                      label="Age"
-                      onChange={handleChange}
+                      value={catId}
+                      label="Select Main Category"
+                      onChange={GetCats}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {GetCatData.map((item: any) => (
+                        <MenuItem value={item?.categoryId}>
+                          {item?.name}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
-              
                 </Grid>
               </Grid>
               <Grid item xs={12} sm={6} md={6} lg={8}>
@@ -110,66 +116,24 @@ const Categories = (props: Props) => {
                     <InputLabel id="demo-simple-select-label">
                       Sub Select
                     </InputLabel>
-                    
-                    
-                    
+
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      value={subSelect}
-                      label="Age"
-                      onChange={handlesubSelect}
+                      value={SubcatId}
+                      label="Sub Cat"
+                      onChange={GetSubCats}
                     >
-                      <MenuItem value={10}>Ten</MenuItem>
-                      <MenuItem value={20}>Twenty</MenuItem>
-                      <MenuItem value={30}>Thirty</MenuItem>
+                      {SubCatData?.map((list: any) => (
+                        <MenuItem value={list?.categoryId}>
+                          {list?.name}
+                        </MenuItem>
+                      ))}
                     </Select>
                   </FormControl>
                 </Grid>
               </Grid>
             </Grid>
-
-
-<Grid>
-  <>
-  {/* <table className="table table-bordered">  
-            <tr>  
-                <th>ID</th>  
-                <th>Name</th>  
-                <th>Email</th>  
-            </tr>  
-    
-            {res?.data?.map((name) => (  
-              <tr >  
-                <td>{name._id}</td>  
-                <td>{name}</td>  
-                  
-              </tr>  
-            ))}  
-    
-        </table>   */}
-
-
-  {/* {students.map(name => (  
-          <h1>  
-            {name}  
-          </h1>  
-        ))}  */}
-  {/* {data.map((_id, name) => {
-                      return (
-                        <tr key={name}>
-                          <th scope="row">{_id}</th>
-                      
-                        </tr>
-                      );
-                    })} */}
-                  </>
-                  <Grid>
-                    {/* <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam eum molestiae ea voluptate, rem explicabo corporis. Soluta corrupti incidunt minima laborum perspiciatis ullam ipsam magni, dolorem dolor, repudiandae, dicta beatae!
-                    </Typography> */}
-                  </Grid>
-</Grid>
 
             <Divider id="divider" />
             <Box sx={{ flexGrow: 1 }}>
