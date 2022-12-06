@@ -34,9 +34,9 @@ function App() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
-        <Route path="/project/categories" element={<Categories />} />
-        <Route path="/project/categories/subcategory" element={<Subcategory />} />
-        <Route path="/project/categories/subcategory/location" element={<Location />} />
+        <Route path="/categories" element={<Categories />} />
+        {/* <Route path="/project/categories/subcategory" element={<Subcategory />} /> */}
+        <Route path="/location" element={<Location />} />
         {/* <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} /> */}

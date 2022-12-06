@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -21,10 +21,6 @@ const Categories = (props: Props) => {
   const [catId, setCatId] = React.useState<any>("");
   const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
   const [SubcatId, setSubCatId] = React.useState<any>("");
-
-
-
-  
 
   const SubCatHandler = (event: SelectChangeEvent) => {
     setSubCatId(event.target.value as string);
@@ -55,32 +51,20 @@ const Categories = (props: Props) => {
     var categoryID = event.target.value;
     // alert(categoryID);
     axios
-
-      // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
-
      // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
-
       .get("http://localhost:5000/subcategories/" + categoryID)
       .then((res) => {
         // console.log(res, "sub_categories Cheched");
         let SubCategoryApi = res?.data;
         SetSubCatData(SubCategoryApi);
-
         //  console.log(SubCatData, "sub_categories Data");
-
-      //  console.log(SubCatData, "sub_categories Data");
 
       })
       .catch((err) => {
         console.log(err, "error");
       });
-
   };
-
-  
-
   ////Sub Category End////
-
 
   return (
     <>
@@ -150,20 +134,20 @@ const Categories = (props: Props) => {
 
             <Divider id="divider" />
             <Box sx={{ flexGrow: 1 }}>
-              <Grid container spacing={2} columns={16} id="Grid2ndForCategory">
-                <Grid item xs={12} sm={6} md={6} lg={8}>
+              <Grid container spacing={2}  id="Grid2ndForCategory">
+                <Grid item xs={12} sm={6} md={6} lg={9}>
                   <Grid>
                     <Typography id="TypoGrid2ofCategory"></Typography>
                   </Grid>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={8}>
-                  <Grid>
+                <Grid item xs={12} sm={6} md={6} lg={3}>
+                  <Grid style={{display:'flex',justifyContent:'end'}}>
                     <Button variant="contained" id="buttoncolorofCategory">
                       <Link
-                        to="/project/categories/subcategory"
+                        to="/location"
                         id="buttoncolorofCategoryLink"
                       >
-                        Next: Additional Subcategory
+                        Next: Location
                       </Link>
                     </Button>
                   </Grid>

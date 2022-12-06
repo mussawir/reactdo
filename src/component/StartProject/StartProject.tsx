@@ -28,7 +28,7 @@ const StartProject = () => {
         <Typography id="typoOffirstHeading2">to life.</Typography>
 
         <Button variant="contained" color="success" id="buttonsuccess">
-         <Link  to="/project/categories" id="starProject"> 
+         <Link  to="/categories" id="starProject"> 
          Start a project</Link> 
         </Button>
         <Grid>
