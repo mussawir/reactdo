@@ -26,27 +26,20 @@ import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
 function App() {
   return (
     <>
-     
-     
       <Routes>
-      
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="dashboard/login" element={<Login />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/discover" element={<Discover />} />
-       
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
         <Route path="/project/categories" element={<Categories />} />
         <Route path="/project/categories/subcategory" element={<Subcategory />} />
         <Route path="/project/categories/subcategory/location" element={<Location />} />
-
-        
         {/* <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} /> */}
-       
         <Route element={<PrivateCopmonent/>}>
         <Route path="dashboard" element={<Dashboard />}/>
         <Route path="/disbursment"  element={<Disbursment />} />
@@ -56,24 +49,16 @@ function App() {
          <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} />
-         
           </Route>
           {/* <Route index element={<Dashboard />} /> */}
-         
-
         <Route path="*" element={<NoMatch />} />
-       
         </Routes>
-      
-
-      
+     
         {/* <Route path="/dashboard" component={Dashboard}/> 
         <Route path="/disbursment" element={<Disbursment />}/> 
         <Route path="/funding" element={<Funding />}/> 
         <Route path="/promotion" element={<Promotion />}/> 
-        <Route path="/roi" element={<Roi />}/>  */}
-       
-       
+        <Route path="/roi" element={<Roi />}/>  */} 
            {/* <Route path="/dashboard" element={<Dashboard />}/>
           <Route index element={<Dashboard />} />
           <Route path="disbursment"  element={<Disbursment />} />
@@ -85,15 +70,6 @@ function App() {
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
           {/* <Route path="*" element={<NoMatch />} /> */}
-        
-     
-        
-
-
-
-
-      
-    
     </>
   );
 }
