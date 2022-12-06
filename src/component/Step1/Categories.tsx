@@ -19,19 +19,20 @@ const Categories = (props: Props) => {
   ////Category ////
   const [GetCatData, SetCatData] = React.useState<any[]>([]);
   const [catId, setCatId] = React.useState<any>("");
+  const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
+  const [SubcatId, setSubCatId] = React.useState<any>("");
 
   const GetCats = (event: SelectChangeEvent) => {
     setCatId(event.target.value as string);
     console.log(catId,"Category");
-
-    
   };
 
+// Bring list of categories 
   useEffect(() => {
     axios
       .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
       .then((res) => {
-        console.log(res, "categories Cheched");
+        // console.log(res, "categories Cheched");
         let CategoryApi = res?.data;
         SetCatData(CategoryApi);
         //console.log(data,"usestate Data")
@@ -43,29 +44,25 @@ const Categories = (props: Props) => {
   ////Category End////
 
   /////////////////Sub-Category //////////////
-
-  const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
-
-  const [SubcatId, setSubCatId] = React.useState<any>("");
-
   const GetSubCats = (event: SelectChangeEvent) => {
-    setSubCatId(event.target.value as string);
-    console.log(SubcatId,"sub Cat_categories Cheched");
-
-    if(SubcatId ===  catId ){
-      axios
+    
+    setCatId(event.target.value as string);
+    // console.log(catId,"sub Cat_categories Cheched");
+    var categoryID = event.target.value;
+    // alert(categoryID);
+    axios
      // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
-      .get("http://localhost:5000/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+      .get("http://localhost:5000/subcategories/" + categoryID)
       .then((res) => {
-        console.log(res, "sub_categories Cheched");
+        // console.log(res, "sub_categories Cheched");
         let SubCategoryApi = res?.data;
         SetSubCatData(SubCategoryApi);
-        console.log(SubCatData, "sub_categories Data");
+      //  console.log(SubCatData, "sub_categories Data");
       })
       .catch((err) => {
         console.log(err, "error");
       });
-    } 
+  
   };
   ////Sub Category End////
 
@@ -91,7 +88,7 @@ const Categories = (props: Props) => {
                 <Grid id="Dropdownn1">
                   <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">
-                      Select
+                      Select Main Category
                     </InputLabel>
 
                     <Select
@@ -99,7 +96,7 @@ const Categories = (props: Props) => {
                       id="demo-simple-select"
                       value={catId}
                       label="Select Main Category"
-                      onChange={GetCats}
+                      onChange={GetSubCats}
                     >
                       {GetCatData.map((item: any) => (
                         <MenuItem value={item?.categoryId}>
@@ -122,10 +119,10 @@ const Categories = (props: Props) => {
                       id="demo-simple-select"
                       value={SubcatId}
                       label="Sub Cat"
-                      onChange={GetSubCats}
+                      // onChange={ShowSubCat}
                     >
                       {SubCatData?.map((list: any) => (
-                        <MenuItem value={list?.categoryId}>
+                        <MenuItem value={list?.subcategoryId}>
                           {list?.name}
                         </MenuItem>
                       ))}
