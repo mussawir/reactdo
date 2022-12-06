@@ -23,10 +23,7 @@ const Categories = (props: Props) => {
   const [SubcatId, setSubCatId] = React.useState<any>("");
 
 
-  const SubCatHandler = (event: SelectChangeEvent) => {
-    setSubCatId(event.target.value as string);
-    console.log(SubcatId, "Category");
-  };
+
   
 
   const SubCatHandler = (event: SelectChangeEvent) => {
