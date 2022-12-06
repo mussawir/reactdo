@@ -1,5 +1,5 @@
-import React, {  useState } from "react";
-import { Link ,useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import {
@@ -22,86 +22,90 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 
-
 type Values = {
   email: string;
   password: any;
 };
 
 const Login = () => {
+  const [email, setemail] = useState("");
+  const [password, setpassword] = useState("");
   const [isCheckedA, setIsCheckedA] = useState(false);
   const handleChangeA = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsCheckedA(e.target.checked);
   };
-  const [values, setValues] = useState<Values>({
-    email: "",
-    password: "",
-  });
 
   const navigate = useNavigate();
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValues({ ...values, [event.target.name]: event.target.value });
-  };
-
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(values, isCheckedA);
+    console.log(email, password, isCheckedA);
+
     await axios
-      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", { values })
-      
+      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", {
+        email,
+        password,
+      })
+
       .then((res: any) => {
         console.log("ResultResultResultResultResultResult", res);
-        console.log("token",res.data.token);
-        var token = res.data.token;
+        console.log("token", res.data.token);
+        localStorage.setItem("token" ,JSON.stringify(res.data.token));
+        // var token = res.data.token;
+        navigate("/dashboard");
       })
       .catch((err: any) => {
         console.log(err, "error");
       });
 
-      // if(){
-      //   navigate("/login");
-      // }else{
-      //   navigate("/dashboard");
-      // }
+    
 
-     
+    if(localStorage.getItem("token")){
+      navigate("/dashboard");
+    }else{
+      navigate("/login");
+    }
   };
 
-  
-
-
-
-
   // useEffect(() => {
-  //   const auth = localStorage.getItem("logintoken");
+  //  localStorage.setItem("token" ,JSON.stringify ());
   //   if (auth) {
   //     navigate("/dashboard");
-  //   }if(!auth){
-  //     navigate('/login')
   //   }
   // }, []);
 
   return (
     <>
-    <Header/>
+      <Header />
       <Box id="LoginFormContainer">
         <Grid>
-          <form onSubmit={ handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <Grid container direction="column" justifyContent="flex-start">
               <Typography className="Login">Login</Typography>
+              <p></p>
 
-              <EmailField
-                changeHandler={handleChange}
-                label={"Email"}
-                name={"email"}
+              <TextField
+                required
+                id="outlined-number"
+                label="Email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => {
+                  setemail(e.target.value);
+                }}
               />
-
-              <PasswordField
-                changeHandler={handleChange}
-                label={"Password"}
-                name={"password"}
+              <p></p>
+              <TextField
+                required
+                id="outlined-password-input"
+                label="Password"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => {
+                  setpassword(e.target.value);
+                }}
               />
 
               <div>
@@ -173,7 +177,7 @@ const Login = () => {
         </Grid>
       </Box>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

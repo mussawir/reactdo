@@ -23,12 +23,12 @@ const rows = [
   createData('Project C', 6, 100000),
 ];
 
-const  Roi =() =>{
+const  Promotion =() =>{
   return (
     <>
         <TopBar/>
  <SideBar />
- 
+ <div>TExt here</div>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -59,4 +59,4 @@ const  Roi =() =>{
   );
 }
 
-export default Roi;
+export default Promotion;

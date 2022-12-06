@@ -1,0 +1,77 @@
+#FirstGridForlocation {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 10%;
+}
+
+#headingoflocation {
+  text-align: center;
+  font-size: 1.7rem;
+  padding-top: 20px;
+}
+
+#pafterhead3 {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgb(155, 152, 152);
+  font-weight: 200;
+  width: 100% !important;
+}
+#boxofdropdowns3 {
+  padding-top: 3%;
+}
+#Dropdownn1h1 {
+  width: 100%;
+  border-radius: 0px;
+}
+#lineafterD {
+  font-size: 0.9rem;
+  color: rgb(0, 0, 0);
+}
+#divider3 {
+  padding-top: 10%;
+}
+
+#Grid2ndForlocation {
+  padding-top: 30px;
+}
+#arrowicoN {
+  padding-top: 10px;
+  font-size: 1.4rem;
+}
+#buttoncoloroflocation {
+  background-color: #1b59c7;
+  border-radius: 0px;
+  color: white;
+  padding-left: 8%;
+
+  text-transform: none;
+  float: right;
+}
+
+#buttoncoloroflocation:hover {
+  background-color: rgb(2, 2, 2);
+  border-radius: 0px;
+  color: white;
+}
+
+#TypoGrid2oflocation {
+  color: grey;
+  font-size: 0.9rem;
+  padding-top: px;
+  text-transform: none;
+  padding-bottom: 20px;
+}
+
+#lineinbottomofGrid3 {
+  font-size: 0.7rem;
+  color: rgb(168, 167, 167);
+  padding-top: 15%;
+  font-weight: 100;
+  text-align: center;
+}
+#buttoncolorofLocationLink{
+  color: white !important;
+}

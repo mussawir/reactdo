@@ -11,7 +11,9 @@ import Stack from '@mui/material/Stack';
 import "../../Layer/Funding/FundingStyle.css"
 import { styled } from '@mui/material/styles';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-import Dashboard from './../../oldDash';
+import SideBar from '../../Sidbar/SideBar';
+import TopBar from '../../TopBar/TopBar';
+
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -27,9 +29,12 @@ type Props = {}
 const Funding = (props: Props) => {
   return (
     <>
-    <Dashboard/>
+    <TopBar/>
+ <SideBar />
+
     <Grid id="mainpic">
         <Grid xs={12} sm={10} md={8} lg={6}>
+          <br/>
           <Typography id="id3">Funding</Typography>
             <Typography id="TopHeading">
             Smart Class Kit

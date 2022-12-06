@@ -17,7 +17,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-
+import SwitchAccessShortcutAddIcon from '@mui/icons-material/SwitchAccessShortcutAdd';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import MoveUpIcon from '@mui/icons-material/MoveUp';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 type Props = {};
 const drawerWidth = 240;
 const SideBar = (props: Props) => {
@@ -37,11 +40,11 @@ const SideBar = (props: Props) => {
           <Toolbar />
           <Box sx={{ overflow: "auto" }}>
             <List>
-              <Link to="funding">
+              <Link to="/funding">
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      <InboxIcon />
+                      <SwitchAccessShortcutAddIcon />
                     </ListItemIcon>
                     <ListItemText primary="Funding" />
                   </ListItemButton>
@@ -54,7 +57,7 @@ const SideBar = (props: Props) => {
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      <InboxIcon />
+                      <ConnectWithoutContactIcon />
                     </ListItemIcon>
 
                     <ListItemText primary="Promotion" />
@@ -69,7 +72,7 @@ const SideBar = (props: Props) => {
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemIcon>
-                      <InboxIcon />
+                      <MoveUpIcon />
                     </ListItemIcon>
                     <ListItemText primary="Disbursment" />
                   </ListItemButton>
@@ -79,14 +82,17 @@ const SideBar = (props: Props) => {
             <Divider />
 
             <List>
+            <Link to="/roi">
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
-                    <InboxIcon />
+                    <AttachMoneyIcon />
                   </ListItemIcon>
                   <ListItemText primary="ROI" />
                 </ListItemButton>
               </ListItem>
+              
+</Link>
             </List>
             <Divider />
           </Box>

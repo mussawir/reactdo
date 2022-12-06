@@ -92,13 +92,13 @@ a {
   width: 100%;
   background-color: #1b59c7;
   color: white;
-  border-color :;
+
   text-transform :none;
   border-radius:0px;
 font-family: "CircularStd-Book";
 }
 
 #checkBox{
-  padding-top: 5px;
+  padding-top: 1px;
   
 }

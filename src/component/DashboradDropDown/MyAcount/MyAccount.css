@@ -1,0 +1,76 @@
+#heading1ofmyaccount{
+    font-size: 2rem;
+    margin-left: 3%;
+   
+}
+
+#heading2ofmyaccounts{
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+
+#id{
+    margin-left: 10%;
+}
+
+#heading3ofmyaccounts{
+    padding-top: 3%;
+    margin-left: 3%;
+    font-size: 1.2rem;
+}
+
+#card{
+    padding-top: 3%;
+    padding-top: 3%;
+  
+}
+#tabsofmyaccount{
+    margin-left: 40%;
+}
+
+#maincards{
+    margin-bottom: 5%;
+}
+
+#mainpageofmyaccounts{
+    background-color: rgb(233, 229, 229);
+}
+
+
+
+#img1{
+    width: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+
+
+#cardofmyaccounts{
+    display: flex;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+#Continueeditingbutton{
+    text-align: right;
+    float: right;
+}
+
+#whole{
+    margin-left: 390%;
+}
+
+
+
+#button{
+    margin-left: 4%;
+}
+#cardbutton{
+    margin-left: 25%;
+    font-size: 1.1rem;
+    font-weight: bolder;
+ 
+   
+}

@@ -22,11 +22,19 @@ const Categories = (props: Props) => {
   const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
   const [SubcatId, setSubCatId] = React.useState<any>("");
 
+
   const SubCatHandler = (event: SelectChangeEvent) => {
     setSubCatId(event.target.value as string);
     console.log(SubcatId, "Category");
   };
-  // Bring list of categories
+  
+
+  const SubCatHandler = (event: SelectChangeEvent) => {
+    setSubCatId(event.target.value as string);
+    console.log(SubcatId,"Category");
+  };
+
+// Bring list of categories 
   useEffect(() => {
     axios
       .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
@@ -44,23 +52,39 @@ const Categories = (props: Props) => {
 
   /////////////////Sub-Category //////////////
   const GetSubCats = (event: SelectChangeEvent) => {
+
     setCatId(event.target.value as string);
     // console.log(catId,"sub Cat_categories Cheched");
     var categoryID = event.target.value;
     // alert(categoryID);
     axios
+
       // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+
+     // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+
       .get("http://localhost:5000/subcategories/" + categoryID)
       .then((res) => {
         // console.log(res, "sub_categories Cheched");
         let SubCategoryApi = res?.data;
         SetSubCatData(SubCategoryApi);
+
         //  console.log(SubCatData, "sub_categories Data");
+
+      //  console.log(SubCatData, "sub_categories Data");
+
       })
       .catch((err) => {
         console.log(err, "error");
       });
+
   };
+
+  
+  };
+  ////Sub Category End////
+
+
   return (
     <>
       <Header />
