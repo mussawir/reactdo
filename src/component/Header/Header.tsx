@@ -99,6 +99,16 @@ const Header = (props: Props) => {
             </Link>
           </Toolbar>
         </AppBar>
+
+
+
+
+
+
+
+
+
+        
         <Stack direction="row" spacing={1} id="button1">
           <Typography variant="h6" id="h3">
           <Link to="/discover">Become an invester</Link>  

@@ -1,3 +1,11 @@
+@font-face {font-family:"CircularStd-Book";
+  src:url('../fonts/CircularStd-Book.otf') format('opentype') }
+  @font-face {font-family:"Circular-Air-Light";
+      src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
+      @font-face {font-family:"Montserrat-Light";
+        src:url('../fonts/Montserrat-Light.ttf') format('truetype') }
+
+
 #FirstGridForlocation {
   align-items: center;
   display: flex;
@@ -14,10 +22,16 @@
 
 #pafterhead3 {
   text-align: center;
-  font-size: 1.1rem;
-  color: rgb(155, 152, 152);
-  font-weight: 200;
-  width: 100% !important;
+  color: rgb(128, 128, 128);
+  font-size: 19px;
+  font-weight: 400;
+  font-family: "Montserrat-Light" !important;
+}
+#catBack{
+  color: gray;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Montserrat-Light" !important;
 }
 #boxofdropdowns3 {
   padding-top: 3%;
@@ -27,8 +41,11 @@
   border-radius: 0px;
 }
 #lineafterD {
-  font-size: 0.9rem;
   color: rgb(0, 0, 0);
+  padding: 4px 13px 0px;
+  font-size: 14px;
+  font-family: "Montserrat-Light" !important;
+  font-weight: 600;
 }
 #divider3 {
   padding-top: 10%;
@@ -42,13 +59,14 @@
   font-size: 1.4rem;
 }
 #buttoncoloroflocation {
-  background-color: #1b59c7;
+  background-color: #464646;
   border-radius: 0px;
+  font-family: "Circular-Air-Light" !important;
+  font-weight: 100;
+  font-size: 12px;
   color: white;
-  padding-left: 8%;
-
   text-transform: none;
-  float: right;
+  letter-spacing: 1px;
 }
 
 #buttoncoloroflocation:hover {
@@ -58,7 +76,7 @@
 }
 
 #TypoGrid2oflocation {
-  color: grey;
+  color: grey !important;
   font-size: 0.9rem;
   padding-top: px;
   text-transform: none;
