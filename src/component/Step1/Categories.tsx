@@ -181,6 +181,5 @@ const Categories = (props: Props) => {
       <Footer />
     </>
   );
-};
 
 export default Categories;
