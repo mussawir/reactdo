@@ -78,7 +78,7 @@ const Categories = (props: Props) => {
   };
 
   
-  };
+
   ////Sub Category End////
 
 
@@ -180,6 +180,6 @@ const Categories = (props: Props) => {
 
       <Footer />
     </>
-  );
+  );  };
 
 export default Categories;
