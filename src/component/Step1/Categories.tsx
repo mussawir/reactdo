@@ -27,6 +27,11 @@ const Categories = (props: Props) => {
     console.log(catId,"Category");
   };
 
+  const SubCatHandler = (event: SelectChangeEvent) => {
+    setSubCatId(event.target.value as string);
+    console.log(SubcatId,"Category");
+  };
+
 // Bring list of categories 
   useEffect(() => {
     axios
@@ -119,7 +124,7 @@ const Categories = (props: Props) => {
                       id="demo-simple-select"
                       value={SubcatId}
                       label="Sub Cat"
-                      // onChange={ShowSubCat}
+                      onChange={SubCatHandler}
                     >
                       {SubCatData?.map((list: any) => (
                         <MenuItem value={list?.subcategoryId}>
