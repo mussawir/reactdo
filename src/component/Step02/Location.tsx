@@ -102,7 +102,7 @@ const Location = (props: Props) => {
                 <Grid item xs={12} sm={6} md={6} lg={3}>
                   <Grid style={{ display: "flex", justifyContent: "end" }}>
                     <Button variant="contained" id="buttoncoloroflocation">
-                      <Link to="/dashboard">
+                      <Link to="/ProjectOverview">
                         <span id="buttoncolorofLocationLink">Continue</span>{" "}
                       </Link>
                     </Button>
