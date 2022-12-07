@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import "../Step1/CategoriesStyle.css";
+import "./CategoriesStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";

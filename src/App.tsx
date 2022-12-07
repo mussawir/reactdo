@@ -15,9 +15,9 @@ import Promotion from "./component/Dashborad/Layer/Promotion/Promotion";
 import Roi from "./component/Dashborad/Layer/ROI/Roi";
 import NoMatch from './component/NoMatch/NoMatch';
 import PrivateCopmonent from './component/PrivatComponent/PrivateCopmonent';
-import Categories from './component/Step1/Categories';
-import Subcategory from './component/Step2/Subcategory';
-import Location from './component/Step3/Location';
+import Categories from './component/Step01/Categories';
+import ProjectOverview from './component/Step03/ProjectOverview';
+import Location from './component/Step02/Location';
 import MyProjects from "./component/DashboradDropDown/MyProjects/MyProjects";
 import MyInvestment from "./component/DashboradDropDown/MyInvestment/MyInvestment";
 import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
@@ -35,7 +35,7 @@ function App() {
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
         <Route path="/categories" element={<Categories />} />
-        {/* <Route path="/project/categories/subcategory" element={<Subcategory />} /> */}
+         <Route path="/ProjectOverview" element={<ProjectOverview />} />
         <Route path="/location" element={<Location />} />
         {/* <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
