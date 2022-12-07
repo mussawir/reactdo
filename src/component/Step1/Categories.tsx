@@ -22,14 +22,9 @@ const Categories = (props: Props) => {
   const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
   const [SubcatId, setSubCatId] = React.useState<any>("");
 
-  const GetCats = (event: SelectChangeEvent) => {
-    setCatId(event.target.value as string);
-    console.log(catId,"Category");
-  };
-
   const SubCatHandler = (event: SelectChangeEvent) => {
     setSubCatId(event.target.value as string);
-    console.log(SubcatId,"Category");
+    // console.log(SubcatId,"Category");
   };
 
 // Bring list of categories 
@@ -126,9 +121,15 @@ const Categories = (props: Props) => {
                       label="Sub Cat"
                       onChange={SubCatHandler}
                     >
-                      {SubCatData?.map((list: any) => (
-                        <MenuItem value={list?.subcategoryId}>
-                          {list?.name}
+                        {/* {GetCatData.map((item: any) => (
+                        <MenuItem value={item?.categoryId}>
+                          {item?.name}
+                        </MenuItem>
+                      ))} */}
+
+                      {SubCatData?.map((sitem: any) => (
+                        <MenuItem value={sitem?.subcategoryId}>
+                          {sitem?.nam }
                         </MenuItem>
                       ))}
                     </Select>
