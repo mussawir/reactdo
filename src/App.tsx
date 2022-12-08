@@ -15,16 +15,19 @@ import Promotion from "./component/Dashborad/Layer/Promotion/Promotion";
 import Roi from "./component/Dashborad/Layer/ROI/Roi";
 import NoMatch from './component/NoMatch/NoMatch';
 import PrivateCopmonent from './component/PrivatComponent/PrivateCopmonent';
-import Categories from './component/Step1/Categories';
-import Subcategory from './component/Step2/Subcategory';
-import Location from './component/Step3/Location';
+import Categories from './component/Step01/Categories';
+import ProjectOverview from './component/Step03/ProjectOverview';
+import Location from './component/Step02/Location';
 import MyProjects from "./component/DashboradDropDown/MyProjects/MyProjects";
 import MyInvestment from "./component/DashboradDropDown/MyInvestment/MyInvestment";
 import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
+
 import MyRedux from "./component/MyRedux/MyRedux";
 import Page2 from "./component/MyRedux/Page2";
 
 
+
+import CreatProjectTabs from "./component/CreatProjectTabs/CreatProjectTabs";
 
 
 function App() {
@@ -38,9 +41,9 @@ function App() {
         <Route path="/discover" element={<Discover />} />
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
-        <Route path="/project/categories" element={<Categories />} />
-        <Route path="/project/categories/subcategory" element={<Subcategory />} />
-        <Route path="/project/categories/subcategory/location" element={<Location />} />
+        <Route path="/categories" element={<Categories />} />
+         <Route path="/ProjectOverview" element={<ProjectOverview />} />
+        <Route path="/location" element={<Location />} />
         {/* <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} /> */}
@@ -53,8 +56,12 @@ function App() {
          <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} />
+
         <Route path="/myredux" element={<MyRedux />} />
         <Route path="/page2" element={<Page2 />} />
+
+        <Route path="/creatproject" element={<CreatProjectTabs />} />
+
           </Route>
           {/* <Route index element={<Dashboard />} /> */}
         <Route path="*" element={<NoMatch />} />

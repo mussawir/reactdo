@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import "../Step1/CategoriesStyle.css";
+import "./CategoriesStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
@@ -45,7 +45,7 @@ const Categories = (props: Props) => {
 
   /////////////////Sub-Category //////////////
   const GetSubCats = (event: SelectChangeEvent) => {
-    
+
     setCatId(event.target.value as string);
     // console.log(catId,"sub Cat_categories Cheched");
     var categoryID = event.target.value;
@@ -57,12 +57,12 @@ const Categories = (props: Props) => {
         // console.log(res, "sub_categories Cheched");
         let SubCategoryApi = res?.data;
         SetSubCatData(SubCategoryApi);
-      //  console.log(SubCatData, "sub_categories Data");
+        //  console.log(SubCatData, "sub_categories Data");
+
       })
       .catch((err) => {
         console.log(err, "error");
       });
-  
   };
   ////Sub Category End////
 
@@ -140,20 +140,20 @@ const Categories = (props: Props) => {
 
             <Divider id="divider" />
             <Box sx={{ flexGrow: 1 }}>
-              <Grid container spacing={2} columns={16} id="Grid2ndForCategory">
-                <Grid item xs={12} sm={6} md={6} lg={8}>
+              <Grid container spacing={2}  id="Grid2ndForCategory">
+                <Grid item xs={12} sm={6} md={6} lg={9}>
                   <Grid>
                     <Typography id="TypoGrid2ofCategory"></Typography>
                   </Grid>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={8}>
-                  <Grid>
+                <Grid item xs={12} sm={6} md={6} lg={3}>
+                  <Grid style={{display:'flex',justifyContent:'end'}}>
                     <Button variant="contained" id="buttoncolorofCategory">
                       <Link
-                        to="/project/categories/subcategory"
+                        to="/location"
                         id="buttoncolorofCategoryLink"
                       >
-                        Next: Additional Subcategory
+                        Next: Location
                       </Link>
                     </Button>
                   </Grid>
@@ -170,7 +170,6 @@ const Categories = (props: Props) => {
 
       <Footer />
     </>
-  );
-};
+  );  };
 
 export default Categories;
