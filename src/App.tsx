@@ -21,7 +21,7 @@ import Location from './component/Step02/Location';
 import MyProjects from "./component/DashboradDropDown/MyProjects/MyProjects";
 import MyInvestment from "./component/DashboradDropDown/MyInvestment/MyInvestment";
 import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
-import CreatProjectTabs from "./component/CreatProjectTabs/CreatProjectTabs";
+import CreateProjectTabs from "./component/CreateProjectTabs/CreateProjectTabs";
 
 
 function App() {
@@ -50,7 +50,7 @@ function App() {
          <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />
         <Route path="/myaccount" element={<MyAcount />} />
-        <Route path="/creatproject" element={<CreatProjectTabs />} />
+        <Route path="/createproject" element={<CreateProjectTabs />} />
           </Route>
           {/* <Route index element={<Dashboard />} /> */}
         <Route path="*" element={<NoMatch />} />

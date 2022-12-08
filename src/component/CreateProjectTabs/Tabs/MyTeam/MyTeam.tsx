@@ -55,12 +55,12 @@ const MyTeam = (props: Props) => {
             Create a custom URL for your profile page with at least three<br></br> characters. This will also be the beginning of your project<br></br> URL—we’ll generate that later.
           </Typography>
         </Grid>
-        <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
+        <Grid xs={12} sm={10} md={8} lg={4} id="Grid2peopleScreen4">
 
           <Box
             sx={{
               width: 500,
-              maxWidth: '120%',
+              maxWidth: '100%',
               borderRadius: '0%',
               marginLeft: '28%',
             }}
@@ -88,7 +88,7 @@ const MyTeam = (props: Props) => {
           <Box
             sx={{
               width: 500,
-              maxWidth: '100%',
+              maxWidth: '80%',
               borderRadius: '0%',
               marginLeft: '28%',
               border: '1px solid grey',
@@ -105,7 +105,7 @@ const MyTeam = (props: Props) => {
           <Box
             sx={{
               width: 500,
-              maxWidth: '100%',
+              maxWidth: '90%',
               borderRadius: '0%',
               marginLeft: '28%',
               padding: '10px',
@@ -136,7 +136,7 @@ const MyTeam = (props: Props) => {
           <Box
             sx={{
               width: 560,
-              maxWidth: '100%',
+              maxWidth: '80%',
               borderRadius: '0%',
               marginLeft: '32%',
               padding: '10px',

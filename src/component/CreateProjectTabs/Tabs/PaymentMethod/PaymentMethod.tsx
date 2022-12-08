@@ -30,7 +30,7 @@ const PaymentMethod = (props: Props) => {
 
                     <Box
                         sx={{
-                            width: 580,
+                            width: 530,
                             maxWidth: '100%',
                             borderRadius: '0%',
                             marginLeft: '36%',
@@ -61,8 +61,8 @@ const PaymentMethod = (props: Props) => {
 
                     <Box
                         sx={{
-                            width: 560,
-                            maxWidth: '100%',
+                            width: 530,
+                            maxWidth: '80.5%',
                             borderRadius: '0%',
                             marginLeft: '28%',
                             border: '1px solid grey',
@@ -91,10 +91,10 @@ const PaymentMethod = (props: Props) => {
 
                     <Box
                         sx={{
-                            width: 560,
-                            maxWidth: '100%',
+                            width: 530,
+                            maxWidth: '80%',
                             borderRadius: '0%',
-                            marginLeft: '28%',
+                            marginLeft: '25%',
                             border: '1px solid grey',
                             padding: '20px',
                             backgroundColor: '#FBFBFA'
@@ -121,10 +121,10 @@ const PaymentMethod = (props: Props) => {
 
                     <Box
                         sx={{
-                            width: 560,
-                            maxWidth: '100%',
+                            width: 530,
+                            maxWidth: '80%',
                             borderRadius: '0%',
-                            marginLeft: '28%',
+                            marginLeft: '27%',
                             border: '1px solid grey',
                             padding: '20px',
                             backgroundColor: '#FBFBFA'
@@ -152,7 +152,7 @@ const PaymentMethod = (props: Props) => {
                     <Box
                         sx={{
                             width: 560,
-                            maxWidth: '100%',
+                            maxWidth: '75.5%',
                             borderRadius: '0%',
                             marginLeft: '28%',
                             border: '1px solid grey',

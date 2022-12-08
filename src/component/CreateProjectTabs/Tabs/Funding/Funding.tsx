@@ -19,7 +19,7 @@ const Funding = (props: Props) => {
       </Grid>
       <Divider id="dividerafterpeopletypo2" />
                 <Grid container id="TypOofStory3">
-                    <Grid xs={12} sm={10} md={8} lg={6}>
+                    <Grid xs={10} sm={8} md={6} lg={6}>
                         <Typography id="Typoheadingofgrid2">
                             Funding Method
                         </Typography>
@@ -27,7 +27,7 @@ const Funding = (props: Props) => {
                             <br></br>Be honest about the potential risks and challenges of this <br></br>project and how you plan to overcome them to complete it.
                         </Typography>
                     </Grid>
-                    <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
+                    <Grid xs={10} sm={8} md={6} lg={6} id="Grid2peopleScreen4">
 
                         <Box
                             sx={{
@@ -38,7 +38,7 @@ const Funding = (props: Props) => {
                             }}
                         >
                             <Typography id="anyt">Amount</Typography>
-                            <TextField fullWidth label="$100,000" id="fullWidth" />
+                            <TextField fullWidth placeholder="$100,000" id="fullWidth" />
                         </Box>
                         <Button id="buttoonssofpeople2" variant='contained'>
                             Confirm
@@ -54,7 +54,7 @@ const Funding = (props: Props) => {
                             }}
                         >
                             <Typography id="anyt">Investor Share</Typography>
-                            <TextField fullWidth label="50%" id="fullWidth" />
+                            <TextField fullWidth placeholder="50%" id="fullWidth" />
                         </Box>
                         <Button id="buttoonssofpeople2" variant='contained'>
                             Confirm
