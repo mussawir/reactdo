@@ -25,10 +25,11 @@ import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
 
 import MyRedux from "./component/MyRedux/MyRedux";
 import Page2 from "./component/MyRedux/Page2";
+import CreateProjectTabs from "./component/CreateProjectTabs/CreateProjectTabs";
 
 
 
-import CreatProjectTabs from "./component/CreatProjectTabs/CreatProjectTabs";
+
 
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
         <Route path="/myredux" element={<MyRedux />} />
         <Route path="/page2" element={<Page2 />} />
 
-        <Route path="/creatproject" element={<CreatProjectTabs />} />
+        <Route path="/creatproject" element={<CreateProjectTabs />} />
 
 
           </Route>
