@@ -41,3 +41,15 @@
     top: -10px;
     left: -6px;
 }
+@media (min-width:100px) and (max-width:1200px) {
+    .trust-safety {
+        width: 270%;
+    }
+   
+    }
+    @media  (min-width : 100px) and (max-width : 410px){
+        .trust-safety {
+            width: 340%;
+        }
+       
+    }

@@ -2,60 +2,160 @@
     src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
  @font-face {font-family:"Circular-Air-Medium";
     src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
-
-
-
-
-    .banner-box p {
-        font-family: "Circular-Air-Medium";
-        color: #1b59c7;
-        margin: 5px;
-        font-size: 16px;
+    
+    
+    
+        .banner-box p {
+            font-family: "Circular-Air-Medium";
+            color: #1b59c7;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .main-sec-2 {
+            margin-top: -67px;
+            margin-bottom: 80px;
+        }
+        
+        .banner-box h2 {
+            font-family: "Circular-Air-Light";
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0;
+        }
+    .main-banner h1 {
+            color: #fff;
+            font-family: Circular-Air-Light;
+            font-size: 52px;
+            font-weight: 200;
+            margin: 0px;
+        }
+        .main-banner h5 {
+            color: #fff;
+            font-family: Circular-Air-Light;
+            font-size: 32px;
+            font-weight: 100;
+            margin: 0px;
+        }
+        .main-banner h5 {
+            color: #fff;
+            font-family: Circular-Air-Light;
+            font-size: 22px;
+            font-weight: 100;
+            margin: 16px;
+        }
+    .main-banner {
+        background: url("../images/banner.png");
+        text-align: center;
+        padding: 120px 0 320px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-    .main-sec-2 {
-        margin-top: -67px;
-        margin-bottom: 80px;
+    .banner-box {
+        text-align: center;
+        background: #fff;
+        padding: 20px 0;
+        border: solid 5px #938a8a36;
+        border-radius: 20px;
     }
     
-    .banner-box h2 {
-        font-family: "Circular-Air-Light";
-        font-size: 36px;
-        font-weight: 500;
-        margin: 0;
+    
+    
+    @media (min-width : 100px) and (max-width : 1200px){
+        .main-sec-2 {
+            margin-top: -67px;
+            margin-bottom: 80px;
+            padding-left: 20%;
+        }
+        .main-banner {
+            background: url("../images/banner.png");
+            text-align: center;
+            padding: 120px 0 320px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 270%;
+    
+        }
+        .banner-box {
+            text-align: center;
+            background: #fff;
+            padding: 20px 0;
+            border: solid 5px #938a8a36;
+            border-radius: 25px;
+            width: 150%;
+            margin-left: 390%;
+    
+        }
+        #typobannerbox{
+            font-size: 1rem;
+            color: black;
+            text-align: center;
+        }
     }
-.main-banner h1 {
-        color: #fff;
-        font-family: Circular-Air-Light;
-        font-size: 52px;
-        font-weight: 200;
-        margin: 0px;
+    @media  (min-width : 100px) and (max-width : 410px){
+        .main-banner {
+            background: url("../images/banner.png");
+            text-align: center;
+            padding: 120px 0 320px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 340%;
+    
+        }
+        .banner-box {
+            text-align: center;
+            background: #fff;
+            padding: 40px 0;
+            border: solid 5px #938a8a36;
+            border-radius: 20px;
+            width: 250%;
+            margin-left: 790%;
+    
+        }
+        #typobannerbox{
+            font-size: 0.9rem;
+            color: black;
+            text-align: center;
+        }
     }
-    .main-banner h5 {
-        color: #fff;
-        font-family: Circular-Air-Light;
-        font-size: 32px;
-        font-weight: 100;
-        margin: 0px;
+    
+    
+    @media  (min-width : 100px) and (max-width : 320px){
+        .main-banner {
+            background: url("../images/banner.png");
+            text-align: center;
+            padding: 120px 0 320px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 360%;
+    
+        }
+        
+        .banner-box {
+            text-align: center;
+            background: #fff;
+            padding: 50px 0;
+            border: solid 5px #938a8a36;
+            border-radius: 20px;
+            width: 320%;
+            margin-left: 1090%;
+    
+        }
+        #typobannerbox{
+            font-size: 0.8rem;
+            color: black;
+            text-align: center;
+        }
     }
-    .main-banner h5 {
-        color: #fff;
-        font-family: Circular-Air-Light;
-        font-size: 22px;
-        font-weight: 100;
-        margin: 16px;
+    
+    
+    
+    
+    #typobannerbox{
+        font-size: 1.1rem;
+        color: black;
+        text-align: center;
     }
-.main-banner {
-    background: url("../images/banner.png");
-    text-align: center;
-    padding: 120px 0 320px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.banner-box {
-    text-align: center;
-    background: #fff;
-    padding: 20px 0;
-    border: solid 5px #938a8a36;
-    border-radius: 20px;
-}
