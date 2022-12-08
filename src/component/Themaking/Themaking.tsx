@@ -60,5 +60,3 @@ function Themaking (props: Props) {
 }
 
 export default Themaking
-
-

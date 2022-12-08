@@ -27,12 +27,14 @@ const style2 = {
   border: "1px solid grey",
 };
 
-type Props = {};
+type Props = {
+  name:string
+};
 
 const ProjectOverview = (props: Props) => {
   return (
     <>
-
+              {props.name} 
     <Header/>
       <Grid>
         <Grid id="firstGridOfPreview">

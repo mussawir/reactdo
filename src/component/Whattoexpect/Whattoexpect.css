@@ -70,3 +70,66 @@ top: 0;
   font-weight: 200;
   color: #bdbdbd;
 }
+@media (min-width:100px) and (max-width:1200px) {
+.what-to-expect-box{
+
+padding-left: 20%;
+}
+.what-to-expect-section{
+  display: flex;
+
+}
+#hgvhgvgvg{
+  display: flex;
+}
+.what-to-expect-section {
+  padding: 0 0px !important;
+  justify-content: center;
+  align-items: center;
+}
+  #h6forwhattoexpect{
+    font-size: 1.8rem;
+  }
+  #h3forwhattoexpect{
+    font-size: 4rem;
+  }
+#h1forwhattoexpect{
+  font-size: 3rem;
+}
+#h2forwhattoexpect{
+  font-size: 3rem;
+}
+#pforwhattoexpect{
+  font-size: 2rem;
+}
+.what-to-expect-box-shape h4::before {
+  content: url(../images/shape-left.png);
+  position: absolute;
+  left: -190px;
+  transform: scale(1.0);
+  display: block;
+  top: 0;
+  }
+  .what-to-expect-box-shape{
+    font-size: 3rem;
+  }
+  .what-to-expect-box-shape h4::after {
+    content: url(../images/shape-right.png);
+    position: absolute;
+    left: 85px;
+    transform: scale(1.0);
+    top: 20px;
+  }
+}
+@media  (min-width : 100px) and (max-width : 410px){
+  .what-to-expect-section {
+      width: 340%;
+  }
+ 
+}
+@media  (min-width : 100px) and (max-width : 1200px){
+  .what-to-expect-section {
+      width: 270%;
+  }
+ 
+}
