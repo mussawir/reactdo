@@ -9,7 +9,8 @@ const initialState = {
 type Action = {type: "ADD_NOTE", payload: string}
 export const notesReducer = (state:NotesState = initialState, action: Action) => {
 switch(action.type){
-    case "ADD_NOTE":{
+    case "ADD_NOTE":
+   {
         return {...state, notes:[...state.notes, action.payload]} //for adding new state
     }
     default:

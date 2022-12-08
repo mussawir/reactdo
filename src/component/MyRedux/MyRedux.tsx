@@ -24,10 +24,10 @@ function MyRedux(){
 // </ul>
 // </>  
 // );
-
 const notes = useSelector<NotesState, NotesState["notes"]>(
   (state) => state.notes
 );
+
 const dispatch = useDispatch();
 
 const onAddNote = (note: string) => {
