@@ -53,21 +53,19 @@
 }
 #buttoonssofpeople2 {
     background-color: rgb(92, 91, 91);
-    padding-left: 45%;
+  
     margin-top: 2%;
-    padding-right: 51%;
-    margin-left: 0%;
-    text-transform: none;
-    border-radius: none;
+   padding-left: 30%;
+ padding-right: 30%;
+   
 }
 #buttoonssofpeople2:hover {
     background-color: rgb(0, 0, 0);
-    padding-left: 45%;
+   
     margin-top: 2%;
-    padding-right: 51%;
-    margin-left: 0%;
-    text-transform: none;
-    border-radius: none;
+    padding-right: 30%;
+    padding-left: 30%;
+   
 }
 #PeopleScreensTypo1 {
     text-align: center;
