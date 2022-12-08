@@ -42,7 +42,7 @@ function App() {
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
         <Route path="/categories" element={<Categories />} />
-         <Route path="/ProjectOverview" element={<ProjectOverview />} />
+         <Route path="/ProjectOverview" element={<ProjectOverview name="Propsssssssss" />} />
         <Route path="/location" element={<Location />} />
         {/* <Route path="/myprojects" element={<MyProjects />} />
         <Route  path="/myinvestment" element={<MyInvestment />} />

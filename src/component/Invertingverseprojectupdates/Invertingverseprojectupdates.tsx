@@ -10,28 +10,27 @@ function Invertingverseprojectupdates(props: Props) {
     return (
 <>
 <Grid className='inverting-verse-project-updates'>
-  <Container maxWidth="lg">
-    <div>
+  
+    <Grid >
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4, lg: 4 }}>
         <Grid item xs={5}>
-          <div className='inverting-verse-project-updates-left-col'>
+          <Grid className='inverting-verse-project-updates-left-col'>
             <img src={updates} alt="" />
-          </div>
+          </Grid>
         </Grid>
         <Grid item xs={7}>
-          <div className='inverting-verse-project-updates-right-col'>
+          <Grid className='inverting-verse-project-updates-right-col'>
             <h2>Invertingverse Project Updates</h2>
-            <p>A destination for news, tips, and inspiration, and home to our new monthly video series, Kickstarter Project Updates shares everything you need to know about what’s happening at Invertingverse.</p>
+            <p className='inverting-verse-project-updates-right-col-p1'>A destination for news, tips, and inspiration, and home to our new monthly video series, Kickstarter Project Updates shares everything you need to know about what’s happening at Invertingverse.</p>
             <a href="#">learn more</a>
-          </div>
+          </Grid>
         </Grid>
       </Grid>
-    </div>
-  </Container>
+    </Grid>
+
 </Grid>
 </>                 
     )
 }
 
 export default Invertingverseprojectupdates
-

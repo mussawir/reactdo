@@ -12,8 +12,8 @@ type Props = {}
 function Hotoffthepress (props: Props) {
     return (
  <>
-<Grid className='our-press-sec'>
-  <Container maxWidth="lg">
+<Grid className='our-press-sec' xs={12} sm={12}>
+  <Grid>
   <h5>Our Press</h5>
     <h4>Hot off the press</h4>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4, lg: 4 }}>
@@ -55,7 +55,7 @@ function Hotoffthepress (props: Props) {
         </Grid>
       </Grid>
 
-  </Container>
+  </Grid>
 </Grid>
 </>                                     
     )
