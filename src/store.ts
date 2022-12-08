@@ -7,13 +7,6 @@ export const store = createStore(notesReducer,devToolsEnhancer())
 
 
 
-
-
-
-
-
-
-
 // let composedEnhancers: StoreEnhancer<unknown, {}>;
 // if (addNote.developmentOptions.reduxDevToolsBlacklistActions) {
 //     const composeEnhancers =
