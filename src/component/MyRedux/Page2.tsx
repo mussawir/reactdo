@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from "react";
+import {store} from '../../store'
 import { NewNoteInput } from "./NewNoteInput";
 import { useSelector, useDispatch } from "react-redux";
-import {NotesState} from "../../notesReducer";
+import {NotesState} from "../../reducers/notesReducer";
 import { addNote } from "../../actions";
 
 
 function Page2(){
-const notes = useSelector<NotesState, NotesState["notes"]>(
-  (state) => state.notes
-);
-const dispatch = useDispatch();
-
-const onAddNote = (note: string) => {
-  dispatch(addNote(note));
-};
-
+const state = store.getState();
+const notes = state.notes;
+console.log(notes,"data here");
 return (
   <>
     {/* <NewNoteInput addNote={onAddNote} /> */}
