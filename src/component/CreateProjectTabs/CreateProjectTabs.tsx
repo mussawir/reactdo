@@ -12,7 +12,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import Header from '../Header/Header';
 import { Grid } from '@mui/material';
 import "../CreateProjectTabs/Tabs/CreateProjectTabs.css"
-import Funding from './Tabs/Funding/Funding';
+import FundingTab from './Tabs/FundingTab/FundingTab';
 import Story from './Tabs/Story/Story';
 import MyTeam from './Tabs/MyTeam/MyTeam';
 import PaymentMethod from './Tabs/PaymentMethod/PaymentMethod';
@@ -45,7 +45,7 @@ const CreateProjectTabs = ()=>{
         </Box>
         </Grid>
         <TabPanel value="1"><Basic/></TabPanel>
-        <TabPanel value="2"><Funding/></TabPanel>
+        <TabPanel value="2"><FundingTab/></TabPanel>
         <TabPanel value="3"><Story/></TabPanel>
         <TabPanel value="4"><MyTeam/></TabPanel>
         <TabPanel value="5"><PaymentMethod/></TabPanel>

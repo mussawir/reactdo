@@ -2,10 +2,10 @@ import { Box, Button, Divider, Grid, Typography, TextField } from '@mui/material
 import React from 'react'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import "../Funding/Funding.css";
+import "./Funding.css";
 type Props = {}
 
-const Funding = (props: Props) => {
+const FundingTab = (props: Props) => {
     return (
         <>
             <Grid>
@@ -75,4 +75,4 @@ const Funding = (props: Props) => {
     )
 }
 
-export default Funding
+export default FundingTab

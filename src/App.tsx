@@ -13,24 +13,23 @@ import Disbursment from "./component/Dashborad/Layer/Disbursment/Disbursment";
 import Funding from "./component/Dashborad/Layer/Funding/Funding";
 import Promotion from "./component/Dashborad/Layer/Promotion/Promotion";
 import Roi from "./component/Dashborad/Layer/ROI/Roi";
-import NoMatch from './component/NoMatch/NoMatch';
-import PrivateCopmonent from './component/PrivatComponent/PrivateCopmonent';
-import Categories from './component/Step01/Categories';
-import ProjectOverview from './component/Step03/ProjectOverview';
-import Location from './component/Step02/Location';
+import NoMatch from "./component/NoMatch/NoMatch";
+import PrivateCopmonent from "./component/PrivatComponent/PrivateCopmonent";
+import Categories from "./component/Step01/Categories";
+import ProjectOverview from "./component/Step03/ProjectOverview";
+import Location from "./component/Step02/Location";
 import MyProjects from "./component/DashboradDropDown/MyProjects/MyProjects";
 import MyInvestment from "./component/DashboradDropDown/MyInvestment/MyInvestment";
 import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
 
-
 import MyRedux from "./component/MyRedux/MyRedux";
 import Page2 from "./component/MyRedux/Page2";
 import CreateProjectTabs from "./component/CreateProjectTabs/CreateProjectTabs";
-
-
-
-
-
+import Basic from "./component/CreateProjectTabs/Tabs/Basic/Basic";
+import FundingTab from "./component/CreateProjectTabs/Tabs/FundingTab/FundingTab";
+import Story from "./component/CreateProjectTabs/Tabs/Story/Story";
+import MyTeam from "./component/CreateProjectTabs/Tabs/MyTeam/MyTeam";
+import PaymentMethod from "./component/CreateProjectTabs/Tabs/PaymentMethod/PaymentMethod";
 
 function App() {
   return (
@@ -38,55 +37,34 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
-        {/* <Route path="dashboard/login" element={<Login />} /> */}
         <Route path="/signup" element={<Signup />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
-        <Route path="/categories" element={<Categories />} />
-         <Route path="/ProjectOverview" element={<ProjectOverview name="Propsssssssss" />} />
+        <Route path="/projectoverview" element={<ProjectOverview />} />
         <Route path="/location" element={<Location />} />
-        {/* <Route path="/myprojects" element={<MyProjects />} />
-        <Route  path="/myinvestment" element={<MyInvestment />} />
-        <Route path="/myaccount" element={<MyAcount />} /> */}
-        <Route element={<PrivateCopmonent/>}>
-        <Route path="dashboard" element={<Dashboard />}/>
-        <Route path="/disbursment"  element={<Disbursment />} />
+        <Route element={<PrivateCopmonent />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/disbursment" element={<Disbursment />} />
           <Route path="/funding" element={<Funding />} />
           <Route path="/promotion" element={<Promotion />} />
           <Route path="/roi" element={<Roi />} />
-         <Route path="/myprojects" element={<MyProjects />} />
-        <Route  path="/myinvestment" element={<MyInvestment />} />
-        <Route path="/myaccount" element={<MyAcount />} />
-
-
-        <Route path="/myredux" element={<MyRedux />} />
-        <Route path="/page2" element={<Page2 />} />
-
-        <Route path="/creatproject" element={<CreateProjectTabs />} />
-
-
-          </Route>
-          {/* <Route index element={<Dashboard />} /> */}
+          <Route path="/myprojects" element={<MyProjects />} />
+          <Route path="/myinvestment" element={<MyInvestment />} />
+          <Route path="/myaccount" element={<MyAcount />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/myredux" element={<MyRedux />} />
+          <Route path="/page2" element={<Page2 />} />
+          //Create Project Tab Route///
+          <Route path="/creatproject" element={<CreateProjectTabs />} />
+          <Route path="/creatproject" element={<Basic />} />
+          <Route path="/creatproject" element={<FundingTab />} />
+          <Route path="/creatproject" element={<Story />} />
+          <Route path="/creatproject" element={<MyTeam />} />
+          <Route path="/creatproject" element={<PaymentMethod />} />
+        </Route>
         <Route path="*" element={<NoMatch />} />
-        </Routes>
-     
-        {/* <Route path="/dashboard" component={Dashboard}/> 
-        <Route path="/disbursment" element={<Disbursment />}/> 
-        <Route path="/funding" element={<Funding />}/> 
-        <Route path="/promotion" element={<Promotion />}/> 
-        <Route path="/roi" element={<Roi />}/>  */} 
-           {/* <Route path="/dashboard" element={<Dashboard />}/>
-          <Route index element={<Dashboard />} />
-          <Route path="disbursment"  element={<Disbursment />} />
-          <Route path="funding" element={<Funding />} />
-          <Route path="promotion" element={<Promotion />} />
-          <Route path="roi" element={<Roi />} /> */}
-
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
-          {/* <Route path="*" element={<NoMatch />} /> */}
+      </Routes>
     </>
   );
 }
