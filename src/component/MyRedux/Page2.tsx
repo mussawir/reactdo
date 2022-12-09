@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import {store} from '../../store'
+// import {store} from '../../store'
 import { NewNoteInput } from "./NewNoteInput";
 import { useSelector, useDispatch } from "react-redux";
 import {NotesState} from "../../reducers/notesReducer";
 import { addNote } from "../../actions";
-import {store} from "../../store"
+// import {store} from "../../store"
 
 
 function Page2(){
