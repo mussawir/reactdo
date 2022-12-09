@@ -9,13 +9,27 @@ import projectimage3 from "../images/projectimage3.jpg";
 import projectimage4 from "../images/projectimage4.png";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 import "../StartProject/StartProjectStyle.css";
 
 
+
+
+
 const StartProject = () => {
+  const navigate = useNavigate();
+
+
+
+  const HandleProject =() =>{
+    if(localStorage.getItem("token")){
+      navigate("/categories");
+    }else{
+      navigate("/login");
+    }
+    };
   return (
     <>
     <Header/>
@@ -26,10 +40,10 @@ const StartProject = () => {
           Bring your creative project{" "}
         </Typography>
         <Typography id="typoOffirstHeading2">to life.</Typography>
-
-        <Button variant="contained" color="success" id="buttonsuccess">
-         <Link  to="/categories" id="starProject"> 
-         Start a project</Link> 
+    
+        <Button variant="contained" onClick={HandleProject} color="success" id="buttonsuccess">
+        Start a project
+         {/* <Link  to="/categories" id="starProject">  </Link>  */}
         </Button>
         <Grid>
           <Box sx={{ flexGrow: 1 }}>
