@@ -28,7 +28,7 @@ const ProjectTabsLink = (props: Props) => {
       <Divider />
       <ListItem button divider>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
-        <ListItemText primary="Rewards" secondary="Set your rewards and shipping costs." />
+        <ListItemText primary="Funding" secondary="Set your rewards and shipping costs." />
       </ListItem>
       <ListItem button>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
@@ -37,13 +37,13 @@ const ProjectTabsLink = (props: Props) => {
       <Divider light />
       <ListItem button>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
-        <ListItemText primary="People" secondary="Edit your kickstarter profile and add colaborators" />
+        <ListItemText primary="My Team" secondary="Edit your kickstarter profile and add colaborators" />
       </ListItem>
       <Divider light />
       <ListItem button>
         <br></br>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
-        <ListItemText primary="Payment" secondary="Verify details and link a bank account" />
+        <ListItemText primary="Payment Method" secondary="Verify details and link a bank account" />
       </ListItem>
     </List>
     </Grid>
