@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { Grid } from '@mui/material';
 import "../Step03/ProjectTabsLinkStyle.css"
-
+import { Link } from "react-router-dom";
 const style = {
     width: '100%',
     maxWidth: '100%' ,
@@ -23,12 +23,12 @@ const ProjectTabsLink = (props: Props) => {
       <ListItem button>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
       
-        <ListItemText  primary= "Basic" secondary="Name your Project, upload an image or video and establish your campaign details."  />
+        <Link to="/creatproject"> <ListItemText  primary= "Basic" secondary="Name your Project, upload an image or video and establish your campaign details."  /></Link>
       </ListItem>
       <Divider />
       <ListItem button divider>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
-        <ListItemText primary="Rewards" secondary="Set your rewards and shipping costs." />
+        <ListItemText primary="Funding" secondary="Set your rewards and shipping costs." />
       </ListItem>
       <ListItem button>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
@@ -37,13 +37,13 @@ const ProjectTabsLink = (props: Props) => {
       <Divider light />
       <ListItem button>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
-        <ListItemText primary="People" secondary="Edit your kickstarter profile and add colaborators" />
+        <ListItemText primary="My Team" secondary="Edit your kickstarter profile and add colaborators" />
       </ListItem>
       <Divider light />
       <ListItem button>
         <br></br>
       <CheckCircleOutlineIcon id="CircleCheckIcon"/>
-        <ListItemText primary="Payment" secondary="Verify details and link a bank account" />
+        <ListItemText primary="Payment Method" secondary="Verify details and link a bank account" />
       </ListItem>
     </List>
     </Grid>

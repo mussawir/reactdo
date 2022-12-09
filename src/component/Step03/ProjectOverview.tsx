@@ -11,7 +11,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../Step03/ProjectOverviewStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
+import { Link } from "react-router-dom";
 const style = {
   width: "100%",
   maxWidth: "100%",
@@ -28,13 +28,13 @@ const style2 = {
 };
 
 type Props = {
-  name:string
+  // name:string
 };
 
 const ProjectOverview = (props: Props) => {
   return (
     <>
-              {props.name} 
+              {/* {props.name}  */}
     <Header/>
       <Grid>
         <Grid id="firstGridOfPreview">
@@ -87,8 +87,8 @@ const ProjectOverview = (props: Props) => {
                 involve prohibited items.
               </Typography>
               <br></br>
-              <Button variant="contained" color="primary">
-                Got it
+              <Button variant="contained" color="primary" >
+               <Link to='/creatproject' style={{color:"#fff"}}> Got it</Link>
               </Button>
               <br></br>
               <br></br>

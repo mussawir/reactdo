@@ -1,11 +1,8 @@
 import React from 'react'
-import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Autocomplete from '@mui/material/Autocomplete';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import "../../Layer/Funding/FundingStyle.css"
@@ -13,6 +10,8 @@ import { styled } from '@mui/material/styles';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import SideBar from '../../Sidbar/SideBar';
 import TopBar from '../../TopBar/TopBar';
+import { Link } from "react-router-dom";
+import Invertingverseprojectupdates from './../../../Invertingverseprojectupdates/Invertingverseprojectupdates';
 
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -35,9 +34,14 @@ const Funding = (props: Props) => {
     <Grid id="mainpic">
         <Grid xs={12} sm={10} md={8} lg={6}>
           <br/>
-          <Typography id="id3">Funding</Typography>
+          <Typography id="id3">
+            <Link to='/categories'>
+            <Button variant="contained" color="primary">
+            Start Project
+            </Button> </Link>
+          </Typography>
             <Typography id="TopHeading">
-            Smart Class Kit
+            Inverting Verse
             </Typography>
         </Grid>
         <Grid>
