@@ -12,7 +12,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import Header from '../Header/Header';
 import { Grid } from '@mui/material';
 import "../CreateProjectTabs/Tabs/CreateProjectTabs.css"
-import Funding from './Tabs/Funding/Funding';
+import Funding from './Tabs/FundingTab/FundingTab';
 import Story from './Tabs/Story/Story';
 import MyTeam from './Tabs/MyTeam/MyTeam';
 import PaymentMethod from './Tabs/PaymentMethod/PaymentMethod';
