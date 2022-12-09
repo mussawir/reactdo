@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -22,12 +22,37 @@ const Categories = (props: Props) => {
   const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
   const [SubcatId, setSubCatId] = React.useState<any>("");
 
-  const SubCatHandler = (event: SelectChangeEvent) => {
-    setSubCatId(event.target.value as string);
-    // console.log(SubcatId,"Category");
+
+  //////////Created Project Api////////
+  const [title, SetTitle] = React.useState("");
+  const [subTitle, SetSubtitle] = React.useState("");
+  const handleCreateProject = (e: any) => {
+    e.preventDefault();
+    console.log();
+
+    axios.post("http://localhost:5000/project", { title,subTitle})
+      .then((res) => {
+        console.log(res, "Created ProjectCreated ProjectCreated Project");
+        let ProjectId = res?.data.projectId;
+        console.log("ProjectIdProjectId");
+        console.log(ProjectId);
+        console.log("ProjectIdProjectId");
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+      
   };
 
-// Bring list of categories 
+  const SubCatHandler = (event: SelectChangeEvent) => {
+    setSubCatId(event.target.value as string);
+   // console.log(SubcatId,"SubCategory idididdidididi");
+   //SetSub Title
+   SetSubtitle(SubcatId);
+      console.log(title, "SubTitleID");
+  };
+
+  // Bring list of categories
   useEffect(() => {
     axios
       .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
@@ -45,20 +70,19 @@ const Categories = (props: Props) => {
 
   /////////////////Sub-Category //////////////
   const GetSubCats = (event: SelectChangeEvent) => {
-
     setCatId(event.target.value as string);
     // console.log(catId,"sub Cat_categories Cheched");
     var categoryID = event.target.value;
-    // alert(categoryID);
+    SetTitle(categoryID);
+    console.log(title, "TitleID");
     axios
-     // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+      // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
       .get("http://localhost:5000/subcategories/" + categoryID)
       .then((res) => {
         // console.log(res, "sub_categories Cheched");
         let SubCategoryApi = res?.data;
         SetSubCatData(SubCategoryApi);
-        //  console.log(SubCatData, "sub_categories Data");
-
+        console.log(SubCatData, "sub_categories Data");
       })
       .catch((err) => {
         console.log(err, "error");
@@ -121,15 +145,15 @@ const Categories = (props: Props) => {
                       label="Sub Cat"
                       onChange={SubCatHandler}
                     >
-                        {/* {GetCatData.map((item: any) => (
+                      {/* {GetCatData.map((item: any) => (
                         <MenuItem value={item?.categoryId}>
                           {item?.name}
                         </MenuItem>
                       ))} */}
 
-                      {SubCatData?.map((sitem: any) => (
-                        <MenuItem value={sitem?.subcategoryId}>
-                          {sitem?.nam }
+                      {SubCatData?.map((item: any) => (
+                        <MenuItem value={item?.subcategoryId}>
+                          {item?.name}
                         </MenuItem>
                       ))}
                     </Select>
@@ -140,21 +164,26 @@ const Categories = (props: Props) => {
 
             <Divider id="divider" />
             <Box sx={{ flexGrow: 1 }}>
-              <Grid container spacing={2}  id="Grid2ndForCategory">
+              <Grid container spacing={2} id="Grid2ndForCategory">
                 <Grid item xs={12} sm={6} md={6} lg={9}>
                   <Grid>
                     <Typography id="TypoGrid2ofCategory"></Typography>
                   </Grid>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} lg={3}>
-                  <Grid style={{display:'flex',justifyContent:'end'}}>
-                    <Button variant="contained" id="buttoncolorofCategory">
-                      <Link
+                  <Grid style={{ display: "flex", justifyContent: "end" }}>
+                    <Button
+                      onClick={handleCreateProject}
+                      variant="contained"
+                      id="buttoncolorofCategory"
+                    >
+                      Next: Location
+                      {/* <Link
                         to="/location"
                         id="buttoncolorofCategoryLink"
                       >
                         Next: Location
-                      </Link>
+                      </Link> */}
                     </Button>
                   </Grid>
                 </Grid>
@@ -170,6 +199,7 @@ const Categories = (props: Props) => {
 
       <Footer />
     </>
-  );  };
+  );
+};
 
 export default Categories;
