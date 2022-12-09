@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {NotesState} from "../../reducers/notesReducer";
 import { addNote } from "../../actions";
 import {store} from '../../store'
+import { log } from "console";
 
 
 function MyRedux(){
@@ -34,6 +35,8 @@ const dispatch = useDispatch();
 const onAddNote = (note: string) => {
   dispatch(addNote(note));
 };
+
+console.log("Store Data",notes)
 
 return (
   <>

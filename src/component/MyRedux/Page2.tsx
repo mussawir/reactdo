@@ -4,15 +4,28 @@ import { NewNoteInput } from "./NewNoteInput";
 import { useSelector, useDispatch } from "react-redux";
 import {NotesState} from "../../reducers/notesReducer";
 import { addNote } from "../../actions";
+import {store} from "../../store"
 
 
 function Page2(){
-const state = store.getState();
-const notes = state.notes;
-console.log(notes,"data here");
+// const states = store.getState();
+// const notes = states.notes;
+// console.log(notes);
+
+const notes = useSelector<NotesState, NotesState["notes"]>(
+  (state) => state.notes 
+);
+console.log(notes);
+
+const dispatch = useDispatch();
+
+const onAddNote = (note: string) => {
+  dispatch(addNote(note));
+};
+
 return (
   <>
-    {/* <NewNoteInput addNote={onAddNote} /> */}
+    <NewNoteInput addNote={onAddNote} />
     <hr />
     <ul>
       {notes.map((note) => {
@@ -21,6 +34,7 @@ return (
     </ul>
   </>
 );
+
 }
 
 export default Page2;

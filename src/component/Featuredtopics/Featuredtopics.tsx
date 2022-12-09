@@ -12,20 +12,14 @@ import Featuredtopics01 from  '../images/Featuredtopics01.png';
 import Featuredtopics02 from  '../images/Featuredtopics02.png';
 import Featuredtopics03 from  '../images/Featuredtopics03.png';
 import Featuredtopics04 from  '../images/Featuredtopics04.png';
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}))
+
 
 const Featuredtopics = () => {
     return (
 
         <Box sx={{ flexGrow: 1 }} id="box1">
             <Grid container spacing={0} columns={12} id="Grid1">
-                <Grid item lg={6}>
+                <Grid  xs={12} sm={10} md={12} lg={6}>
                     <Grid id="con1">
                         <Typography id="t1">
                             What to expect
@@ -49,45 +43,51 @@ const Featuredtopics = () => {
                     <Typography id="t8">
                         Related Topics
                     </Typography>
-                    <Grid container spacing={2} columns={16} id="main1">
+                    <Grid container spacing={2} columns={12} id="main1">
                     <Grid item xs={6}  id="img3">
-                    <img src={Featuredtopics02}></img>
+                    <img src={Featuredtopics02}  id="img3"></img>
                     </Grid>
                     <Grid item xs={6}>
                     <Typography id="t4">Parentheses books</Typography>
                         <Typography id="t5">20% funded</Typography>
                         <Typography id="t6">By parentheses books</Typography>
+                        <Grid id='fdsfsfscs'>
                         <SellIcon />
                         <RecommendIcon />
                         <ThumbDownIcon />
+                        </Grid>
                     </Grid>
                 </Grid>
                 <hr id='hr1'></hr>
-                <Grid container spacing={2} columns={16} id="main1">
+                <Grid container spacing={2} columns={12} id="main1">
                     <Grid item xs={6} id="img3">
-                    <img src={Featuredtopics03}></img>
+                    <img src={Featuredtopics03}  id="img3"></img>
                     </Grid>
                     <Grid item xs={6}>
                     <Typography id="t4">Parentheses books</Typography>
                         <Typography id="t5">20% funded</Typography>
                         <Typography id="t6">By parentheses books</Typography>
+                        <Grid id='fdsfsfscs'>
                         <SellIcon />
                         <RecommendIcon />
                         <ThumbDownIcon />
+                        </Grid>
                     </Grid>
                 </Grid>
                 <hr id='hr1'></hr>
-                <Grid container spacing={2} columns={16} id="main">
+                <Grid container spacing={2} columns={12} id="main">
                     <Grid item xs={6}  id="img3">
-                    <img src={Featuredtopics04}></img>
+                    <img src={Featuredtopics04}  id="img3"></img>
                     </Grid>
                     <Grid item xs={6}>
                     <Typography id="t4">Parentheses books</Typography>
                         <Typography id="t5">20% funded</Typography>
                         <Typography id="t6">By parentheses books</Typography>
+                      <Grid id='fdsfsfscs'>
                         <SellIcon />
                         <RecommendIcon />
                         <ThumbDownIcon />
+                        </Grid>
                     </Grid>
                 </Grid>
                 </Grid>
