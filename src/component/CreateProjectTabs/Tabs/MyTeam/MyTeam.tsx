@@ -68,7 +68,7 @@ const MyTeam = (props: Props) => {
             <Typography id="anyt">https://kickstarter.com/profile/</Typography>
             <TextField fullWidth label="" id="fullWidth" />
           </Box>
-          <Button id="buttoonssofpeople2" variant='contained'>
+          <Button id="buttoonssofpeople8" variant='contained'>
             Confirm
           </Button>
         </Grid>

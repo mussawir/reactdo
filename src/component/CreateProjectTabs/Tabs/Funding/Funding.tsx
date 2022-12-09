@@ -39,10 +39,11 @@ const Funding = (props: Props) => {
                         >
                             <Typography id="anyt">Amount</Typography>
                             <TextField fullWidth placeholder="$100,000" id="fullWidth" />
-                        </Box>
-                        <Button id="buttoonssofpeople2" variant='contained'>
+                            <Button id="buttoonssofpeople9" variant='contained'>
                             Confirm
                         </Button>
+                        </Box>
+                        
                         <br></br>
                         <br></br>
                         <Box
@@ -55,10 +56,11 @@ const Funding = (props: Props) => {
                         >
                             <Typography id="anyt">Investor Share</Typography>
                             <TextField fullWidth placeholder="50%" id="fullWidth" />
-                        </Box>
-                        <Button id="buttoonssofpeople2" variant='contained'>
+                            <Button id="buttoonssofpeople9" variant='contained'>
                             Confirm
                         </Button>
+                        </Box>
+                        
                     </Grid>
                 </Grid>
             </Grid>

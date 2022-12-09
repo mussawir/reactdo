@@ -27,20 +27,19 @@ const CreateProjectTabs = ()=>{
   };
   return (
     <>
-
     <Header/>
     <Grid>
-    <Box sx={{ width: '100%', typography: 'body1' }}>
+    <Box sx={{ width: '100%', typography: 'body1' }} id="main-tab-section">
       <TabContext value={value}>
         <Grid >
           <Grid xs={12} sm={10} md={8} lg={6}>
         <Box sx={{ borderBottom: 1,  borderColor: 'divider' }}>
           <TabList onChange={handleChange} aria-label="lab API tabs example" id="tab1">         
-            <Tab icon={<BorderColorOutlinedIcon id="iicon1" />} aria-label="Basic" label="Basic" value="1"/>           
-            <Tab icon={< EqualizerOutlinedIcon id="iicon1"/>}  label="Funding" value="2"/>          
-            <Tab icon={< ImportContactsIcon id="iicon1"/>}  label="Story" value="3"/>           
-            <Tab icon={<GroupsIcon id="iicon1"/>}  label="My Team" value="4"/>
-            <Tab icon={< CampaignOutlinedIcon id="iicon1"/>}  label="Payment Method" value="5"/>
+            <Tab id="tab-option"  icon={<BorderColorOutlinedIcon id="iicon1" />} aria-label="Basic" label="Basic" value="1"/>           
+            <Tab id="tab-option" icon={< EqualizerOutlinedIcon id="iicon1"/>}  label="Funding" value="2"/>          
+            <Tab id="tab-option" icon={< ImportContactsIcon id="iicon1"/>}  label="Story" value="3"/>           
+            <Tab id="tab-option" icon={<GroupsIcon id="iicon1"/>}  label="My Team" value="4"/>
+            <Tab id="tab-option" icon={< CampaignOutlinedIcon id="iicon1"/>}  label="Payment Method" value="5"/>
           </TabList>
         </Box>
         </Grid>

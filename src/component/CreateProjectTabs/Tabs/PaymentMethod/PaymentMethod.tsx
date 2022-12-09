@@ -26,7 +26,7 @@ const PaymentMethod = (props: Props) => {
                     <Typography id="para2ofpayment">If the incorrect email is shown here, update it on<br></br> your account.</Typography>
                 </Grid>
 
-                <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
+                <Grid xs={8} sm={8} md={6} lg={6} id="Grid2peopleScreen4">
 
                     <Box
                         sx={{
@@ -151,10 +151,10 @@ const PaymentMethod = (props: Props) => {
 
                     <Box
                         sx={{
-                            width: 560,
-                            maxWidth: '75.5%',
+                            width: 530,
+                            maxWidth: '80%',
                             borderRadius: '0%',
-                            marginLeft: '28%',
+                            marginLeft: '20%',
                             border: '1px solid grey',
                             padding: '20px',
                             backgroundColor: '#FBFBFA'
