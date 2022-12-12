@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import Login from "./component/Login/Login";
 import Signup from "./component/Signup/Signup";
 import Discover from "./component/Discover/Discover";
@@ -8,7 +8,6 @@ import HomePage from "./component/HomePage/HomePage";
 import StartProject from "./component/StartProject/StartProject";
 import PostProject from "./component/NewProject/CreateProject/PostProject";
 import Dashboard from "./component/Dashborad/Dashboard";
-
 import Disbursment from "./component/Dashborad/Layer/Disbursment/Disbursment";
 import Funding from "./component/Dashborad/Layer/Funding/Funding";
 import Promotion from "./component/Dashborad/Layer/Promotion/Promotion";
@@ -21,7 +20,6 @@ import Location from "./component/Step02/Location";
 import MyProjects from "./component/DashboradDropDown/MyProjects/MyProjects";
 import MyInvestment from "./component/DashboradDropDown/MyInvestment/MyInvestment";
 import MyAcount from "./component/DashboradDropDown/MyAcount/MyAcount";
-
 import MyRedux from "./component/MyRedux/MyRedux";
 import Page2 from "./component/MyRedux/Page2";
 import CreateProjectTabs from "./component/CreateProjectTabs/CreateProjectTabs";
@@ -30,8 +28,12 @@ import FundingTab from "./component/CreateProjectTabs/Tabs/FundingTab/FundingTab
 import Story from "./component/CreateProjectTabs/Tabs/Story/Story";
 import MyTeam from "./component/CreateProjectTabs/Tabs/MyTeam/MyTeam";
 import PaymentMethod from "./component/CreateProjectTabs/Tabs/PaymentMethod/PaymentMethod";
-
-function App() {
+import DiscoverProjects from './component/DiscoverProjects/DiscoverProjects';
+// type myProps = {
+//   ProjectId:string,
+//   ID:string
+// };
+const  App = () => {
   return (
     <>
       <Routes>
@@ -43,6 +45,16 @@ function App() {
         <Route path="/project" element={<StartProject />} />
         <Route path="/projectoverview" element={<ProjectOverview />} />
         <Route path="/location/:projectId" element={<Location />} />
+        <Route path="/discoverprojects" element={<DiscoverProjects/>} />
+        {/* <Route path="/location/:projecId" element={<Location{...projectId}/>} /> */}
+        {/* <Route
+  path='/project/:id'
+  render={({ Location }) => {
+    const { state } = Location;
+    return <ProjectDetails project={state.project} /> 
+  }}
+/> */}
+
         <Route element={<PrivateCopmonent />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/disbursment" element={<Disbursment />} />

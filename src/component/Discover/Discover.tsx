@@ -63,13 +63,13 @@ export default function Discover() {
           <Typography id="ColHeading">Collections</Typography>
         </AccordionSummary>
         <AccordionDetails id="AccordionDetails">
-          <Grid> <Link to=""  id="collectoinText">Projects We Love</Link> </Grid>
-          <Grid>  <Link to="" id="collectoinText">Trending</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Nearly Funded</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Just Launched</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText"> Upcoming Projects</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText"> Projects Near You</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Everything</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects"  id="collectoinText">Projects We Love</Link> </Grid>
+          <Grid>  <Link to="/discoverprojects" id="collectoinText">Trending</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Nearly Funded</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Just Launched</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText"> Upcoming Projects</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText"> Projects Near You</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Everything</Link> </Grid>   
 
 
 
@@ -83,14 +83,14 @@ export default function Discover() {
         </AccordionSummary>
         <AccordionDetails>
         <AccordionDetails id="AccordionDetails">
-        <Grid> <Link to=""  id="collectoinText">Arts</Link> </Grid>
-          <Grid>  <Link to="" id="collectoinText">Comics & Illustration</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Design & Tech</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Film</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Food & Craft</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText"> Games</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Music</Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Publishing</Link> </Grid>   
+        <Grid> <Link to="/discoverprojects"  id="collectoinText">Arts</Link> </Grid>
+          <Grid>  <Link to="/discoverprojects" id="collectoinText">Comics & Illustration</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Design & Tech</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Film</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Food & Craft</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText"> Games</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Music</Link> </Grid>   
+          <Grid> <Link to="/discoverprojects" id="collectoinText">Publishing</Link> </Grid>   
         </AccordionDetails>
         </AccordionDetails>
       </Accordion>
@@ -99,21 +99,21 @@ export default function Discover() {
           <Typography id="ColHeading">Categories</Typography>
         </AccordionSummary>
         <AccordionDetails id="AccordionDetails">
-        <Grid> <Link to=""  id="collectoinText">Arts <span id="smallText">11</span></Link> </Grid>
-          <Grid><Link to="" id="collectoinText">Comics <span id="smallText">269</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Crafts   <span id="smallText">60</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Dance <span id="smallText">9</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Design <span id="smallText">317</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText"> Fashion <span id="smallText">174</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Film & Video <span id="smallText">282</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Food<span id="smallText">112</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Games<span id="smallText">718</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Journalism<span id="smallText">12</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Music<span id="smallText">146</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Photography <span id="smallText">43 </span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Publishing <span id="smallText"> 379</span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText"> Technology<span id="smallText">267 </span></Link> </Grid>   
-          <Grid> <Link to="" id="collectoinText">Theater <span id="smallText">21 </span></Link> </Grid>   
+        <Grid> <Link to="/discoverprojects/discoverprojects"  id="collectoinText">Arts <span id="smallText">11</span></Link> </Grid>
+          <Grid><Link to="/discoverprojects/discoverprojects" id="collectoinText">Comics <span id="smallText">269</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Crafts   <span id="smallText">60</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Dance <span id="smallText">9</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Design <span id="smallText">317</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText"> Fashion <span id="smallText">174</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Film & Video <span id="smallText">282</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Food<span id="smallText">112</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Games<span id="smallText">718</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Journalism<span id="smallText">12</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Music<span id="smallText">146</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Photography <span id="smallText">43 </span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Publishing <span id="smallText"> 379</span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText"> Technology<span id="smallText">267 </span></Link> </Grid>   
+          <Grid> <Link to="/discoverprojects/discoverprojects" id="collectoinText">Theater <span id="smallText">21 </span></Link> </Grid>   
         </AccordionDetails>
       </Accordion>
 
@@ -122,10 +122,10 @@ export default function Discover() {
           <Typography id="ColHeading">On Our Radar</Typography>
         </AccordionSummary>
         <AccordionDetails id="AccordionDetails">
-        <Grid> <Link to=""  id="collectoinText">RPGs </Link> </Grid>
-        <Grid> <Link to=""  id="collectoinText">Sci-Fi and Fantasy</Link> </Grid>
-        <Grid> <Link to=""  id="collectoinText">STEM</Link> </Grid>
-        <Grid> <Link to=""  id="collectoinText">Zine Quest</Link> </Grid>
+        <Grid> <Link to="/discoverprojects"  id="collectoinText">RPGs </Link> </Grid>
+        <Grid> <Link to="/discoverprojects"  id="collectoinText">Sci-Fi and Fantasy</Link> </Grid>
+        <Grid> <Link to="/discoverprojects"  id="collectoinText">STEM</Link> </Grid>
+        <Grid> <Link to="/discoverprojects"  id="collectoinText">Zine Quest</Link> </Grid>
         
         </AccordionDetails>
       </Accordion>

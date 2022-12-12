@@ -15,7 +15,12 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import axios from "axios";
-type Props = {};
+type Props = {
+  //  projectId:string,
+  // docId:string
+};
+
+// const Location:React.FC<Props> = (projectId) => {
 
 const Location = (props: Props) => {
   const [countryData, SetCountryData] = React.useState<any[]>([]);
@@ -41,6 +46,9 @@ const Location = (props: Props) => {
 
   return (
     <>
+{/* {props.ProjectId}
+{props.ID} */}
+  
       <Header />
       <Grid id="FirstGridForlocation">
         <Box>

@@ -13,7 +13,10 @@ import "./CategoriesStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
-type Props = {};
+import Location from "../Step02/Location";
+
+type Props = {
+};
 
 const Categories = (props: Props) => {
   ////Category ////
@@ -24,19 +27,31 @@ const Categories = (props: Props) => {
 
 
   //////////Created Project Api////////
-  const [title, SetTitle] = React.useState("");
-  const [subTitle, SetSubtitle] = React.useState("");
+  const [categoryId, SetcategoryId] = React.useState("");
+  const [subcatId, setsubcatId] = React.useState("");
+ const [docId, setdocId] = React.useState("");
+  const [projectId, SetProjectId] = React.useState("");
   const handleCreateProject = (e: any) => {
     e.preventDefault();
     console.log();
 
-    axios.post("http://localhost:5000/project", { title,subTitle})
-      .then((res) => {
+    // axios.post("http://localhost:5000/project/create-project", { categoryId, subcatId})
+    axios.post("http://localhost:5000/project/create-project", { categoryId:categoryId, subcategoryId: subcatId})  
+    .then((res) => {
         console.log(res, "Created ProjectCreated ProjectCreated Project");
-        let ProjectId = res?.data.projectId;
-        console.log("ProjectIdProjectId");
-        console.log(ProjectId);
-        console.log("ProjectIdProjectId");
+        let Projectid = res?.data.projectId;
+        SetProjectId(Projectid);
+        let Id = res?.data._id;
+        setdocId(Id);
+//pass projectId and docId to Location 
+Location.arguments(projectId, docId);
+
+
+
+        // console.log("////////////");
+        // console.log(projectId);
+        // console.log(docId);
+        // console.log("///////////");
       })
       .catch((err) => {
         console.log(err, "error");
@@ -48,8 +63,8 @@ const Categories = (props: Props) => {
     setSubCatId(event.target.value as string);
    // console.log(SubcatId,"SubCategory idididdidididi");
    //SetSub Title
-   SetSubtitle(SubcatId);
-      console.log(title, "SubTitleID");
+   setsubcatId(SubcatId);
+      console.log(subcatId, "subcatId");
   };
 
   // Bring list of categories
@@ -73,8 +88,8 @@ const Categories = (props: Props) => {
     setCatId(event.target.value as string);
     // console.log(catId,"sub Cat_categories Cheched");
     var categoryID = event.target.value;
-    SetTitle(categoryID);
-    console.log(title, "TitleID");
+    SetcategoryId(categoryID);
+    console.log(categoryId, "categoryId");
     axios
       // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
       .get("http://localhost:5000/subcategories/" + categoryID)
@@ -178,13 +193,23 @@ const Categories = (props: Props) => {
                       id="buttoncolorofCategory"
                     >
                       Next: Location
-                      {/* <Link
-                        to="/location"
+
+                      <Link
+                        to="/location/{projectId}"
                         id="buttoncolorofCategoryLink"
                       >
                         Next: Location
-                      </Link> */}
-                    </Button>
+                      </Link>                    </Button>
+
+
+                    {/* { projectId?.map((item: any) => {
+        const path = '/location/' + item.projectId;
+        return (
+          <Link to={path} key={item?.projectId}> 
+            <Location projectId={item} />
+          </Link>
+        )
+      })}   */}
                   </Grid>
                 </Grid>
               </Grid>
@@ -203,3 +228,5 @@ const Categories = (props: Props) => {
 };
 
 export default Categories;
+
+
