@@ -36,14 +36,10 @@ const StartProject = () => {
     
     <Box>
       <Grid id="MainSection">
-        <Grid id="mainhead508">
-        <Typography id="mainhead507">
-          Bring your creative project
+        <Typography id="typoOffirstHeading">
+          Bring your creative project{" "}
         </Typography>
-        <Typography id="mainhead507">
-          to life.
-          </Typography>
-        </Grid>
+        <Typography id="typoOffirstHeading">to life.</Typography>
     
         <Button variant="contained" onClick={HandleProject} color="success" id="buttonsuccess">
         Start a project
@@ -54,24 +50,38 @@ const StartProject = () => {
             <Grid container spacing={2} columns={16}>
               <Grid item lg={9}>
                 <Grid id="imgGrid1">
-                {" "}
                   <img src={projectimage1} id="image1" alt="LeftSide-Image" />
                 </Grid>
               </Grid>
               <Grid item lg={5} id="mainimg1" columnSpacing={2}>
-                <Grid item lg={20}  id="imgGrid2">
+                <Grid item lg={20} id="imgGrid2">
                   <Grid>
                     {" "}
-                    <img src={projectimage2} id="image2"  alt="RightSide-Image" />
-                    
-                  <Grid>
-                    {" "}
-                    <img src={projectimage3} id="image3" alt="RightSide-Image" />
-                 
-                </Grid>
+                    <img src={projectimage2} id="image2" alt="rightside-Image" />
                   </Grid>
                 </Grid>
-              
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Grid item lg={20} id="imgGrid2">
+                  <Grid>
+                    {" "}
+                    <img src={projectimage3} id="image2" alt="rightside-Image" />
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Box>
@@ -196,8 +206,8 @@ const StartProject = () => {
         <br></br>
         <br></br>
         <br></br>
-        <Box id="boxofSEC4" >
-          <Grid xs={12} sm={10} md={8} lg={6}>
+        <Box id="boxofSEC4">
+          <Grid>
             {" "}
             <img src={projectimage4} id="image4" alt="rightside-Image" />
           </Grid>
