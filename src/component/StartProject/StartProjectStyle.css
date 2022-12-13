@@ -11,6 +11,14 @@
 
 }
 
+#mainhead507{
+    font-size: 3rem;
+}
+
+#mainhead508{
+    padding-left: 21.5%;
+}
+
 #typoOffirstHeading2 {
     font-size: 2.7rem;
     font-weight: 600;
@@ -39,13 +47,23 @@
 }
 
 #image2 {
-    width: 100%;
-    margin-bottom: -70.5%;
+    width: 120%;
+    padding-top: 18%;
+ 
 
 }
 
+#image3{
+    width: 120%;
+padding-top: 7.6%;
+    
+   
+}
+
 #imgGrid2 {
-    width: 400%;
+    width: 100%;
+    padding-top: 5.3%;
+
 
 }
 
@@ -114,7 +132,11 @@
 }
 #boxofSEC4{
     background-color:#282828 ;
+    
 }
+
+
+
 #image4{
     width: 170vh;
     padding-top: 5%;
