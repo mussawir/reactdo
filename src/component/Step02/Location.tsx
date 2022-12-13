@@ -10,7 +10,7 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "../Step02/LocationStyle.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
@@ -25,6 +25,7 @@ type Props = {
 const Location = (props: Props) => {
   const [countryData, SetCountryData] = React.useState<any[]>([]);
   const [Contry, setContry] = React.useState<any>("");
+  const {projectId} = useParams();
 
   const handleCountry = (event: SelectChangeEvent) => {
     setContry(event.target.value);
@@ -56,7 +57,7 @@ const Location = (props: Props) => {
           </Typography>
           <br></br>
           <Typography id="pafterhead3">
-            Pick your country of legal residence if you’re raising funds as an
+           Pick your country of legal residence if you’re raising funds as an
             <br></br> individual. If you’re raising funds for a business or
             nonprofit, select the<br></br> country where the entity’s tax ID is
             registered.
@@ -69,6 +70,7 @@ const Location = (props: Props) => {
                     <InputLabel id="demo-simple-select-autowidth-label">
                       Select your country
                     </InputLabel>
+                    <label> {projectId}</label>
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
