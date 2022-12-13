@@ -44,7 +44,7 @@ const  App = () => {
         <Route path="/create-project" element={<PostProject />} />
         <Route path="/project" element={<StartProject />} />
         <Route path="/projectoverview" element={<ProjectOverview />} />
-        <Route path="/location" element={<Location/>} />
+        <Route path="/location/:projectId" element={<Location />} />
         <Route path="/discoverprojects" element={<DiscoverProjects/>} />
         {/* <Route path="/location/:projecId" element={<Location{...projectId}/>} /> */}
         {/* <Route

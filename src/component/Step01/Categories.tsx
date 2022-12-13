@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./CategoriesStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -195,7 +195,7 @@ Location.arguments(projectId, docId);
                       Next: Location
 
                       <Link
-                        to="/location/{projectId}"
+                        to="/location/:{projectId}"
                         id="buttoncolorofCategoryLink"
                       >
                         Next: Location
