@@ -42,8 +42,7 @@ const Location = (props: Props) => {
         console.log(res, "Update Location ID");
         //  let Countryid = res?.data;
         //  console.log("Location Id",Countryid)
-        // toCreateProject({projectId}); 
-     
+        toCreateProject(projectId); 
       })
       .catch((err) => {
         console.log(err, "error");
