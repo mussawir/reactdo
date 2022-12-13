@@ -23,21 +23,47 @@ type Props = {
 // const Location:React.FC<Props> = (projectId) => {
 
 const Location = (props: Props) => {
-  const [countryData, SetCountryData] = React.useState<any[]>([]);
+
+  // const navigate = useNavigate();
+
+  const [countryId, SetcountryId] = React.useState<any[]>([]);
   const [Contry, setContry] = React.useState<any>("");
   const {projectId} = useParams();
 
   const handleCountry = (event: SelectChangeEvent) => {
     setContry(event.target.value);
   };
+
+  const handleupdateLocation = (e: any) => {
+    e.preventDefault();
+    console.log();
+
+    axios.patch("http://localhost:5000/project/location" + countryId )  
+    .then((res) => {
+        console.log(res, "Update Location ID");
+         let Countryid = res?.data;
+         console.log("Location Id",Countryid)
+     
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+      
+  };
+  // const CreatProject = (projectid: string) => {
+  //   // 👇️ navigate to / location
+  //   navigate('/creatproject/'+ projectid);
+  // };
+
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/country")
       .then((res) => {
         console.log(res, "country Cheched");
-        let CountryApi = res?.data;
-        SetCountryData(CountryApi);
-        console.log(countryData, "country Data");
+        let CountryApi = res?.data.countryId;
+        SetcountryId(CountryApi);
+        console.log(countryId, "country Data");
       })
       .catch((err) => {
         console.log(err, "error");
@@ -75,8 +101,8 @@ const Location = (props: Props) => {
                       label="Select  Country"
                       onChange={handleCountry}
                     >
-                      {countryData.map((item: any) => (
-                        <MenuItem value={item?.CountryId}>
+                      {countryId.map((item: any) => (
+                        <MenuItem value={item?.countryId}>
                           {item?.name}
                         </MenuItem>
                       ))}
@@ -108,10 +134,13 @@ const Location = (props: Props) => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} lg={3}>
                   <Grid style={{ display: "flex", justifyContent: "end" }}>
-                    <Button variant="contained" id="buttoncoloroflocation">
-                      <Link to="/ProjectOverview">
+                    <Button variant="contained" 
+                    id="buttoncoloroflocation"
+                     onClick={handleupdateLocation}>
+                      Continue
+                      {/* <Link to="/ProjectOverview">
                         <span id="buttoncolorofLocationLink">Continue</span>{" "}
-                      </Link>
+                      </Link> */}
                     </Button>
                   </Grid>
                 </Grid>
