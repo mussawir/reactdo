@@ -68,9 +68,9 @@ const  App = () => {
           <Route path="/myredux" element={<MyRedux />} />
           <Route path="/page2" element={<Page2 />} />
           //Create Project Tab Route///
-          <Route path="/creatproject" element={<CreateProjectTabs />} />
-          <Route path="/creatproject" element={<Basic />} />
-          <Route path="/creatproject" element={<FundingTab />} />
+          <Route path="/creatproject/:projectId" element={<CreateProjectTabs />} />
+          <Route path="/basic/:projectId" element={<Basic />} />
+          <Route path="/fundingtab/:projectId" element={<FundingTab />} />
           <Route path="/creatproject" element={<Story />} />
           <Route path="/creatproject" element={<MyTeam />} />
           <Route path="/creatproject" element={<PaymentMethod />} />
