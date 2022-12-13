@@ -71,9 +71,9 @@ const  App = () => {
           <Route path="/creatproject/:projectId" element={<CreateProjectTabs />} />
           <Route path="/basic/:projectId" element={<Basic />} />
           <Route path="/fundingtab/:projectId" element={<FundingTab />} />
-          <Route path="/creatproject" element={<Story />} />
-          <Route path="/creatproject" element={<MyTeam />} />
-          <Route path="/creatproject" element={<PaymentMethod />} />
+          <Route path="/story" element={<Story />} />
+          <Route path="/myteam" element={<MyTeam />} />
+          <Route path="/paymentmethod" element={<PaymentMethod />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
