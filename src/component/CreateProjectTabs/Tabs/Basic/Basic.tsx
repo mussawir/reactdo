@@ -17,7 +17,6 @@ import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
-import CreateProjectTabs from "../../CreateProjectTabs";
 
 type Props = {};
 
@@ -47,8 +46,8 @@ const Basic = (props: Props) => {
   const [title, settitle] = React.useState("");
   const [subTitle, setSubTitle] = React.useState("");
   const [websiteUrl, setWebsiteUrl] = React.useState("");
-  // const [image, setimage] = React.useState("");
-  // const [video, setvideo] = React.useState("");
+  const [image, setimage] = React.useState("");
+  const [video, setVideo] = React.useState("");
   const [targetLaunchDate, setTargetLaunchDate] = React.useState("");
   const [duration, setDuration] = React.useState("");
   const [cDFixed, setCDFixed] = React.useState("");
@@ -60,10 +59,13 @@ const Basic = (props: Props) => {
     axios.patch("http://localhost:5000/project/basic/" + projectId, {
         title: title,
         subTitle:subTitle,
+        image:image,
+        video:video,
         websiteUrl:websiteUrl,
         targetLaunchDate: targetLaunchDate,
         duration: duration,
         cDFixed:cDFixed,
+
       })
     
       // axios.patch("http://localhost:5000/project/basic/" + projectId, {
@@ -356,7 +358,18 @@ const Basic = (props: Props) => {
           <InsertPhotoIcon id="insertphotoicon" />
           <Typography id="typoaftarinsert">
             Drop an image here, or select a file.
+            
           </Typography>
+          <Grid id="typoaftarinsert">
+          <input 
+            type="file"
+            value={image}
+              onChange={(e) => {
+                setimage(e.target.value);
+              }}
+            />
+          </Grid>
+          
           <Typography id="typoaftarinsert2">
             It must be a JPG, PNG, GIF, TIFF, or BMP, no larger than 200
             MB.
@@ -398,6 +411,14 @@ const Basic = (props: Props) => {
           <Typography id="typoaftarinsert">
             Drop a video here, or select a file.
           </Typography>
+          <input 
+          id="typoaftarinsert"
+            type="file"
+            value={video}
+              onChange={(e) => {
+                setVideo(e.target.value);
+              }}
+            />
           <Typography id="typoaftarinsert2">
             It must be a MOV, MPEG, AVI, MP4, 3GP, WMV, or FLV, no larger
             than 5120 MB.
