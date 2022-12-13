@@ -8,7 +8,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./CategoriesStyle.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -19,6 +19,8 @@ type Props = {
 };
 
 const Categories = (props: Props) => {
+  
+  const navigate = useNavigate();
   ////Category ////
   const [GetCatData, SetCatData] = React.useState<any[]>([]);
   const [catId, setCatId] = React.useState<any>("");
@@ -40,23 +42,25 @@ const Categories = (props: Props) => {
     .then((res) => {
         console.log(res, "Created ProjectCreated ProjectCreated Project");
         let Projectid = res?.data.projectId;
-        SetProjectId(Projectid);
+        SetProjectId(res?.data.projectId);
         let Id = res?.data._id;
         setdocId(Id);
-//pass projectId and docId to Location 
-Location.arguments(projectId, docId);
-
-
-
         // console.log("////////////");
-        // console.log(projectId);
+        console.log(projectId);
         // console.log(docId);
         // console.log("///////////");
+        Location(res?.data.projectId);
+     
       })
       .catch((err) => {
         console.log(err, "error");
       });
       
+  };
+
+  const Location = (projectid: string) => {
+    // 👇️ navigate to / location
+    navigate('/location/'+ projectid);
   };
 
   const SubCatHandler = (event: SelectChangeEvent) => {
@@ -194,22 +198,18 @@ Location.arguments(projectId, docId);
                     >
                       Next: Location
 
-                      <Link
-                        to="/location/:{projectId}"
+                      {/* <Link
+                        to="/location/{projectId}"
                         id="buttoncolorofCategoryLink"
                       >
-                        Next: Location
-                      </Link>                    </Button>
-
-
-                    {/* { projectId?.map((item: any) => {
-        const path = '/location/' + item.projectId;
-        return (
-          <Link to={path} key={item?.projectId}> 
-            <Location projectId={item} />
-          </Link>
-        )
-      })}   */}
+                      </Link>                     */}
+                      </Button>
+                      
+                      {/* <Button variant="contained" id="buttoncoloroflocation" onClick={handleCreateProject}>
+                      <Link to="/location/{projectId}">
+                        <span id="buttoncolorofLocationLink">Continue</span>{" "}
+                      </Link>
+                    </Button> */}
                   </Grid>
                 </Grid>
               </Grid>

@@ -46,9 +46,6 @@ const Location = (props: Props) => {
 
   return (
     <>
-{/* {props.ProjectId}
-{props.ID} */}
-  
       <Header />
       <Grid id="FirstGridForlocation">
         <Box>
@@ -70,7 +67,7 @@ const Location = (props: Props) => {
                     <InputLabel id="demo-simple-select-autowidth-label">
                       Select your country
                     </InputLabel>
-                    <label> {projectId}</label>
+                    {/* <label> {projectId}</label> */}
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
