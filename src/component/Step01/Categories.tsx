@@ -197,7 +197,6 @@ const Categories = (props: Props) => {
                       id="buttoncolorofCategory"
                     >
                       Next: Location
-
                       {/* <Link
                         to="/location/{projectId}"
                         id="buttoncolorofCategoryLink"
