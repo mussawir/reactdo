@@ -1,0 +1,162 @@
+#PeopleScreensTypo1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.7rem;
+}
+
+#PeopleScreensTypo2 {
+    text-align: center;
+    margin-top: 1%;
+    font-size: 1rem;
+    color: grey;
+}
+
+#dividerafterpeopletypo2 {
+    margin-top: 4%;
+}
+
+#Grid2peopleScreen {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    padding-top: 3%;
+}
+
+#Grid2peopleScreen2 {
+    margin-top: 4%;
+}
+
+#ProfilePeople {
+    margin-top: 5%;
+    font-size: 1rem;
+}
+
+#ParaOfPeoplescreen {
+    font-size: 0.8rem;
+    color: grey;
+    margin-top: 1%;
+}
+
+#boxofstoryscreen4 {
+    background-color: rgb(255, 255, 255);
+    width: 210%;
+    height: 27vh;
+    border: inherit;
+    overflow: visible;
+    border: 1px solid #b1aeae;
+    padding: 15px;
+    margin-left: 85%;
+
+}
+
+#paraofstoryscreen3 {
+    padding-top: 5%;
+}
+
+#pfea {
+    font-size: 0.8rem;
+    color: grey;
+    padding-top: 10px;
+}
+
+#buttoonssofpeople {
+    background-color: rgb(73, 72, 72);
+    padding-left: 28%;
+    padding-right: 28%;
+    margin-left: 2.4%;
+    text-transform: none;
+}
+
+#buttoonssofpeople:hover {
+    background-color: rgb(0, 0, 0);
+    padding-left: 28%;
+    margin-left: 2.4%;
+    padding-right: 28%;
+    text-transform: none;
+}
+
+#buttoonssofpeople2 {
+    background-color: rgb(92, 91, 91);
+   margin-left: 29%;
+    margin-top: 2%;
+    padding-left: 10%;
+   padding-right: 10%;
+   
+}
+
+#buttoonssofpeople2:hover {
+    background-color: rgb(0, 0, 0);
+    margin-left: 29%;
+    margin-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+
+#anyt {
+    font-size: 0.8rem;
+}
+
+#buttoonssofpeople3 {
+    background-color: rgb(190, 186, 186);
+    margin-top: 2%;
+    width: 40%;
+    margin-left: 30%;
+    text-transform: none;
+    border-radius: none;
+}
+
+#buttoonssofpeople3:hover {
+    background-color: rgb(15, 14, 14);
+    margin-top: 2%;
+    margin-left: 30%;
+    text-transform: none;
+    border-radius: none;
+    width: 40%;
+}
+
+#TypooFpeopleS4 {
+    font-size: 0.8rem;
+}
+
+#lastbuttonofpeoplescreen {
+    display: flex;
+    padding-left: 15%;
+}
+
+#Buttonofbackinpeoples {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+#flexforpeople {
+    display: flex;
+    padding-top: 10%;
+}
+
+.sjdncjc {
+    padding-left: 20%;
+    display: flex;
+}
+
+#hdwsw {
+    padding-top: 5px;
+    padding-right: 20px;
+}
+
+#mainLastPeopleid {
+    padding-top: 10%;
+}
+
+.thorakhiskobackbutton {
+    margin-left: 50px;
+    text-transform: none;
+    color: grey;
+    font-size: 1rem;
+}
+@media (min-width:100px) and (max-width:500px){
+    #mainheadingofpeopleScreen{
+width: 10%;
+    } 
+}

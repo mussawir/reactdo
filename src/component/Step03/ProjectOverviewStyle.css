@@ -1,0 +1,149 @@
+#firstGridOfPreview {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+}
+
+#firstGridOfPreviewx2 {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 3%;
+
+
+}
+
+#TypoOfPREVIEW1 {
+  font-size: 2rem;
+
+}
+
+#TypoOfPREVIEW2 {
+  color: grey;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+#spanoficon {
+  padding-top: 0%;
+  color: grey;
+  direction: flex;
+  padding-left: 10px;
+  text-transform: none;
+  padding-bottom: 15px;
+}
+
+#headingbeforedivider {
+  padding-top: 2%;
+  padding-left: 5%;
+  font-size: 1.2rem;
+
+}
+
+#iconAndPreviewheading {
+  padding-top: 4%;
+}
+
+#DividerPreview {
+  padding-top: 3%;
+
+}
+
+#listforviewq {
+  border: 2px;
+
+}
+
+#TypoOfPREVIEW3 {
+  color: grey;
+  padding-left: 5%;
+  padding-top: 2%;
+}
+
+#boxforGrid2x2 {
+  padding-left: 10%;
+  padding-right: 10%;
+  border: 1px solid rgb(211, 206, 206);
+  background-color: #FBFBFA;
+}
+
+#numberinmodeler {
+  font-size: 2.5rem;
+  color: rgb(211, 211, 204);
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+  padding-top: 20px;
+  text-align: start;
+}
+
+#TypoAndIconofModel {
+  padding-top: 0%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  align-items: baseline;
+}
+
+#Prepareheading {
+  padding-left: 5%;
+  font-size: 1.3rem;
+  padding-top: 5%;
+}
+
+#Iconofdeletelast {
+  font-size: 1.4rem;
+}
+
+#deleteiconandtypo {
+  padding-left: 5%;
+  font-size: 1rem;
+  padding-top: 5%;
+  color: grey;
+}
+
+#CircleCheckIcon {
+  padding-right: 15px;
+  color: rgb(156, 151, 151);
+  font-size: 3 rem;
+
+}
+
+#buttoncolorofdelete {
+  color: grey;
+  text-transform: none;
+  padding-bottom: 20px;
+}
+
+#Gridofbox1 {
+  align-items: center;
+  justify-content: center;
+}
+
+#box1iinsideid {
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+
+}
+
+#divideroffirstbox {
+  width: 50%;
+  justify-content: center;
+
+}
+
+#NumberingIcons {
+  padding-top: 0px;
+}
+
+#FavIcon {
+  font-size: 2.5rem;
+
+
+}
+
+#iconofpreview {
+  padding-bottom: 0px;
+  font-size: 1.4rem;
+}

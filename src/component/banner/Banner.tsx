@@ -18,22 +18,22 @@ function Banner(props: Props) {
 <Grid className='main-sec-2'>
   <Container maxWidth="lg">
     <div>
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 4, lg: 4 }}>
-        <Grid item xs={4}>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 8, sm: 12, md: 14, lg: 1 }}>
+        <Grid item xs={4} lg={4} >
           <div className='banner-box'>
-            <h2>$229,035</h2>
-            <p>projects funded</p>
+            <Typography id="typobannerbox">$229,035</Typography>
+            <Typography>projects funded</Typography>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} lg={4}>
           <div className='banner-box'>
-            <h2>$229,035</h2>
-            <p>projects funded</p>
+            <Typography  id="typobannerbox">$229,035</Typography>
+            <p >projects funded</p>
           </div>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} lg={4}>
           <div className='banner-box'>
-            <h2>$229,035</h2>
+            <Typography  id="typobannerbox">$229,035</Typography>
             <p>projects funded</p>
           </div>
         </Grid>
@@ -46,4 +46,3 @@ function Banner(props: Props) {
 }
 
 export default Banner
-

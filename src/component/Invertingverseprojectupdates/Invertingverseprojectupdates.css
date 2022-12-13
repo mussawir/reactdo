@@ -1,39 +1,68 @@
 @font-face {font-family:"Circular-Air-Light";
-    src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
-  @font-face {font-family:"Circular-Air-Medium";
-    src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
-    @font-face {font-family:"Circular-Air-Bold";
-      src:url('../fonts/Circular-Air-Bold.ttf') format('truetype') }
-      @font-face {font-family:"CircularStd-Black";
-        src:url('../fonts/CircularStd-Black.otf') format('opentype') }
-        @font-face {font-family:"CircularStd-Book";
-          src:url('../fonts/CircularStd-Book.otf') format('opentype') }
+  src:url('../fonts/Circular-Air-Light.ttf') format('truetype') }
+@font-face {font-family:"Circular-Air-Medium";
+  src:url('../fonts/Circular-Air-Medium.ttf') format('truetype') }
+  @font-face {font-family:"Circular-Air-Bold";
+    src:url('../fonts/Circular-Air-Bold.ttf') format('truetype') }
+    @font-face {font-family:"CircularStd-Black";
+      src:url('../fonts/CircularStd-Black.otf') format('opentype') }
+      @font-face {font-family:"CircularStd-Book";
+        src:url('../fonts/CircularStd-Book.otf') format('opentype') }
 
 
 
-          .inverting-verse-project-updates-right-col h2 {
-            margin: 64px 0 16px 0;
-            font-family: "Circular-Air-Bold";
-            color: #282828;
-            font-size: 39px;
+        .inverting-verse-project-updates-right-col h2 {
+          margin: 64px 0 16px 0;
+          font-family: "Circular-Air-Bold";
+          color: #282828;
+          font-size: 39px;
+      }
+      .inverting-verse-project-updates-right-col p {
+          color: #282828;
+          font-family: Circular-Air-Light;
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: 100;
+          margin: 0;
+      }     
+      .inverting-verse-project-updates-right-col a {
+          font-family: "Circular-Air-Bold";
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #fff !important;
+          background: #1b59c7;
+          padding: 11px 30px;
+          margin-top: 22px;
+          font-size: 15px;
+          display: inline-block;
+          border-radius: 30px;
+      }           
+      @media (min-width:100px) and (max-width:1200px) {
+        #picofupdateiniv{
+          width: 150%;
+          padding-left: 50%;
         }
+        #h2ofupdateiniv{
+          padding-left: 0%;
+          font-size: 3rem;
+        }
+        .inverting-verse-project-updates{
+          width: 260%;
+          padding: 20px;
+        }
+        
         .inverting-verse-project-updates-right-col p {
-            color: #282828;
-            font-family: Circular-Air-Light;
-            font-size: 18px;
-            line-height: 26px;
-            font-weight: 100;
-            margin: 0;
-        }     
-        .inverting-verse-project-updates-right-col a {
-            font-family: "Circular-Air-Bold";
-            text-decoration: none;
-            text-transform: uppercase;
-            color: #fff !important;
-            background: #1b59c7;
-            padding: 11px 30px;
-            margin-top: 22px;
-            font-size: 15px;
-            display: inline-block;
-            border-radius: 30px;
-        }           
+          color: #282828;
+          font-family: Circular-Air-Light;
+          font-size: 30px;
+          line-height: 26px;
+          font-weight: 100;
+          margin: 0;
+      }  
+      }
+      @media  (min-width : 100px) and (max-width : 410px){
+        .inverting-verse-project-updates {
+            width: 340%;
+        }
+       
+    }

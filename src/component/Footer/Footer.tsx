@@ -40,7 +40,7 @@ function Footer (props: Props) {
             </Typography>
           </div>         
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3} lg={3}>
           <div className='footer-sec-02'>
             <h2>Qucik Links</h2>
             <ul>
@@ -51,7 +51,7 @@ function Footer (props: Props) {
             </ul>
           </div>         
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3} lg={3}>
           <div className='footer-sec-03'>
             <h2>Location</h2>
             <ul>
@@ -61,7 +61,7 @@ function Footer (props: Props) {
             </ul>
           </div>         
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} md={3} lg={3}>
           <div className='footer-sec-04'>
             <h2>Newsletter</h2>
             <Paper

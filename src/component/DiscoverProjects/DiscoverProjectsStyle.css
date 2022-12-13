@@ -1,0 +1,27 @@
+#GridforWeLove{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 50px;
+}
+#Typo1forWeLove{
+    text-align: center;
+    font-size: 2rem;
+}
+#Typo2forWeLove{
+    text-align: center;
+    font-size: 2rem;
+    color: green;
+}
+#Gridforwelovecards{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#ButtonofLoadmore{
+    justify-content: center;
+    align-items: center;
+    margin-left: 45%;
+    margin-bottom: 20%;
+    margin-top: 7%;
+}

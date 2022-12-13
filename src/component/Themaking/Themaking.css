@@ -43,3 +43,15 @@
     display: inline-block;
     margin-top: 20px;
 }
+@media (min-width:100px) and (max-width:1200px) {
+    .making-sec {
+        width: 270%;
+    }
+   
+    }
+    @media  (min-width : 100px) and (max-width : 410px){
+        .making-sec {
+            width: 340%;
+        }
+       
+    }

@@ -1,0 +1,86 @@
+#TypOofStory3 {
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 3%;
+    display: flex;
+}
+
+#Typoheadingofgrid2 {
+    font-weight: 500;
+}
+
+#paraofstoryscreen {
+    font-size: 0.8rem;
+    color: rgb(158, 156, 156);
+}
+
+#boxofstoryscreen2 {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 20vh;
+    border: inherit;
+    overflow: visible;
+    border: 1px solid #E8E8E8;
+}
+
+#paraofstoryscreen3 {
+    font-size: 0.8rem;
+    color: rgb(158, 156, 156);
+    padding: 10px;
+}
+
+#buttonofstoryscreen4 {
+    text-transform: none;
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+#GRIDoFlAST {
+    padding-top: 7%;
+    padding-left: 5%;
+}
+
+#Buttonofbackinrewards {
+    text-transform: none;
+    color: black;
+}
+
+#ButtonofStORYforSave {
+    display: flex;
+    justify-content: right;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#buttoonssofpeople2 {
+    background-color: rgb(92, 91, 91);
+  
+    margin-top: 2%;
+   padding-left: 30%;
+ padding-right: 30%;
+   
+}
+#buttoonssofpeople2:hover {
+    background-color: rgb(0, 0, 0);
+   
+    margin-top: 2%;
+    padding-right: 30%;
+    padding-left: 30%;
+   
+}
+#PeopleScreensTypo1 {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 1.7rem;
+}
+#PeopleScreensTypo2 {
+    text-align: center;
+    margin-top: 1%;
+    font-size: 1rem;
+    color: grey;
+}
+#dividerafterpeopletypo2 {
+    margin-top: 4%;
+}
+#anyt {
+    font-size: 0.8rem;
+}
