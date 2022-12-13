@@ -16,8 +16,8 @@ import FundingTab from './Tabs/FundingTab/FundingTab';
 import Story from './Tabs/Story/Story';
 import MyTeam from './Tabs/MyTeam/MyTeam';
 import PaymentMethod from './Tabs/PaymentMethod/PaymentMethod';
-import Basic from './Tabs/Basic/Basic';
-
+// import Basic from './Tabs/Basic/Basic';
+import {Link } from "react-router-dom";
 
 const CreateProjectTabs = ()=>{
 
@@ -46,7 +46,7 @@ const CreateProjectTabs = ()=>{
           </TabList>
         </Box>
         </Grid>
-        <TabPanel value="1"><Basic/></TabPanel>
+        <TabPanel value="1"><Link to="/basic"></Link></TabPanel>
         <TabPanel value="2"><FundingTab/></TabPanel>
         <TabPanel value="3"><Story/></TabPanel>
         <TabPanel value="4"><MyTeam/></TabPanel>

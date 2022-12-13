@@ -33,13 +33,13 @@ const Location = (props: Props) => {
 
   const handleupdateLocation = (e: any) => {
     e.preventDefault();
-    console.log({projectId});
-    console.log({countryId});
+    // console.log({projectId});
+    // console.log({countryId});
     
     axios.patch("http://localhost:5000/project/location/"+ projectId,  { countryId: countryId } )  
     .then((res) => {
-        //console.clear();
-        console.log(res, "Update Location ID");
+       // console.clear();
+         console.log(res, "Update Location ID");
         //  let Countryid = res?.data;
         //  console.log("Location Id",Countryid)
         toCreateProject(projectId); 
@@ -51,7 +51,7 @@ const Location = (props: Props) => {
 
   const toCreateProject = (projectId: any) => {
     // 👇️ navigate to / location
-    navigate('/creatproject/'+ projectId);
+    navigate('/basic/'+ projectId);
   }
 
 
