@@ -10,60 +10,59 @@ import Divider from "@mui/material/Divider";
 import Button from "@mui/material/Button";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "../Step02/LocationStyle.css";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate  } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import axios from "axios";
-type Props = {
-  //  projectId:string,
-  // docId:string
+type Props = { 
 };
 
 // const Location:React.FC<Props> = (projectId) => {
-
 const Location = (props: Props) => {
-
-  // const navigate = useNavigate();
-
-  const [countryId, SetcountryId] = React.useState<any[]>([]);
-  const [Contry, setContry] = React.useState<any>("");
+  const navigate = useNavigate();
+  const [countries, SetCountries] = React.useState<string[]>([]); 
+  const [countryId, setCountryId] = React.useState<string>("");
   const {projectId} = useParams();
 
   const handleCountry = (event: SelectChangeEvent) => {
-    setContry(event.target.value);
-  };
+    console.clear();
+    setCountryId(event.target.value);
+    console.log(countryId);
+  }
 
   const handleupdateLocation = (e: any) => {
     e.preventDefault();
-    console.log();
-
-    axios.patch("http://localhost:5000/project/location" + countryId )  
+    console.log({projectId});
+    console.log({countryId});
+    
+    axios.patch("http://localhost:5000/project/location/"+ projectId,  { countryId: countryId } )  
     .then((res) => {
+        //console.clear();
         console.log(res, "Update Location ID");
-         let Countryid = res?.data;
-         console.log("Location Id",Countryid)
-     
+        //  let Countryid = res?.data;
+        //  console.log("Location Id",Countryid)
+        toCreateProject(projectId); 
       })
       .catch((err) => {
         console.log(err, "error");
       });
-      
-  };
-  // const CreatProject = (projectid: string) => {
-  //   // 👇️ navigate to / location
-  //   navigate('/creatproject/'+ projectid);
-  // };
+  }
+
+  const toCreateProject = (projectId: any) => {
+    // 👇️ navigate to / location
+    navigate('/creatproject/'+ projectId);
+  }
 
 
   useEffect(() => {
     axios
       .get("http://localhost:5000/country")
       .then((res) => {
-        console.log(res, "country Cheched");
-        let CountryApi = res?.data.countryId;
-        SetcountryId(CountryApi);
-        console.log(countryId, "country Data");
+         console.log(res.data, "Countries List");
+        // let CountryApi = res?.data.countryId;
+        SetCountries(res?.data);
+        // console.log(countryId, "country Data");
       })
       .catch((err) => {
         console.log(err, "error");
@@ -97,11 +96,11 @@ const Location = (props: Props) => {
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
-                      value={Contry}
+                      value={countryId}
                       label="Select  Country"
                       onChange={handleCountry}
                     >
-                      {countryId.map((item: any) => (
+                      {countries.map((item: any) => (
                         <MenuItem value={item?.countryId}>
                           {item?.name}
                         </MenuItem>
@@ -136,7 +135,8 @@ const Location = (props: Props) => {
                   <Grid style={{ display: "flex", justifyContent: "end" }}>
                     <Button variant="contained" 
                     id="buttoncoloroflocation"
-                     onClick={handleupdateLocation}>
+                    onClick={handleupdateLocation}
+                    >
                       Continue
                       {/* <Link to="/ProjectOverview">
                         <span id="buttoncolorofLocationLink">Continue</span>{" "}
