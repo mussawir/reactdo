@@ -120,14 +120,7 @@ const Story = (props: Props) => {
                         </Grid>
                         <Grid xs={12} sm={10} md={8} lg={7}>
                             <Box >
-                                {/* <TextField
-                                    id="boxofstoryscreen2"
-                                    className="outlined-multiline-static"
-                                    
-                                    style={{ width: "100%" }}
-                                    rows={6}
-                                    placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience..."
-                                /> */}
+                              
                               <TextField
                   required
                   style={{ width: "100%" }}

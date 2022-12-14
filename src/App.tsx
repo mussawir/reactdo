@@ -73,7 +73,7 @@ const  App = () => {
           <Route path="/fundingtab/:projectId" element={<FundingTab />} />
           <Route path="/story/:projectId" element={<Story />} />
           <Route path="/myteam/:projectId" element={<MyTeam />} />
-          <Route path="/paymentmethod" element={<PaymentMethod />} />
+          <Route path="/paymentmethod/:projectId" element={<PaymentMethod />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>

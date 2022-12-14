@@ -2,12 +2,46 @@ import { Box, Button, Divider, Grid, TextField, Typography } from '@mui/material
 import React from 'react'
 import "../MyTeam/MyTeam.css"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useParams, useNavigate,Link } from "react-router-dom";
+import axios from "axios";
 import Footer from '../../../Footer/Footer';
 import Header from '../../../Header/Header';
 
 type Props = {}
 
 const MyTeam = (props: Props) => {
+  const navigate = useNavigate();
+  const { projectId } = useParams();
+  const [ivProfileUrl, setIvProfileUrl] = React.useState("");
+  const [paymentEmail, setPaymentEmail] = React.useState("");
+ 
+  const handleSubmit = (e: any) => {
+       e.preventDefault();
+       console.log(projectId);
+       axios.patch("http://localhost:5000/project/myteam/" + projectId, {
+        ivProfileUrl: ivProfileUrl,
+        paymentEmail: paymentEmail,
+         })
+   
+         // axios.patch("http://localhost:5000/project/basic/" + projectId, {
+         //   title: title,
+         //   subTitle:subTitle
+         // })
+         .then((res) => {
+           console.log(res, "Result");
+           console.log("Funding Screen Updated Data", res.data);
+         })
+         .catch((err) => {
+           console.log(err, "error");
+         });
+   
+         toPaymentMethod(projectId);
+     };
+
+     const toPaymentMethod = (projectId: any) => {
+       // 👇️ navigate to /
+       navigate("/paymentmethod/" + projectId);
+     };
   return (
 
     <>
@@ -74,8 +108,20 @@ const MyTeam = (props: Props) => {
               marginLeft: '14%',
             }}
           >
-            <Typography id="anyt">https://kickstarter.com/profile/</Typography>
-            <TextField fullWidth label="" id="fullWidth" />
+            <Typography id="anyt">https://myinvestingverse.com/profile/</Typography>
+           
+            <TextField
+                  style={{ width: "100%" }}
+                  required
+                  size="small"
+                  id="outlined-required"
+                  type="text"
+                  value={ivProfileUrl}
+                  onChange={(e) => {
+                    setIvProfileUrl(e.target.value);
+                  }}
+                />
+           
           </Box>
           <Button id="buttoonssofpeople2098" variant='contained'>
             Confirm
@@ -122,7 +168,18 @@ const MyTeam = (props: Props) => {
 
             }}
           >
-            <TextField fullWidth label="Email..." id="fullWidth" />
+            <TextField
+                  style={{ width: "100%" }}
+                  required
+                  size="small"
+                  id="outlined-required"
+                  type="text"
+                  placeholder='Email...'
+                  value={paymentEmail}
+                  onChange={(e) => {
+                    setPaymentEmail(e.target.value);
+                  }}
+                />
             <Button id="buttoonssofpeople3" variant='contained'>
               send Verification email
             </Button>
@@ -166,7 +223,7 @@ const MyTeam = (props: Props) => {
           </Grid>
           <Grid xs={12} sm={10} md={8} lg={6} id="ButtonofStORYforSave" className="sjdncjc">
             <Typography id="hdwsw">No unsaved Changes</Typography>
-            <Button variant="contained" color="primary" id="ButtonofStORYforSave">Next: Payment</Button>
+            <Button variant="contained" color="primary" type="submit" onClick={handleSubmit} id="ButtonofStORYforSave">Next: Payment</Button>
           </Grid >
           <br></br>
         </Grid>
