@@ -10,7 +10,7 @@ type Props = {}
 const PaymentMethod = (props: Props) => {
     return (
         <Grid>
-            <Grid>
+            <Grid xs={12} sm={12} md={12} lg={12}>
                 <Typography id="firstheadingofpaymentscreen">
                     Verify your details and link a bank account
                 </Typography>
@@ -19,16 +19,17 @@ const PaymentMethod = (props: Props) => {
                 </Typography>
                 <Divider />
             </Grid>
-            <Grid id="mainGridofPayment" columns={12}>
-                <Grid xs={12} sm={10} md={8} lg={6}>
+            <Grid id="mainGridofPayment" >
+                <Grid xs={12} sm={12} md={8} lg={6}>
                     <Typography>Contact email</Typography>
                     <Typography id="para2ofpayment">Confirm the email address we should use for <br></br>correspondence about this project.</Typography>
                     <Typography id="para2ofpayment">If the incorrect email is shown here, update it on<br></br> your account.</Typography>
                 </Grid>
 
-                <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
+                <Grid xs={12} sm={12} md={8} lg={6} id="Grid2peopleScreen4">
 
                     <Box
+                    id="helkncj"
                         sx={{
                             width: 530,
                             maxWidth: '100%',
@@ -60,6 +61,7 @@ const PaymentMethod = (props: Props) => {
 
 
                     <Box
+                    id="boxofpaymentofpara2payment"
                         sx={{
                             width: 530,
                             maxWidth: '80.5%',
@@ -90,6 +92,7 @@ const PaymentMethod = (props: Props) => {
 
 
                     <Box
+                         id="boxofpaymentofpara2payment"
                         sx={{
                             width: 530,
                             maxWidth: '80%',
@@ -120,6 +123,7 @@ const PaymentMethod = (props: Props) => {
                 <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
 
                     <Box
+                         id="boxofpaymentofpara2payment"
                         sx={{
                             width: 530,
                             maxWidth: '80%',
@@ -150,6 +154,7 @@ const PaymentMethod = (props: Props) => {
                 <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
 
                     <Box
+                         id="boxofpaymentofpara2payment"
                         sx={{
                             width: 560,
                             maxWidth: '75.5%',
