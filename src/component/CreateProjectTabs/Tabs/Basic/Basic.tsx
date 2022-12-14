@@ -435,7 +435,7 @@ const Basic = (props: Props) => {
             </Typography>
           </Grid>
           <Grid xs={10} sm={10} md={8} lg={7} id="Grid2peopleScreen4">
-          <Box
+            <Box
               id="fullWidthx"
               sx={{
                 width: "100%",
@@ -446,7 +446,7 @@ const Basic = (props: Props) => {
             >
               <Grid id="DropImageContainer">
                 <Grid id="RoundBoxImage">
-                <VideoLibraryIcon id="insertphotoicon" />
+                  <VideoLibraryIcon id="insertphotoicon" />
                   <input
                     type="file"
                     id="input-file-upload"
@@ -463,7 +463,8 @@ const Basic = (props: Props) => {
                     Drop an image here, or select a file.
                   </Typography>
                   <Typography id="TextTypeImage">
-                  It must be a MOV, MPEG, AVI, MP4, 3GP, WMV, or FLV, no larger than 5120 MB.
+                    It must be a MOV, MPEG, AVI, MP4, 3GP, WMV, or FLV, no
+                    larger than 5120 MB.
                   </Typography>
                 </Grid>
               </Grid>
