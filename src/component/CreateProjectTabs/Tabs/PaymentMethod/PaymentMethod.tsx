@@ -146,7 +146,7 @@ const PaymentMethod = (props: Props) => {
                 size="small"
                 id="outlined-required"
                 type="text"
-                placeholder="Individua or Business and Nonprofit"
+                placeholder="Type one Individua/Business/Nonprofit"
                 value={paymentPtype}
                 onChange={(e) => {
                   setPaymentPtype(e.target.value);
