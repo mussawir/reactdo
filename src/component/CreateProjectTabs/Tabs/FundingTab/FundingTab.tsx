@@ -129,7 +129,7 @@ const FundingTab = (props: Props) => {
             <Grid id="GRIDoFlAST" container>
                 <Grid xs={12} sm={10} md={8} lg={6} id="Buttonofbackinrewards">
                     <Button id="Buttonofbackinrewards" ><ArrowBackIosIcon id="Buttonofbackinrewards" />
-                   <Link to="/basic/:projectId">Back to Basic</Link> </Button>
+                   <Link to="">Back to Basic</Link> </Button>
                 </Grid>
                 <Grid xs={12} sm={10} md={8} lg={6} id="ButtonofStORYforSave">
                     <Button variant="contained" type="submit" onClick={handleSubmit} color="primary" id="ButtonofStORYforSave">Next: Story</Button>

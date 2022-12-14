@@ -11,13 +11,51 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import TextField from '@mui/material/TextField';
+import { useParams, useNavigate,Link } from "react-router-dom";
+import axios from "axios";
+import Footer from '../../../Footer/Footer';
+import Header from '../../../Header/Header';
 type Props = {}
 
 const Story = (props: Props) => {
-
+    const navigate = useNavigate();
+    const { projectId } = useParams();
+    const [risksChallenges, setRisksChallenges] = React.useState("");
+    const [description, setDescription] = React.useState("");
+    console.log('====================================');
+    console.log(risksChallenges,description);
+    console.log('====================================');
+    const handleSubmit = (e: any) => {
+         e.preventDefault();
+         console.log(projectId);
+         axios.patch("http://localhost:5000/project/story/" + projectId, {
+            description: description,
+            risksChallenges: risksChallenges,
+           })
+     
+           // axios.patch("http://localhost:5000/project/basic/" + projectId, {
+           //   title: title,
+           //   subTitle:subTitle
+           // })
+           .then((res) => {
+             console.log(res, "Result");
+             console.log("Funding Screen Updated Data", res.data);
+           })
+           .catch((err) => {
+             console.log(err, "error");
+           });
+     
+          toMyteam(projectId);
+       };
+ 
+       const toMyteam = (projectId: any) => {
+         // 👇️ navigate to /
+         navigate("/myteam/" + projectId);
+       };
     return (
 
         <>
+        <Header/>
             <Grid>
                 <Grid id="Grid1OfStoryScreen">
                     <Typography id="typo1ofstory">
@@ -50,13 +88,15 @@ const Story = (props: Props) => {
                             <Grid >
 
                                 <input className="input"
+                                value={description}
+                                onChange={(e) => {
+                                  setDescription(e.target.value);
+                                }}
                                     type="text"
-                                    placeholder="Write about your project that you're explaining it to a friend...  " />
-                                {/* <InputBase
-                                id="inpiutbAse"
-                                    placeholder="Write about your project that you're explaining it to a friend... "
-                                    inputProps={{ 'aria-label': 'Write about your project that youre explaining it to a friend...' }}
-                                /> */}
+                                    placeholder="Write about your project that you're explaining it to a friend...  " 
+                                    
+                                    />
+                           
                             </Grid>
 
                         </Box>
@@ -80,21 +120,27 @@ const Story = (props: Props) => {
                         </Grid>
                         <Grid xs={12} sm={10} md={8} lg={7}>
                             <Box >
-                                <TextField
+                                {/* <TextField
                                     id="boxofstoryscreen2"
                                     className="outlined-multiline-static"
                                     
                                     style={{ width: "100%" }}
                                     rows={6}
                                     placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience..."
-                                />
-                                {/* <TextField
-                                 type="text"
-                                 style={{width: "100%"}}
-                             id="risksx"
-                                    placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience... "
-                                    aria-placeholder='Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience...'
                                 /> */}
+                              <TextField
+                  required
+                  style={{ width: "100%" }}
+                  id="boxofstoryscreen2"
+                  rows={6}
+                  className="outlined-multiline-static"
+                  type="text"
+                  placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience..."
+                  value={risksChallenges}
+                  onChange={(e) => {
+                    setRisksChallenges(e.target.value);
+                  }}
+                />
 
                             </Box>
                             <Box>
@@ -110,12 +156,12 @@ const Story = (props: Props) => {
                         <Button id="Buttonofbackinrewards" ><ArrowBackIosIcon id="Buttonofbackinrewards" />Back to Funding</Button>
                     </Grid>
                     <Grid xs={12} sm={10} md={8} lg={6} id="ButtonofStORYforSave">
-                        <Button variant="contained" color="primary" id="ButtonofStORYforSave">Save</Button>
+                        <Button variant="contained" color="primary" type="submit" onClick={handleSubmit} id="ButtonofStORYforSave">Save</Button>
                     </Grid >
                     <br></br>
                 </Grid>
             </Grid>
-
+<Footer/>
         </>
     )
 }
