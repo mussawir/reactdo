@@ -2,12 +2,52 @@ import { Box, Button, Divider, Grid, TextField, Typography } from '@mui/material
 import React from 'react'
 import "../MyTeam/MyTeam.css"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useParams, useNavigate,Link } from "react-router-dom";
+import axios from "axios";
+import Footer from '../../../Footer/Footer';
+import Header from '../../../Header/Header';
 
 type Props = {}
 
 const MyTeam = (props: Props) => {
+  const navigate = useNavigate();
+  const { projectId } = useParams();
+  const [ivProfileUrl, setIvProfileUrl] = React.useState("");
+  const [paymentEmail, setPaymentEmail] = React.useState("");
+ 
+  const handleSubmit = (e: any) => {
+       e.preventDefault();
+       console.log(projectId);
+       axios.patch("http://localhost:5000/project/myteam/" + projectId, {
+        ivProfileUrl: ivProfileUrl,
+        paymentEmail: paymentEmail,
+         })
+   
+         // axios.patch("http://localhost:5000/project/basic/" + projectId, {
+         //   title: title,
+         //   subTitle:subTitle
+         // })
+         .then((res) => {
+           console.log(res, "Result");
+           console.log("Funding Screen Updated Data", res.data);
+         })
+         .catch((err) => {
+           console.log(err, "error");
+         });
+   
+         toPaymentMethod(projectId);
+     };
+
+     const toPaymentMethod = (projectId: any) => {
+       // 👇️ navigate to /
+       navigate("/paymentmethod/" + projectId);
+     };
   return (
-    <Grid id="mainheadingofpeopleScreen">
+
+    <>
+
+    <Header/>
+        <Grid id="mainheadingofpeopleScreen">
       <Grid xs={12} sm={10} md={8} lg={6}>
         <Typography id="PeopleScreensTypo1">
           Introduce yourself
@@ -27,9 +67,9 @@ const MyTeam = (props: Props) => {
             This will appear on your project page and must include your<br></br> name, photo, and biography.
           </Typography>
         </Grid>
-        <Grid xs={12} sm={12} md={8} lg={6} id="Grid2peopleScreen4">
+        <Grid xs={12} sm={12}   md={4} lg={4} id="Grid2peopleScreen4">
 
-          <Box id="boxofstoryscreen4">
+          <Box id="boxofstoryscreen4" >
             <Typography id="paraofstoryscreen3">
               Brain M
             </Typography>
@@ -39,10 +79,13 @@ const MyTeam = (props: Props) => {
             <br></br>
             <br></br>
             <Divider />
+            <br></br>
+
             <Button id="buttoonssofpeople" variant='contained'>
               Complete your project
             </Button>
           </Box>
+          
         </Grid>
       </Grid>
       <Divider id="dividerafterpeopletypo2" />
@@ -59,16 +102,28 @@ const MyTeam = (props: Props) => {
 
           <Box
             sx={{
-              width: 500,
+              width: 650,
               maxWidth: '100%',
               borderRadius: '0%',
-              marginLeft: '28%',
+              marginLeft: '14%',
             }}
           >
-            <Typography id="anyt">https://kickstarter.com/profile/</Typography>
-            <TextField fullWidth label="" id="fullWidth" />
+            <Typography id="anyt">https://myinvestingverse.com/profile/</Typography>
+           
+            <TextField
+                  style={{ width: "100%" }}
+                  required
+                  size="small"
+                  id="outlined-required"
+                  type="text"
+                  value={ivProfileUrl}
+                  onChange={(e) => {
+                    setIvProfileUrl(e.target.value);
+                  }}
+                />
+           
           </Box>
-          <Button id="buttoonssofpeople2" variant='contained'>
+          <Button id="buttoonssofpeople2098" variant='contained'>
             Confirm
           </Button>
         </Grid>
@@ -87,10 +142,10 @@ const MyTeam = (props: Props) => {
 
           <Box
             sx={{
-              width: 500,
-              maxWidth: '80%',
+              width: 600,
+              maxWidth: '120%',
               borderRadius: '0%',
-              marginLeft: '28%',
+              marginLeft: '15%',
               border: '1px solid grey',
               padding: '20px',
               backgroundColor: '#FBFBFA'
@@ -104,16 +159,27 @@ const MyTeam = (props: Props) => {
           <br></br>
           <Box
             sx={{
-              width: 500,
-              maxWidth: '90%',
+              width: 620,
+              maxWidth: '120%',
               borderRadius: '0%',
-              marginLeft: '28%',
+              marginLeft: '15%',
               padding: '10px',
               backgroundColor: '#FBFBFA'
 
             }}
           >
-            <TextField fullWidth label="Email..." id="fullWidth" />
+            <TextField
+                  style={{ width: "100%" }}
+                  required
+                  size="small"
+                  id="outlined-required"
+                  type="text"
+                  placeholder='Email...'
+                  value={paymentEmail}
+                  onChange={(e) => {
+                    setPaymentEmail(e.target.value);
+                  }}
+                />
             <Button id="buttoonssofpeople3" variant='contained'>
               send Verification email
             </Button>
@@ -135,10 +201,10 @@ const MyTeam = (props: Props) => {
 
           <Box
             sx={{
-              width: 560,
-              maxWidth: '80%',
+              width: 623,
+              maxWidth: '120%',
               borderRadius: '0%',
-              marginLeft: '32%',
+              marginLeft: '15%',
               padding: '10px',
               backgroundColor: '#FBFBFA'
 
@@ -157,12 +223,16 @@ const MyTeam = (props: Props) => {
           </Grid>
           <Grid xs={12} sm={10} md={8} lg={6} id="ButtonofStORYforSave" className="sjdncjc">
             <Typography id="hdwsw">No unsaved Changes</Typography>
-            <Button variant="contained" color="primary" id="ButtonofStORYforSave">Next: Payment</Button>
+            <Button variant="contained" color="primary" type="submit" onClick={handleSubmit} id="ButtonofStORYforSave">Next: Payment</Button>
           </Grid >
           <br></br>
         </Grid>
       </Grid>
     </Grid>
+
+    <Footer/>
+    </>
+
   )
 }
 
