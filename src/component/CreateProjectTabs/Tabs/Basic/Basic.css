@@ -16,14 +16,56 @@
     padding-top: 3%;
     display: flex;
 }
+#FieldText{
+    font-size: 15px;
+    font-family: "Montserrat-light" !important;
+    font-weight: 600 !important;
+    padding: 5px 0px;
+}
+#outlined-required{
+    border-color: gray !important;
+    border-radius: none !important;
+}
+#outlined-required:active{
+    border-color: gray !important;
+    border-radius: none !important;
+}
+#outlined-select-currency{
+    border-color: gray !important;
+    border-radius: none !important;
+    width: 100% !important;
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border-radius: 0px solid gray !important;
+}
+.css-1dvmivx{
+    border-radius: solid gray !important;
+}
+#label-file-upload {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 2px;
+    border-radius: 1rem;
+    border-style: dashed;
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+  }
+
 
 #Typoheadingofgrid2 {
     font-weight: 500;
+    font-family: "Montserrat-light" !important;
+    font-weight: 600 !important;
 }
 
 #paraofstoryscreenz {
     font-size: 0.9rem;
     color: rgb(94, 93, 93);
+    font-family: "Montserrat-light" !important;
+    font-weight: 500 !important;
 }
 
 #boxofstoryscreen2 {
@@ -44,7 +86,7 @@
 #buttonofstoryscreen4 {
     text-transform: none;
     font-size: 0.8rem;
-    padding: 5px;
+    padding: 18px 0px;
 }
 
 #GRIDoFlAST {
@@ -62,6 +104,10 @@
     justify-content: right;
     padding-right: 5%;
     padding-left: 5%;
+    border-radius: 0px;
+    font-size: 15px;
+    font-family: "CircularStd-Book" !important;
+
 }
 
 #buttoonssofpeople2 {
@@ -88,8 +134,8 @@
     text-align: center;
     margin-top: 5%;
     font-size: 1.7rem;
-    font-family: "Montserrat-Bold";
-    font-weight: 400;
+    font-family: "Montserrat-Regular" !important;
+    font-weight: 700 !important;
 }
 
 #PeopleScreensTypo2 {
@@ -97,6 +143,8 @@
     margin-top: 1%;
     font-size: 1rem;
     color: grey;
+    font-family: "Montserrat-light" !important;
+    font-weight: 400 !important;
 }
 
 #dividerafterpeopletypo2 {
@@ -114,26 +162,17 @@
 }
 
 #fullWidthx {
-    height: 30vh;
+    /* height: 30vh; */
     background-color: #f3f1f1;
 }
 
-#insertphotoicon {
-    margin-left: 45%;
-    margin-top: 7%;
-    font-size: 2.2rem;
-}
+
 
 #typoaftarinsert {
     padding-left: 30%;
     font-size: 0.8rem;
 }
 
-#typoaftarinsert2 {
-    padding-left: 30%;
-    font-size: 0.7rem;
-    color: grey;
-}
 
 #togglebuttonGroup {
     margin-top: 40px;
@@ -141,16 +180,55 @@
     margin-bottom: 20px;
 }
 
-#kskjcksjc {
+#dateTimeTopText {
     margin-left: 20px;
     font-size: 0.9rem;
     margin-top: 10px;
+    font-family: "CircularStd-Book" !important;
+    font-weight: 500 !important;
+}
+#dateTimePoint{
+    font-family: "Montserrat-light" !important;
+  
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+#Selectdate{
+    border: none !important;
+    padding: 10px 10px;
+}
+
+#ContainerSelectdate{
+    display: flex;
+    justify-content: start;
+    border: none;
+    width: 100%;
+    padding: 10px 10px;
 }
 
 #fullWidthxx {
     width: 100%;
 }
 
+#fixedDays{
+   
+    border: 1px solid gray !important;
+}
+#radioBtn{
+/* border:  2px solid gray !important; */
+padding: 10px;
+}
+#FixedTextField{
+    padding: 10px;
+}
+
+#FieldTextSmall{
+    font-size: 12px;
+    font-family: "Montserrat-light" !important;
+    font-weight: 600 !important;
+    padding: 5px 0px;
+}
 #somegaponsubcat {
     margin: 15px;
 }
@@ -160,23 +238,68 @@
 }
 
 
-@media (min-width:100px) and (max-width:800px) {
-    #insertphotoicon {
-        margin-left: 40%;
-        margin-top: 7%;
-        font-size: 2.2rem;
+#DropImageContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+   
+}
+#RoundBoxImage{
+   /* position: absolute; */
+
+    background-color: white;
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+   box-shadow:  0 2px 6px 0 rgb(0 0 0 / 17%);
+
+}
+
+#insertphotoicon {
+    position: relative;
+    left: 28px;
+    top: 28px;
+    
+}
+
+#TextTypeImage {
+    color: black !important;
+    font-size: 12px;
+    font-family: "Montserrat-Regular" !important;
+    font-weight: 400 !important;
+    padding: 8px 0px 5px 0px;
+    text-align: center;
+
+}
+#TextTypeConatiner{
+    font-family: "Montserrat-light" !important;
+    font-weight: 400 !important;
+}
+
+@media  (min-width:1200px) and (max-width:1500px) {
+    #fourField{
+        margin: 0px 94px 0px 0px;
     }
+}
+
+@media  (min-width:200px) and (max-width:800px) {
+    #insertphotoicon {
+        position: relative;
+    left: 28px;
+    top: 27px;
+}
+}
+
+@media (min-width:100px) and (max-width:800px) {
+   
 
     #typoaftarinsert {
         padding-left: 15%;
         font-size: 0.8rem;
     }
 
-    #typoaftarinsert2 {
-        padding-left: 0%;
-        font-size: 0.7rem;
-        color: grey;
-    }
 
     #fullWidthxx {
         width: 70%;
