@@ -75,7 +75,7 @@ const Basic = (props: Props) => {
         console.log(err, "error");
       });
 
-    // toFunding(projectId);
+     toFunding(projectId);
   };
 
   const [formats, setFormats] = React.useState(() => [
@@ -105,9 +105,6 @@ const Basic = (props: Props) => {
   return (
     <>
       <Header />
-      {/* <CreateProjectTabs/> */}
-
-      {/* <form onSubmit={handleSubmit}> */}
       <Grid>
         <Grid xs={12} sm={10} md={12} lg={6}>
           <Typography id="PeopleScreensTypo1">
@@ -350,34 +347,6 @@ const Basic = (props: Props) => {
             </Typography>
           </Grid>
           <Grid xs={10} sm={10} md={8} lg={7} id="Grid2peopleScreen4">
-            {/* <Box
-              id="fullWidthx"
-              sx={{
-                width: "100%",
-                maxWidth: "120%",
-                borderRadius: "0%",
-                border: "1px dashed ",
-              }}
-            >
-              <InsertPhotoIcon id="insertphotoicon" />
-              <Typography id="typoaftarinsert">
-                Drop an image here, or select a file.
-              </Typography>
-              <Grid id="typoaftarinsert">
-                <input
-                  type="file"
-                  id="input-file-upload"
-                  value={image}
-                  onChange={(e) => {
-                    setimage(e.target.value);
-                  }}
-                />
-              </Grid>
-
-              <Typography id="typoaftarinsert2">
-                It must be a JPG, PNG, GIF, TIFF, or BMP, no larger than 200 MB.
-              </Typography>
-            </Box> */}
 
             <Box
               id="fullWidthx"
@@ -469,32 +438,7 @@ const Basic = (props: Props) => {
                 </Grid>
               </Grid>
             </Box>
-            {/* <Box
-              id="fullWidthx"
-              sx={{
-                width: "100%",
-                maxWidth: "120%",
-                borderRadius: "0%",
-                border: "1px dashed ",
-              }}
-            >
-              <VideoLibraryIcon id="insertphotoicon" />
-              <Typography id="typoaftarinsert">
-                Drop a video here, or select a file.
-              </Typography>
-              <input
-                id="typoaftarinsert"
-                type="file"
-                value={video}
-                onChange={(e) => {
-                  setVideo(e.target.value);
-                }}
-              />
-              <Typography id="typoaftarinsert2">
-                It must be a MOV, MPEG, AVI, MP4, 3GP, WMV, or FLV, no larger
-                than 5120 MB.
-              </Typography>
-            </Box> */}
+      
             <Box>
               <Button color="success" id="buttonofstoryscreen4">
                 <LocationOnIcon /> 80% of successful projects have a video. Make
@@ -526,17 +470,7 @@ const Basic = (props: Props) => {
                 border: "1px solid ",
               }}
             >
-              {/* <TextField
-              required
-              id="outlined-required"
-              label="Sub Title"
-              type="text"
-              placeholder="Enter Title"
-              value={subTitle}
-              onChange={(e) => {
-                setSubTitle(e.target.value);
-              }}
-            /> */}
+              
               <Grid id="ContainerSelectdate">
                 <TextField
                   id="Selectdate"
