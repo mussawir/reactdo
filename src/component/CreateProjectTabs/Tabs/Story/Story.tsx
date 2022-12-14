@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Grid, Typography } from '@mui/material'
+import { Box, Button, Divider, Grid, Input, InputBase, Typography } from '@mui/material'
 import React from 'react'
 import "../Story/Story.css"
 import ListIcon from '@mui/icons-material/List';
@@ -10,10 +10,13 @@ import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import TextField from '@mui/material/TextField';
 type Props = {}
 
 const Story = (props: Props) => {
+
     return (
+
         <>
             <Grid>
                 <Grid id="Grid1OfStoryScreen">
@@ -35,7 +38,7 @@ const Story = (props: Props) => {
 
                         <Box id="boxofstoryscreen">
                             <Typography id="headlineofboxstory">
-                                Headline <ListIcon id="iconofheadlinesinbox" />
+                                Headline <ListIcon id="iconofheadlinesinbox"  />
                                 <FormatBoldIcon id="iconofheadlinesinbox" />
                                 <FormatItalicIcon id="iconofheadlinesinbox" />
                                 <AddLinkIcon id="iconofheadlinesinbox" />
@@ -44,9 +47,18 @@ const Story = (props: Props) => {
                                 <VolumeUpIcon id="iconofheadlinesinbox" />
                             </Typography>
                             <Divider />
-                            <Typography id="paraofstoryscreen2">
-                                Write about your project like you're explaining it to a friend..
-                            </Typography>
+                            <Grid >
+
+                                <input className="input"
+                                    type="text"
+                                    placeholder="Write about your project that you're explaining it to a friend...  " />
+                                {/* <InputBase
+                                id="inpiutbAse"
+                                    placeholder="Write about your project that you're explaining it to a friend... "
+                                    inputProps={{ 'aria-label': 'Write about your project that youre explaining it to a friend...' }}
+                                /> */}
+                            </Grid>
+
                         </Box>
 
                     </Grid>
@@ -58,7 +70,7 @@ const Story = (props: Props) => {
                 <br></br>
                 <Grid >
                     <Grid container id="TypOofStory3">
-                        <Grid xs={12} sm={10} md={8} lg={6}>
+                        <Grid xs={12} sm={10} md={8} lg={5}>
                             <Typography id="Typoheadingofgrid2">
                                 Risks and challenges
                             </Typography>
@@ -66,11 +78,24 @@ const Story = (props: Props) => {
                                 <br></br>Be honest about the potential risks and challenges of this <br></br>project and how you plan to overcome them to complete it.
                             </Typography>
                         </Grid>
-                        <Grid xs={12} sm={10} md={8} lg={6}>
-                            <Box id="boxofstoryscreen2">
-                                <Typography id="paraofstoryscreen3">
-                                    Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience...
-                                </Typography>
+                        <Grid xs={12} sm={10} md={8} lg={7}>
+                            <Box >
+                                <TextField
+                                    id="boxofstoryscreen2"
+                                    className="outlined-multiline-static"
+                                    
+                                    style={{ width: "100%" }}
+                                    rows={6}
+                                    placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience..."
+                                />
+                                {/* <TextField
+                                 type="text"
+                                 style={{width: "100%"}}
+                             id="risksx"
+                                    placeholder="Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience... "
+                                    aria-placeholder='Common risks and challenges you may want to address include budgeting, timelines for rewards and the project itself, the size of your audience...'
+                                /> */}
+
                             </Box>
                             <Box>
                                 <Button color="success" id="buttonofstoryscreen4">
@@ -82,7 +107,7 @@ const Story = (props: Props) => {
                 </Grid>
                 <Grid id="GRIDoFlAST" container>
                     <Grid xs={12} sm={10} md={8} lg={6} id="Buttonofbackinrewards">
-                        <Button id="Buttonofbackinrewards" ><ArrowBackIosIcon id="Buttonofbackinrewards" />Back to rewards</Button>
+                        <Button id="Buttonofbackinrewards" ><ArrowBackIosIcon id="Buttonofbackinrewards" />Back to Funding</Button>
                     </Grid>
                     <Grid xs={12} sm={10} md={8} lg={6} id="ButtonofStORYforSave">
                         <Button variant="contained" color="primary" id="ButtonofStORYforSave">Save</Button>

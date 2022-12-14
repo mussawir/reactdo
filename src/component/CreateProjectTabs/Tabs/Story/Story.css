@@ -44,7 +44,7 @@
     border: inherit;
     overflow: visible;
     border: 1px solid #E8E8E8;
-
+    box-sizing: inherit;
 
 }
 
@@ -54,6 +54,7 @@
     height: 60vh;
     border: 1px solid;
     border-color: purple;
+    box-sizing: inherit;
 }
 
 #headlineofboxstory {
@@ -76,8 +77,12 @@
     color: grey;
     text-align: center;
     padding-top: 20px;
-}
 
+}
+.textfielfchanged{
+    width: 100%;
+ 
+}
 #boxofstoryscreen2 {
     background-color: rgb(255, 255, 255);
     width: 100%;
@@ -85,21 +90,53 @@
     border: inherit;
     overflow: visible;
     border: 1px solid #E8E8E8;
+    font-size: 0.8rem;
 }
-
+#boxofstoryscreen2:hover {
+    font-size: 0.8rem;
+    border: 1px solid;
+    width: 100%;
+    border-color: purple;
+}
 #paraofstoryscreen3 {
     font-size: 0.8rem;
     color: rgb(158, 156, 156);
     padding: 10px;
 }
 
-#boxofstoryscreen2:hover {
-    font-size: 0.8rem;
-    padding: 10px;
-    border: 1px solid;
-    border-color: purple;
+#inpiutbAse{
+    
+    margin-left: 10%;
 }
-
+.input {
+    display: inline;
+    width: 70%;
+    font-size: 15px;
+    font-family: Times;
+    border: 0px;
+    font-weight: lighter;
+    color: grey;
+    outline: none;
+    margin: 2px;
+    margin-left: 17%;
+    user-select: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+#risksx{
+    display: inline;
+    font-size: 14px;
+    font-family: Times;
+    border: 0px;
+    font-weight: lighter;
+    color: grey;
+    outline: none;
+    margin: 2px;
+    margin-left: 1%;
+    user-select: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
 #buttonofstoryscreen4 {
     text-transform: none;
     font-size: 0.8rem;
@@ -121,4 +158,27 @@
     justify-content: right;
     padding-right: 5%;
     padding-left: 5%;
+}
+@media (min-width:100px) and (max-width:1200px) {
+    #iconofheadlinesinbox {
+        padding-bottom: 4px;
+        font-size: 0.7rem;
+        padding-left: 3px;
+    }
+    .input {
+        display: inline;
+        width: 95%;
+        font-size: 12px;
+        font-family: Times;
+        border: 0px;
+        font-weight: lighter;
+        color: grey;
+        outline: none;
+        margin: 2px;
+        margin-left: 0%;
+        user-select: text;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+    
 }
