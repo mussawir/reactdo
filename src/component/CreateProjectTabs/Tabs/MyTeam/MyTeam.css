@@ -2,6 +2,7 @@
     text-align: center;
     margin-top: 5%;
     font-size: 1.7rem;
+    font-family: "Montserrat-Light" !important;
 }
 
 #PeopleScreensTypo2 {
@@ -9,6 +10,7 @@
     margin-top: 1%;
     font-size: 1rem;
     color: grey;
+    font-family: "Montserrat-Light" !important;
 }
 
 #dividerafterpeopletypo2 {
@@ -29,95 +31,141 @@
 #ProfilePeople {
     margin-top: 5%;
     font-size: 1rem;
+    font-family: "Montserrat-Light" !important;
 }
 
 #ParaOfPeoplescreen {
     font-size: 0.8rem;
     color: grey;
     margin-top: 1%;
+    font-family: "Montserrat-Light" !important;
 }
 
 #boxofstoryscreen4 {
     background-color: rgb(255, 255, 255);
-    width: 210%;
-    height: 27vh;
+    width: 310%;
+    height: 37vh;
     border: inherit;
     overflow: visible;
     border: 1px solid #b1aeae;
     padding: 15px;
-    margin-left: 85%;
+    margin-left: 35%;
+    font-family: "Montserrat-Light" !important;
 
 }
+@media (min-width:100px) and (max-width:1250px) {
+    #boxofstoryscreen4 {
+        background-color: rgb(255, 255, 255);
+        width: 310%;
+        height: 80vh;
+        border: inherit;
+        overflow: visible;
+        border: 1px solid #b1aeae;
+        padding: 15px;
+        margin-left: 35%;
+        font-family: "Montserrat-Light" !important;
+    
+    }
+}
+    @media  (min-width: 100px) and (max-width: 500px){
+        #boxofstoryscreen4 {
+            background-color: rgb(255, 255, 255);
+            width: 310%;
+            height: 65vh;
+            border: inherit;
+            overflow: visible;
+            border: 1px solid #b1aeae;
+            padding: 10px;
+            margin-left: 0%;
+            font-family: "Montserrat-Light" !important;
+        
+        }
+    }
 
 #paraofstoryscreen3 {
     padding-top: 5%;
+    font-family: "Montserrat-Light" !important;
 }
 
+@media (min-width:100px) and (max-width:1250px) {
+#fullWidth{
+    margin-left: 20%;
+
+}
+}
 #pfea {
     font-size: 0.8rem;
+    font-family: "Montserrat-Light" !important;
     color: grey;
     padding-top: 10px;
 }
 
 #buttoonssofpeople {
     background-color: rgb(73, 72, 72);
-    padding-left: 28%;
+    padding-left: 27%;
     padding-right: 28%;
-    margin-left: 2.4%;
+    margin-left: 7%;
     text-transform: none;
+    font-family: "Montserrat-Light" !important;
 }
 
 #buttoonssofpeople:hover {
     background-color: rgb(0, 0, 0);
-    padding-left: 28%;
-    margin-left: 2.4%;
+    padding-left: 27%;
+    margin-left: 7%;
     padding-right: 28%;
     text-transform: none;
 }
 
-#buttoonssofpeople2 {
+#buttoonssofpeople2098 {
     background-color: rgb(92, 91, 91);
-   margin-left: 29%;
+   margin-left: 14%;
     margin-top: 2%;
-    padding-left: 10%;
-   padding-right: 10%;
+    padding-left: 45%;
+   padding-right: 44%;
+   font-family: "Montserrat-Light" !important;
    
 }
 
-#buttoonssofpeople2:hover {
+#buttoonssofpeople2098:hover {
     background-color: rgb(0, 0, 0);
-    margin-left: 29%;
+    margin-left: 14%;
     margin-top: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 45%;
+    padding-right: 44%;
+    font-family: "Montserrat-Light" !important;
     
 }
 
 #anyt {
     font-size: 0.8rem;
+    font-family: "Montserrat-Light" !important;
 }
 
 #buttoonssofpeople3 {
     background-color: rgb(190, 186, 186);
-    margin-top: 2%;
-    width: 40%;
-    margin-left: 30%;
+    font-family: "Montserrat-Light" !important;
+    width: 100%;
+   
     text-transform: none;
     border-radius: none;
 }
 
 #buttoonssofpeople3:hover {
     background-color: rgb(15, 14, 14);
-    margin-top: 2%;
-    margin-left: 30%;
+    font-family: "Montserrat-Light" !important;
+    
     text-transform: none;
     border-radius: none;
-    width: 40%;
+    width: 100%;
 }
 
 #TypooFpeopleS4 {
     font-size: 0.8rem;
+    font-family: "Montserrat-Light" !important;
 }
+
+
 
 #lastbuttonofpeoplescreen {
     display: flex;
@@ -143,6 +191,7 @@
 #hdwsw {
     padding-top: 5px;
     padding-right: 20px;
+    font-family: "Montserrat-Light" !important;
 }
 
 #mainLastPeopleid {
@@ -150,11 +199,18 @@
 }
 
 .thorakhiskobackbutton {
-    margin-left: 50px;
+    margin-left: 10px;
     text-transform: none;
     color: grey;
     font-size: 1rem;
+    font-family: "Montserrat-Light" !important;
 }
+
+
+#ButtonofStORYforSave{
+    font-family: "Montserrat-Light" !important;
+}
+
 @media (min-width:100px) and (max-width:500px){
     #mainheadingofpeopleScreen{
 width: 10%;
