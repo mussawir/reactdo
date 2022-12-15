@@ -11,6 +11,87 @@ import Header from "../../../Header/Header";
 type Props = {};
 
 const PaymentMethod = (props: Props) => {
+
+    return (
+        <Grid>
+            <Grid xs={12} sm={12} md={12} lg={12}>
+                <Typography id="firstheadingofpaymentscreen">
+                    Verify your details and link a bank account
+                </Typography>
+                <Typography id="firstparaofpaymentscreen">
+                    Confirm who’s raising funds and receiving them if this project reaches its funding goal. Double-check your<br></br> information—you agree the details you provide are true and acknowledge they can’t be changed once <br></br>submitted.
+                </Typography>
+                <Divider />
+            </Grid>
+            <Grid id="mainGridofPayment" >
+                <Grid xs={12} sm={12} md={8} lg={6}>
+                    <Typography>Contact email</Typography>
+                    <Typography id="para2ofpayment">Confirm the email address we should use for <br></br>correspondence about this project.</Typography>
+                    <Typography id="para2ofpayment">If the incorrect email is shown here, update it on<br></br> your account.</Typography>
+                </Grid>
+
+                <Grid xs={12} sm={12} md={8} lg={6} id="Grid2peopleScreen4">
+
+                    <Box
+                    id="helkncj"
+                        sx={{
+                            width: 530,
+                            maxWidth: '100%',
+                            borderRadius: '0%',
+                            marginLeft: '36%',
+                            padding: '10px',
+                            backgroundColor: '#FBFBFA'
+
+                        }}
+                    >
+                        <TextField fullWidth label="Email..." id="fullWidth" />
+                        <Button id="buttoonssofpayment" variant='contained'>
+                            send Verification email
+                        </Button>
+                    </Box>
+
+                </Grid>
+
+            </Grid>
+            <Divider />
+            <Grid id="mainGridofPayment" columns={12}>
+                <Grid xs={12} sm={10} md={8} lg={6}>
+                    <Typography>Project type</Typography>
+                    <Typography id="para2ofpayment">Select “Individual” if you’re raising and receiving funds for<br></br> this project in your own name. Select “Business” or <br></br>“Nonprofit” if you’re raising and receiving funds for this<br></br> project on behalf of an entity that you own or are an<br></br> executive of, with authorization to represent.</Typography>
+                    <Typography id="para2ofpayment">Learn more about tax considerations when running your<br></br> project.</Typography>
+                </Grid>
+
+                <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
+
+
+                    <Box
+                    id="boxofpaymentofpara2payment"
+                        sx={{
+                            width: 530,
+                            maxWidth: '80.5%',
+                            borderRadius: '0%',
+                            marginLeft: '28%',
+                            border: '1px solid grey',
+                            padding: '20px',
+                            backgroundColor: '#FBFBFA'
+
+                        }}
+                    >
+                        <Typography><LockIcon /></Typography>
+                        <Typography id="TypooFpeopleS4">Complete the above steps to unlock this section</Typography>
+
+                    </Box>
+
+                </Grid>
+            </Grid>
+            <Divider />
+            <Grid id="mainGridofPayment" columns={12}>
+                <Grid xs={12} sm={10} md={8} lg={6}>
+                    <Typography>Project verification</Typography>
+                    <Typography id="para2ofpayment">You’ll be redirected to Stripe, our payment processor, to<br></br> provide your age, location, tax information, and other details.<br></br> Projects raising funds for a business or nonprofit will require<br></br> similar information, along with details about the entity’s<br></br> owners and directors.</Typography>
+                    <Typography id="para2ofpayment">By proceeding, you certify that the details you provide are <br></br>true.</Typography>
+                </Grid>
+
   const navigate = useNavigate();
   const { projectId } = useParams();
   const [paymentEmail, setPaymentEmail] = React.useState("");
@@ -18,6 +99,7 @@ const PaymentMethod = (props: Props) => {
   const [varified, setVarified] = React.useState("");
   const [bankAccount, setBankAccount] = React.useState("");
   const [payments, setPayments] = React.useState("");
+
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -42,6 +124,56 @@ const PaymentMethod = (props: Props) => {
       .catch((err) => {
         console.log(err, "error");
       });
+
+
+                    <Box
+                         id="boxofpaymentofpara2payment"
+                        sx={{
+                            width: 530,
+                            maxWidth: '80%',
+                            borderRadius: '0%',
+                            marginLeft: '25%',
+                            border: '1px solid grey',
+                            padding: '20px',
+                            backgroundColor: '#FBFBFA'
+
+                        }}
+                    >
+                        <Typography><LockIcon /></Typography>
+                        <Typography id="TypooFpeopleS4">Complete the above steps to unlock this section</Typography>
+
+                    </Box>
+
+                </Grid>
+            </Grid>
+            <Divider />
+            <Grid id="mainGridofPayment" columns={12}>
+                <Grid xs={12} sm={10} md={8} lg={6}>
+                    <Typography>Bank account</Typography>
+                    <Typography id="para2ofpayment">Add the checking account where you want to receive funds.<br></br> This account must be located in Canada, and able to receive<br></br> direct deposits in the currency in which you raise funds. We<br></br> don’t support wire transfers, savings accounts, or virtual<br></br> bank accounts.</Typography>
+                    <Typography id="para2ofpayment">You represent you're authorized to link this bank account to<br></br> this project. If you’re raising funds as an individual, the<br></br> account is registered in your name. If it’s on behalf of a<br></br> business or nonprofit, the account is registered in the name<br></br> of that entity.</Typography>
+                    <Typography id="para2ofpayment">Make sure all your details are correct—you can’t change<br></br> them after you submit your project for review. Kickstarter<br></br> isn’t responsible for lost bank transfers as a result of<br></br> incorrect or unsupported bank credentials or accounts.</Typography>
+                </Grid>
+
+                <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
+
+                    <Box
+                         id="boxofpaymentofpara2payment"
+                        sx={{
+                            width: 530,
+                            maxWidth: '80%',
+                            borderRadius: '0%',
+                            marginLeft: '27%',
+                            border: '1px solid grey',
+                            padding: '20px',
+                            backgroundColor: '#FBFBFA'
+
+                        }}
+                    >
+                        <Typography><LockIcon /></Typography>
+                        <Typography id="TypooFpeopleS4">Complete the above steps to unlock this section</Typography>
+
+                    </Box>
 
     //toPaymentMethod(projectId);
   };
@@ -78,6 +210,7 @@ const PaymentMethod = (props: Props) => {
               account.
             </Typography>
           </Grid>
+
 
           <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
             <Box
@@ -175,6 +308,18 @@ const PaymentMethod = (props: Props) => {
             </Typography>
           </Grid>
 
+
+                    <Box
+                         id="boxofpaymentofpara2payment"
+                        sx={{
+                            width: 560,
+                            maxWidth: '75.5%',
+                            borderRadius: '0%',
+                            marginLeft: '28%',
+                            border: '1px solid grey',
+                            padding: '20px',
+                            backgroundColor: '#FBFBFA'
+
           <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
             <Box
               sx={{
@@ -233,6 +378,7 @@ const PaymentMethod = (props: Props) => {
               <br></br> incorrect or unsupported bank credentials or accounts.
             </Typography>
           </Grid>
+
 
           <Grid xs={12} sm={10} md={8} lg={6} id="Grid2peopleScreen4">
             <Box
