@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import logo from "../images/logo.png"
 import SearchIcon from '@mui/icons-material/Search';
 import DiscoverModal from "../DiscoverModal/DiscoverModal";
+import Navbar from "./Navbar";
 
 
 const Search = styled("div")(({ theme }) => ({
@@ -86,7 +87,7 @@ const Header: React.FC<Header> = () => {
     }
     return (
         <>
-
+{/* <Navbar/> */}
             <Box sx={{ flexGrow: 1 }} className="TopBarx1">
                 <AppBar id="TopNavbarx12" className={oldSticky}>
                     <Toolbar>
@@ -121,7 +122,7 @@ const Header: React.FC<Header> = () => {
                                 </Link>
                             </Grid>
 
-                            <Grid item xs={2} id="itemsysearch">
+                            <Grid item xs={4} id="itemsysearch">
                                 <Search id="a1">
                                     <SearchIconWrapper id="a1"></SearchIconWrapper>
                                     <SearchIcon />
@@ -130,34 +131,35 @@ const Header: React.FC<Header> = () => {
                                         inputProps={{ "aria-label": "search" }}
                                     />
                                 </Search>
-
-
-                     
+                            </Grid>
                             <Grid item xs={2} id="itemsysearch2">
                            
-                                    <Link to="/login">
-                                        Login
-                                    </Link>
-                                </Grid>
-                            </Grid>
+                           <Link to="/login">
+                               Login
+                           </Link>
+                       </Grid>
                         </Grid>
 
                     </Toolbar>
                 </AppBar>
             </Box>
-            <Grid xs={12} sm={12} md={12} lg={12} >
-                <Stack direction="row" spacing={1} id="button1x1">
-                    <Grid xs={4} lg={4} id="headformtopnext" >
+            <br/>
+            <br/>
+            <br/>
+          
+            <Grid xs={12}  style={{display:"flex",justifyContent:"center"}}>
+                <Stack direction="row" spacing={2} id="button1x1">
+                    <Grid xs={12} lg={4} id="headformtopnext" >
                         <Typography id="h3ofbecomeinvest">
                             Become an invester
                         </Typography>
                     </Grid>
-                    <Grid xs={4} lg={4} id="headformtopnext" >
+                    <Grid xs={12} lg={4} id="headformtopnext" >
                         <Typography id="h3ofbecomeinvest">
                             Become a member
                         </Typography>
                     </Grid>
-                    <Grid xs={4} lg={4} id="headformtopnext" >
+                    <Grid xs={12}  lg={4} id="headformtopnext" >
                         <Typography id="h3ofbecomeinvest">
                             Join the investingverse
                         </Typography>

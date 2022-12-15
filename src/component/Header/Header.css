@@ -29,8 +29,8 @@
     color: #494949;
     font-family: "CircularStd-Book";
     text-decoration: none;
-    padding-right: 20px;
-    margin-top: 20px;
+    /* padding-right: 20px; */
+    margin-top: 10px;
 }
 
 #ax1 {
@@ -62,10 +62,10 @@
     margin-top: 20px;
 }
 
-#button1x1 {
+/* #button1x1 {
     margin-top: 5%;
     margin-left: 33%;
-}
+} */
 
 #itemsysearch {
     display: flex;
@@ -103,6 +103,7 @@
 #h3ofbecomeinvest {
     margin: 15px;
     padding-top: 1px;
+    font-family: "CircularStd-Book";
 
 }
 
@@ -150,7 +151,7 @@
 }
 
 
-@media (min-width: 100px) and (max-width: 870px) {
+/* @media (min-width: 100px) and (max-width: 870px) {
     #itemsysearch {
         display: flex;
         padding-left: 35%;
@@ -222,8 +223,8 @@
         padding-right: 20px;
 
     }
-}
-
+} */
+/* 
 @media (min-width: 870px) and (max-width: 1200px) {
     #itemsysearch {
         display: flex;
@@ -295,14 +296,14 @@
         padding-right: 20px;
 
     }
-}
+} */
 
 @media (min-width: 100px) and (max-width: 414px) {
-    #headformtopnext {
+    /* #headformtopnext {
         padding-top: 28%;
         padding-bottom: 20px;
         justify-content: center;
         font-size: 1.3rem;
         margin-left: 41%;
-    }
+    } */
 }
