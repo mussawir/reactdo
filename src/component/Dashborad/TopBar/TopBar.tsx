@@ -1,9 +1,7 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
-import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -12,14 +10,13 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import Avatar from "@mui/material/Avatar";
 import ListItemText from "@mui/material/ListItemText";
-// import { Link, Outlet } from "react-router-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 type Props = {};
 
 
 function TopBar({}: Props) {
-
+  const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -30,6 +27,11 @@ function TopBar({}: Props) {
       setAnchorEl(null);
     };
     
+    const logout=()=>{                    
+      localStorage.removeItem("token");
+      navigate("/login");
+    };
+
   return (
     <>
       <AppBar
@@ -87,7 +89,7 @@ function TopBar({}: Props) {
               <Link to="/myaccount">My Acount</Link>
             </MenuItem>
 
-            <MenuItem onClick={handleClose}>
+            <MenuItem onClick={logout}>
               <Link to="/login">Logout</Link>
             </MenuItem>
           </Menu>

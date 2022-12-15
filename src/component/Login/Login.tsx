@@ -14,8 +14,7 @@ import {
   Checkbox,
 } from "@mui/material";
 
-import EmailField from "./../CustomTextField/EmailField";
-import PasswordField from "./../CustomTextField/PasswordField";
+
 import "../Login/LoginStyle.css";
 import CheckBoxFlied from "./../CustomTextField/CheckBoxFlied";
 import Header from "../Header/Header";
@@ -31,6 +30,7 @@ const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [isCheckedA, setIsCheckedA] = useState(false);
+  const [token, setToken] =useState("");
   const handleChangeA = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsCheckedA(e.target.checked);
   };
@@ -51,28 +51,32 @@ const Login = () => {
         console.log("ResultResultResultResultResultResult", res);
         console.log("token", res.data.token);
         localStorage.setItem("token" ,JSON.stringify(res.data.token));
-        // var token = res.data.token;
+         let getToken = res.data.token;
+         setToken(getToken);
+         console.log(token,"Token");
         navigate("/dashboard");
       })
       .catch((err: any) => {
         console.log(err, "error");
       });
 
-    
+      
 
-    if(localStorage.getItem("token")){
-      navigate("/dashboard");
-    }else{
+    // if(localStorage.getItem("token")){
+    //   navigate("/dashboard");
+    // }else{
+    //   navigate("/login");
+    // }
+
+  
+
+  };
+    // New Token Cheking Authentication Code
+  useEffect(() => {
+    if(!token) {
       navigate("/login");
     }
-  };
-
-  // useEffect(() => {
-  //  localStorage.setItem("token" ,JSON.stringify ());
-  //   if (auth) {
-  //     navigate("/dashboard");
-  //   }
-  // }, []);
+  }, [])
 
   return (
     <>
@@ -130,12 +134,12 @@ const Login = () => {
               </Divider>
             </Grid>
 
-            <Button id="signin-btn" variant="contained" type="submit">
+            <Button id="signin-btn" variant="contained" >
               <AppleIcon />
                Sign in with Apple
             </Button>
 
-            <Button id="signin-btn" variant="contained" type="submit">
+            <Button id="signin-btn" variant="contained" >
                <FacebookIcon /> Continue with Facebook
             </Button>
           </form>
