@@ -190,7 +190,7 @@ const Basic = (props: Props) => {
         </Grid>
 
         <Divider id="dividerafterpeopletypo2" />
-        <Grid container id="TypOofStory3">
+        {/* <Grid container id="TypOofStory3">
           <Grid xs={12} sm={12} md={8} lg={5} id="fourField">
             <Typography id="Typoheadingofgrid2">Project category</Typography>
             <Typography id="paraofstoryscreenz">
@@ -288,7 +288,7 @@ const Basic = (props: Props) => {
               </Box>
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
         <Divider id="dividerafterpeopletypo2" />
         <Grid container id="TypOofStory3">
           <Grid xs={12} sm={12} md={12} lg={5}>
@@ -600,10 +600,10 @@ const Basic = (props: Props) => {
                           id="outlined-required"
                           type="time"
                           placeholder="Fixed number of days (1-60)"
-                          value={cDFixed}
-                          onChange={(e) => {
-                            setCDFixed(e.target.value);
-                          }}
+                          // value={cDFixed}
+                          // onChange={(e) => {
+                          //   setCDFixed(e.target.value);
+                          // }}
                         />
                       </Grid>
                     </Grid>
