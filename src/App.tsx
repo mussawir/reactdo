@@ -29,6 +29,9 @@ import Story from "./component/CreateProjectTabs/Tabs/Story/Story";
 import MyTeam from "./component/CreateProjectTabs/Tabs/MyTeam/MyTeam";
 import PaymentMethod from "./component/CreateProjectTabs/Tabs/PaymentMethod/PaymentMethod";
 import DiscoverProjects from './component/DiscoverProjects/DiscoverProjects';
+import AdminDashboard from "./component/New Dashboard/AdminDashboard";
+import Admin from "./component/New Dashboard/Pages/Admin/Admin";
+import Project from './component/New Dashboard/Pages/Project/Project';
 // type myProps = {
 //   ProjectId:string,
 //   ID:string
@@ -76,6 +79,9 @@ const  App = () => {
           <Route path="/paymentmethod/:projectId" element={<PaymentMethod />} />
         </Route>
         <Route path="*" element={<NoMatch />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/admindashboard/admin" element={<Admin />} />
+        <Route path="/admindashboard/projectdetails" element={<Project />} />
       </Routes>
     </>
   );
