@@ -54,7 +54,12 @@ const Login = () => {
          let getToken = res.data.token;
          setToken(getToken);
          console.log(token,"Token");
-        navigate("/dashboard");
+      
+        if(email == "admin@gmail.com"){
+          navigate("/admindashboard/adashboard");
+        }else{
+          navigate("/dashboard");
+        }
       })
       .catch((err: any) => {
         console.log(err, "error");
@@ -76,6 +81,7 @@ const Login = () => {
     if(!token) {
       navigate("/login");
     }
+   
   }, [])
 
   return (

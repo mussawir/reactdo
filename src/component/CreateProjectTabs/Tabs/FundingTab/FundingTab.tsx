@@ -6,6 +6,7 @@ import { useParams, useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 import Footer from '../../../Footer/Footer';
 import Header from '../../../Header/Header';
+import TopBar from './../../../Dashborad/TopBar/TopBar';
 
 type Props = {}
 
@@ -45,7 +46,7 @@ const FundingTab = (props: Props) => {
         <>
 
 
-        <Header/>
+        <TopBar/>
             <Grid>
             <Grid xs={12} sm={10} md={8} lg={6}>
         <Typography id="PeopleScreensTypo1">

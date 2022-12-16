@@ -18,6 +18,7 @@ import MyTeam from './Tabs/MyTeam/MyTeam';
 import PaymentMethod from './Tabs/PaymentMethod/PaymentMethod';
 // import Basic from './Tabs/Basic/Basic';
 import {Link } from "react-router-dom";
+import TopBar from './../Dashborad/TopBar/TopBar';
 
 const CreateProjectTabs = ()=>{
 
@@ -30,7 +31,7 @@ const CreateProjectTabs = ()=>{
   return (
     <>
 
-    <Header/>
+    <TopBar/>
     <Grid>
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>

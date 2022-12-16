@@ -28,15 +28,16 @@ import FundingTab from "./component/CreateProjectTabs/Tabs/FundingTab/FundingTab
 import Story from "./component/CreateProjectTabs/Tabs/Story/Story";
 import MyTeam from "./component/CreateProjectTabs/Tabs/MyTeam/MyTeam";
 import PaymentMethod from "./component/CreateProjectTabs/Tabs/PaymentMethod/PaymentMethod";
-import DiscoverProjects from './component/DiscoverProjects/DiscoverProjects';
+import DiscoverProjects from "./component/DiscoverProjects/DiscoverProjects";
 import AdminDashboard from "./component/New Dashboard/AdminDashboard";
 import Admin from "./component/New Dashboard/Pages/Admin/Admin";
-import Project from './component/New Dashboard/Pages/Project/Project';
+import Project from "./component/New Dashboard/Pages/Project/Project";
+import ADashboard from "./component/New Dashboard/Pages/ADashboard/ADashboard";
 // type myProps = {
 //   ProjectId:string,
 //   ID:string
 // };
-const  App = () => {
+const App = () => {
   return (
     <>
       <Routes>
@@ -48,7 +49,7 @@ const  App = () => {
         <Route path="/project" element={<StartProject />} />
         <Route path="/projectoverview" element={<ProjectOverview />} />
         <Route path="/location/:projectId" element={<Location />} />
-        <Route path="/discoverprojects" element={<DiscoverProjects/>} />
+        <Route path="/discoverprojects" element={<DiscoverProjects />} />
         {/* <Route path="/location/:projecId" element={<Location{...projectId}/>} /> */}
         {/* <Route
   path='/project/:id'
@@ -71,20 +72,30 @@ const  App = () => {
           <Route path="/myredux" element={<MyRedux />} />
           <Route path="/page2" element={<Page2 />} />
           //Create Project Tab Route///
-          <Route path="/creatproject/:projectId" element={<CreateProjectTabs />} />
+          <Route
+            path="/creatproject/:projectId"
+            element={<CreateProjectTabs />}
+          />
           <Route path="/basic/:projectId" element={<Basic />} />
           <Route path="/fundingtab/:projectId" element={<FundingTab />} />
           <Route path="/story/:projectId" element={<Story />} />
           <Route path="/myteam/:projectId" element={<MyTeam />} />
           <Route path="/paymentmethod/:projectId" element={<PaymentMethod />} />
-        </Route>
-        <Route path="*" element={<NoMatch />} />
-        <Route path="/admindashboard" element={<AdminDashboard />} />
+       
+////Admin DashBoard
+          <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/admindashboard/adashboard" element={<ADashboard />} />
         <Route path="/admindashboard/admin" element={<Admin />} />
         <Route path="/admindashboard/projectdetails" element={<Project />} />
+        </Route>
+        {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
+
+     
+      
+    
     </>
   );
-}
+};
 
 export default App;

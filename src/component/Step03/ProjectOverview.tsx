@@ -9,9 +9,9 @@ import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "../Step03/ProjectOverviewStyle.css";
-import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import TopBar from "../Dashborad/TopBar/TopBar";
 const style = {
   width: "100%",
   maxWidth: "100%",
@@ -35,7 +35,7 @@ const ProjectOverview = (props: Props) => {
   return (
     <>
               {/* {props.name}  */}
-    <Header/>
+    <TopBar/>
       <Grid>
         <Grid id="firstGridOfPreview">
           <Typography id="TypoOfPREVIEW1">Games Project</Typography>

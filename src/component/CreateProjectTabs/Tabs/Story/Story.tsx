@@ -15,6 +15,7 @@ import { useParams, useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 import Footer from '../../../Footer/Footer';
 import Header from '../../../Header/Header';
+import TopBar from './../../../Dashborad/TopBar/TopBar';
 type Props = {}
 
 const Story = (props: Props) => {
@@ -55,7 +56,7 @@ const Story = (props: Props) => {
     return (
 
         <>
-        <Header/>
+        <TopBar/>
             <Grid>
                 <Grid id="Grid1OfStoryScreen">
                     <Typography id="typo1ofstory">
