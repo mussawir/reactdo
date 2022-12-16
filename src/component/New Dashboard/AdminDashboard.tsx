@@ -11,12 +11,17 @@ import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import Divider from '@mui/material/Divider';
 import TopAppBar from './TopBarDashboard/TopAppBar';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 type Props = {}
 
 const AdminDashboard = (props: Props) => {
   return (
     <>
-    <TopAppBar/>
+   {/* <TopAppBar/> */}
 
 
 
@@ -28,18 +33,18 @@ const AdminDashboard = (props: Props) => {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <ImageIcon />
+            <DashboardIcon />
           </Avatar>
         </ListItemAvatar>
-      <Link  to="/admindashboard">
-      <ListItemText primary="Home"  />
+      <Link  to="/admindashboard/adashboard">
+      <ListItemText primary="Dashboard"  />
         </Link>  
       </ListItem>
       <Divider  component="li" />
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <WorkIcon />
+            <AdminPanelSettingsIcon />
           </Avatar>
         </ListItemAvatar>
         <Link to="/admindashboard/admin"><ListItemText primary="Admin"  /></Link>
@@ -48,7 +53,7 @@ const AdminDashboard = (props: Props) => {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <BeachAccessIcon />
+            <AutoGraphIcon />
           </Avatar>
         </ListItemAvatar>
         <Link to="/admindashboard/projectdetails">  <ListItemText primary="Project" /></Link>
@@ -58,7 +63,7 @@ const AdminDashboard = (props: Props) => {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <BeachAccessIcon />
+            <SupervisorAccountIcon />
           </Avatar>
         </ListItemAvatar>
         <Link to="/admindashboard/projectdetails">  <ListItemText primary="User" /></Link>
@@ -67,7 +72,7 @@ const AdminDashboard = (props: Props) => {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <BeachAccessIcon />
+            <AccountBoxIcon />
           </Avatar>
         </ListItemAvatar>
         <Link to="/admindashboard/projectdetails">  <ListItemText primary="Profile" /></Link>

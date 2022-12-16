@@ -13,6 +13,7 @@ import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import TopBar from './../../../Dashborad/TopBar/TopBar';
 
 type Props = {};
 
@@ -104,7 +105,7 @@ const Basic = (props: Props) => {
 
   return (
     <>
-      <Header />
+      <TopBar />
       <Grid>
         <Grid xs={12} sm={10} md={12} lg={6}>
           <Typography id="PeopleScreensTypo1">

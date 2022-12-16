@@ -11,10 +11,10 @@ import Button from "@mui/material/Button";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "../Step02/LocationStyle.css";
 import { Link, useParams, useNavigate  } from "react-router-dom";
-import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import axios from "axios";
+import TopBar from "../Dashborad/TopBar/TopBar";
 type Props = { 
 };
 
@@ -71,7 +71,7 @@ const Location = (props: Props) => {
 
   return (
     <>
-      <Header />
+      <TopBar />
       <Grid id="FirstGridForlocation">
         <Box>
           <Typography id="headingoflocation">

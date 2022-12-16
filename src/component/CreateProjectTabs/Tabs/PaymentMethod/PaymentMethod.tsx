@@ -8,6 +8,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../../Footer/Footer";
 import Header from "../../../Header/Header";
+import TopBar from './../../../Dashborad/TopBar/TopBar';
 type Props = {};
 
 const PaymentMethod = (props: Props) => {
@@ -52,7 +53,7 @@ const PaymentMethod = (props: Props) => {
   };
   return (
     <>
-      <Header />
+      <TopBar />
       <Grid>
         <Grid>
           <Typography id="firstheadingofpaymentscreen">

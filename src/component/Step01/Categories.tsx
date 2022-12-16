@@ -14,6 +14,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import axios from "axios";
 import Location from "../Step02/Location";
+import TopBar from './../Dashborad/TopBar/TopBar';
 
 type Props = {
 };
@@ -111,7 +112,7 @@ const Categories = (props: Props) => {
 
   return (
     <>
-      <Header />
+      <TopBar />
       <Grid id="FirstGridForCategory">
         <Box>
           <Typography id="headingofCatergoryscreen">

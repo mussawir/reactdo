@@ -2,11 +2,11 @@ import React from 'react'
 import AdminDashboard from '../../AdminDashboard'
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import './AdminStyle.css'
+// import './AdminStyle.css'
 import TopAppBar from '../../TopBarDashboard/TopAppBar';
 type Props = {}
 
-const Admin = (props: Props) => {
+const ADashboard = (props: Props) => {
   return (
 
 
@@ -21,7 +21,9 @@ const Admin = (props: Props) => {
         </Grid>
         <Grid item xs={7} sm={8} md={10} lg={10}>
        <>
-       Admin
+       DASHBOARD
+       
+       
        </>
         </Grid>
       </Grid>
@@ -34,4 +36,4 @@ const Admin = (props: Props) => {
   )
 }
 
-export default Admin
+export default ADashboard
