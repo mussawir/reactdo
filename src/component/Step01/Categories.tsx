@@ -97,7 +97,7 @@ const Categories = (props: Props) => {
     console.log(categoryId, "categoryId");
     axios
       // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
-      .get("http://localhost:5000/subcategories/" + categoryID)
+      .get("http://localhost:5000/scategories/" + categoryID)
       .then((res) => {
         // console.log(res, "sub_categories Cheched");
         let SubCategoryApi = res?.data;
