@@ -13,9 +13,11 @@ import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import TopBar from './../../../Dashborad/TopBar/TopBar';
+import TopBar from "./../../../Dashborad/TopBar/TopBar";
 
 type Props = {};
+
+let formData = new FormData();
 
 const currencies = [
   {
@@ -56,8 +58,8 @@ const Basic = (props: Props) => {
       .patch("http://localhost:5000/project/basic/" + projectId, {
         title: title,
         subTitle: subTitle,
-        image: image,
         video: video,
+        image:image,
         websiteUrl: websiteUrl,
         targetLaunchDate: targetLaunchDate,
         duration: duration,
@@ -76,8 +78,21 @@ const Basic = (props: Props) => {
         console.log(err, "error");
       });
 
-     toFunding(projectId);
+  
+   
+    if(formData.get("image") !==null){
+      axios
+      .post("http://localhost:5000/fileupload/one", formData)
+      .then((response) => {
+        console.log(response.data.filename,"image-Data");
+        let ImageName = response.data.filename;
+        setimage(ImageName);
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
   };
+    }
 
   const [formats, setFormats] = React.useState(() => [
     "bold",
@@ -348,7 +363,6 @@ const Basic = (props: Props) => {
             </Typography>
           </Grid>
           <Grid xs={10} sm={10} md={8} lg={7} id="Grid2peopleScreen4">
-
             <Box
               id="fullWidthx"
               sx={{
@@ -365,8 +379,9 @@ const Basic = (props: Props) => {
                     type="file"
                     id="input-file-upload"
                     value={image}
-                    onChange={(e) => {
-                      setimage(e.target.value);
+                    onChange={(e: any) => {
+                      // setimage(e.target.value);
+                      formData.append("image", e.target.files[0]);
                     }}
                     style={{ opacity: 0 }}
                   />
@@ -439,7 +454,7 @@ const Basic = (props: Props) => {
                 </Grid>
               </Grid>
             </Box>
-      
+
             <Box>
               <Button color="success" id="buttonofstoryscreen4">
                 <LocationOnIcon /> 80% of successful projects have a video. Make
@@ -471,7 +486,6 @@ const Basic = (props: Props) => {
                 border: "1px solid ",
               }}
             >
-              
               <Grid id="ContainerSelectdate">
                 <TextField
                   id="Selectdate"
