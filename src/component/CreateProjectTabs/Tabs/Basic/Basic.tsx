@@ -3,40 +3,23 @@ import axios from "axios";
 import "../Basic/Basic.css";
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import MenuItem from "@mui/material/MenuItem";
 import InsertPhotoIcon from "@mui/icons-material/InsertPhoto";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import { useParams, useNavigate } from "react-router-dom";
-import Header from "../../../Header/Header";
 import Footer from "../../../Footer/Footer";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import TopBar from "./../../../Dashborad/TopBar/TopBar";
+import { updateSourceFile } from "typescript";
+
+
 
 type Props = {};
 
 let formData = new FormData();
 
-const currencies = [
-  {
-    value: "USD",
-    label: "Select",
-  },
-  {
-    value: "EUR",
-    label: "Select",
-  },
-  {
-    value: "BTC",
-    label: "Select",
-  },
-  {
-    value: "JPY",
-    label: "Select",
-  },
-];
+
 
 const Basic = (props: Props) => {
   const navigate = useNavigate();
@@ -44,55 +27,74 @@ const Basic = (props: Props) => {
   const [title, settitle] = React.useState("");
   const [subTitle, setSubTitle] = React.useState("");
   const [websiteUrl, setWebsiteUrl] = React.useState("");
-  const [image, setimage] = React.useState("");
+  const [projectImage, setProjectImage] = React.useState("");
+  const [image, setImage] = React.useState("");
+  const [File, SetFile] = React.useState("");
   const [video, setVideo] = React.useState("");
   const [targetLaunchDate, setTargetLaunchDate] = React.useState("");
   const [duration, setDuration] = React.useState("");
   const [cDFixed, setCDFixed] = React.useState("");
+  let imagefile: string;
+
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(projectId);
-
+   // saveBasicInfo();
+   updateFileName("newfile.jpg"); 
+  }
+ 
+  const saveBasicInfo= () =>{
     axios
-      .patch("http://localhost:5000/project/basic/" + projectId, {
-        title: title,
-        subTitle: subTitle,
-        video: video,
-        image:image,
-        websiteUrl: websiteUrl,
-        targetLaunchDate: targetLaunchDate,
-        duration: duration,
-        cDFixed: cDFixed,
-      })
+    .patch("http://localhost:5000/project/basic/" + projectId, {
+      title: title,
+      subTitle: subTitle,
+      video: video,
+      projectImage:projectImage,
+      websiteUrl: websiteUrl,
+      targetLaunchDate: targetLaunchDate,
+      duration: duration,
+      cDFixed: cDFixed,
+    })
+    .then((res) => {
+   //   console.log(res, "Result");
+    //  console.log("Basic Screen image name", res.data.projectImage);
+    uploadFile();
+    })
+    .catch((err) => {
+      console.log(err, "error");
+    });
 
-      // axios.patch("http://localhost:5000/project/basic/" + projectId, {
-      //   title: title,
-      //   subTitle:subTitle
-      // })
-      .then((res) => {
-        console.log(res, "Result");
-        console.log("Basic Screen Updated Data", res.data);
-      })
-      .catch((err) => {
-        console.log(err, "error");
-      });
+  }
 
-  
-   
+
+  const uploadFile = () =>{
     if(formData.get("image") !==null){
       axios
-      .post("http://localhost:5000/fileupload/one", formData)
+       //.post("http://localhost:5000/fileupload/one", formData)
+      .post("http://localhost:5000/project/basicfile/" + projectId ,formData)
       .then((response) => {
-        console.log(response.data.filename,"image-Data");
-        let ImageName = response.data.filename;
-        setimage(ImageName);
+        SetFile(response.data.filename);
+        imagefile = response.data.filename;
+    // console.log(imagefile);
+    updateFileName("imagefile");
       })
       .catch((error) => {
         console.log("Error", error);
       });
   };
-    }
+  }
+   
+  const updateFileName = (myfilename:any) => {
+    axios
+    .patch("http://localhost:5000/project/updateImageName/" + projectId, "imagename.jpg")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log("Error", error);
+    });
+  };
+ 
 
   const [formats, setFormats] = React.useState(() => [
     "bold",
@@ -106,7 +108,7 @@ const Basic = (props: Props) => {
   ) => {
     setFormats(newFormats);
   };
-
+ 
   const [currency, setCurrency] = React.useState("EUR");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -378,7 +380,7 @@ const Basic = (props: Props) => {
                   <input
                     type="file"
                     id="input-file-upload"
-                    value={image}
+                    value={projectImage}
                     onChange={(e: any) => {
                       // setimage(e.target.value);
                       formData.append("image", e.target.files[0]);
