@@ -79,10 +79,10 @@ const Basic = (props: Props) => {
       });
   };
   }
-   
-  const updateFileName = (myfilename:any) => {
+  //myfilename:string
+  const updateFileName = (filename: string) => {
     axios
-    .patch("http://localhost:5000/project/updateImage/" + projectId, )
+    .patch("http://localhost:5000/project/updateProjectImage/" + projectId, {'projectImage' : filename})
     .then((response) => {
       console.log(response.data);
     })
@@ -394,6 +394,21 @@ const Basic = (props: Props) => {
                   </Typography>
                 </Grid>
               </Grid>
+              {/* <Grid id="GRIDoFlAST" container>
+          <Grid xs={12} sm={6} md={6} lg={6} id="Buttonofbackinrewards"></Grid>
+          <Grid xs={12} sm={6} md={6} lg={6} id="ButtonofStORYforSave">
+            <Button
+              onClick={updateFileName}
+              variant="contained"
+              type="submit"
+              color="primary"
+              id="ButtonofStORYforSave"
+            >
+              Save
+            </Button>
+          </Grid>
+          <br></br>
+        </Grid> */}
             </Box>
           </Grid>
         </Grid>
