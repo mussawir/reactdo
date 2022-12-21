@@ -86,7 +86,7 @@ const Basic = (props: Props) => {
    
   const updateFileName = (myfilename:any) => {
     axios
-    .patch("http://localhost:5000/project/updateImageName/" + projectId, "imagename.jpg")
+    .patch("http://localhost:5000/project/updateImage/" + projectId, "imagename.jpg")
     .then((response) => {
       console.log(response.data);
     })
