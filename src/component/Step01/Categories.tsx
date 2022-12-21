@@ -23,17 +23,58 @@ const Categories = (props: Props) => {
   
   const navigate = useNavigate();
   ////Category ////
-  const [GetCatData, SetCatData] = React.useState<any[]>([]);
+  const [getCatData, SetCatData] = React.useState<any[]>([]);
   const [catId, setCatId] = React.useState<any>("");
   const [SubCatData, SetSubCatData] = React.useState<any[]>([]);
   const [SubcatId, setSubCatId] = React.useState<any>("");
 
-
   //////////Created Project Api////////
   const [categoryId, SetcategoryId] = React.useState("");
   const [subcatId, setsubcatId] = React.useState("");
- const [docId, setdocId] = React.useState("");
+  const [docId, setdocId] = React.useState("");
   const [projectId, SetProjectId] = React.useState("");
+
+
+  // On page load bring list of categories
+  useEffect(() => {
+    axios
+      .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
+      .then((res) => {
+        // console.log(res, "categories Cheched");
+        let CategoryApi = res?.data;
+        SetCatData(CategoryApi);
+        //console.log(data,"usestate Data")
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+  }, []);
+  ////Category End////
+
+  /////////////////Sub-Category //////////////
+  const GetSubCats = (event: SelectChangeEvent) => {
+    setCatId(event.target.value as string);
+    // console.log(catId,"sub Cat_categories Cheched");
+    var categoryID = event.target.value;
+    SetcategoryId(categoryID);
+    console.log(categoryId, "categoryId");
+    axios
+      // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
+      .get("http://localhost:5000/subcategories/" + categoryID)
+      .then((res) => {
+        // console.log(res, "sub_categories Cheched");
+        let SubCategoryApi = res?.data;
+        SetSubCatData(SubCategoryApi);
+        console.log(SubCatData, "sub_categories Data");
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+  };
+  ////Sub Category End////
+
+
+  //Create a new project with categories and sub categories
   const handleCreateProject = (e: any) => {
     e.preventDefault();
     console.log();
@@ -72,43 +113,9 @@ const Categories = (props: Props) => {
       console.log(subcatId, "subcatId");
   };
 
-  // Bring list of categories
-  useEffect(() => {
-    axios
-      .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
-      .then((res) => {
-        // console.log(res, "categories Cheched");
-        let CategoryApi = res?.data;
-        SetCatData(CategoryApi);
-        //console.log(data,"usestate Data")
-      })
-      .catch((err) => {
-        console.log(err, "error");
-      });
-  }, []);
-  ////Category End////
 
-  /////////////////Sub-Category //////////////
-  const GetSubCats = (event: SelectChangeEvent) => {
-    setCatId(event.target.value as string);
-    // console.log(catId,"sub Cat_categories Cheched");
-    var categoryID = event.target.value;
-    SetcategoryId(categoryID);
-    console.log(categoryId, "categoryId");
-    axios
-      // .get("https://sea-lion-app-en7u9.ondigitalocean.app/subcategories/68a8d684-f6d1-4dee-9cc8-9c926ddacd41")
-      .get("http://localhost:5000/scategories/" + categoryID)
-      .then((res) => {
-        // console.log(res, "sub_categories Cheched");
-        let SubCategoryApi = res?.data;
-        SetSubCatData(SubCategoryApi);
-        console.log(SubCatData, "sub_categories Data");
-      })
-      .catch((err) => {
-        console.log(err, "error");
-      });
-  };
-  ////Sub Category End////
+
+
 
   return (
     <>
@@ -134,7 +141,6 @@ const Categories = (props: Props) => {
                     <InputLabel id="demo-simple-select-label">
                       Select Main Category
                     </InputLabel>
-
                     <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
@@ -142,7 +148,7 @@ const Categories = (props: Props) => {
                       label="Select Main Category"
                       onChange={GetSubCats}
                     >
-                      {GetCatData.map((item: any) => (
+                      {getCatData.map((item: any) => (
                         <MenuItem value={item?.categoryId}>
                           {item?.name}
                         </MenuItem>

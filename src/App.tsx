@@ -59,7 +59,7 @@ const App = () => {
   }}
 /> */}
 
-        <Route element={<PrivateCopmonent />}>
+        {/* <Route element={<PrivateCopmonent />}> */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/disbursment" element={<Disbursment />} />
           <Route path="/funding" element={<Funding />} />
@@ -87,7 +87,7 @@ const App = () => {
           <Route path="/admindashboard/adashboard" element={<ADashboard />} />
         <Route path="/admindashboard/admin" element={<Admin />} />
         <Route path="/admindashboard/projectdetails" element={<Project />} />
-        </Route>
+        {/* </Route> */}
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
 
