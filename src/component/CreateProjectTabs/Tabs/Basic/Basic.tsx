@@ -11,15 +11,10 @@ import Footer from "../../../Footer/Footer";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import TopBar from "./../../../Dashborad/TopBar/TopBar";
-import { updateSourceFile } from "typescript";
-
-
 
 type Props = {};
 
 let formData = new FormData();
-
-
 
 const Basic = (props: Props) => {
   const navigate = useNavigate();
@@ -28,19 +23,19 @@ const Basic = (props: Props) => {
   const [subTitle, setSubTitle] = React.useState("");
   const [websiteUrl, setWebsiteUrl] = React.useState("");
   const [projectImage, setProjectImage] = React.useState("");
-  const [image, setImage] = React.useState("");
   const [File, SetFile] = React.useState("");
   const [video, setVideo] = React.useState("");
   const [targetLaunchDate, setTargetLaunchDate] = React.useState("");
   const [duration, setDuration] = React.useState("");
   const [cDFixed, setCDFixed] = React.useState("");
+
   let imagefile: string;
 
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-   // saveBasicInfo();
-   updateFileName("newfile.jpg"); 
+    saveBasicInfo();
+   //updateFileName("newfile.jpg"); 
   }
  
   const saveBasicInfo= () =>{
@@ -73,10 +68,11 @@ const Basic = (props: Props) => {
        //.post("http://localhost:5000/fileupload/one", formData)
       .post("http://localhost:5000/project/basicfile/" + projectId ,formData)
       .then((response) => {
-        SetFile(response.data.filename);
+        SetFile(response.data);
+       
         imagefile = response.data.filename;
-    // console.log(imagefile);
-    updateFileName("imagefile");
+     console.log(imagefile,"Image Name Here");
+    updateFileName(imagefile);
       })
       .catch((error) => {
         console.log("Error", error);
@@ -86,7 +82,7 @@ const Basic = (props: Props) => {
    
   const updateFileName = (myfilename:any) => {
     axios
-    .patch("http://localhost:5000/project/updateImageName/" + projectId, "imagename.jpg")
+    .patch("http://localhost:5000/project/updateImage/" + projectId, )
     .then((response) => {
       console.log(response.data);
     })
@@ -382,7 +378,7 @@ const Basic = (props: Props) => {
                     id="input-file-upload"
                     value={projectImage}
                     onChange={(e: any) => {
-                      // setimage(e.target.value);
+                      setProjectImage(e.target.value);
                       formData.append("image", e.target.files[0]);
                     }}
                     style={{ opacity: 0 }}
