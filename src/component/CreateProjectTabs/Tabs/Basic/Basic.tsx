@@ -15,6 +15,7 @@ import TopBar from "./../../../Dashborad/TopBar/TopBar";
 type Props = {};
 
 let formData = new FormData();
+// let vd = new FormData();
 
 const Basic = (props: Props) => {
   const navigate = useNavigate();
@@ -33,6 +34,8 @@ const Basic = (props: Props) => {
 
 
   const handleSubmit = (e: any) => {
+
+    
     e.preventDefault();
     saveBasicInfo();
    //updateFileName("newfile.jpg"); 
@@ -43,7 +46,7 @@ const Basic = (props: Props) => {
     .patch("http://localhost:5000/project/basic/" + projectId, {
       title: title,
       subTitle: subTitle,
-      video: video,
+       video: video,
       projectImage:projectImage,
       websiteUrl: websiteUrl,
       targetLaunchDate: targetLaunchDate,
@@ -82,7 +85,7 @@ const Basic = (props: Props) => {
   //myfilename:string
   const updateFileName = (filename: string) => {
     axios
-    .patch("http://localhost:5000/project/updateProjectImage/" + projectId, {'projectImage' : filename})
+    .patch("http://localhost:5000/project/updateProjectImage/" + projectId, {'projectImage' : filename,'video' : filename} )
     .then((response) => {
       console.log(response.data);
     })
@@ -447,10 +450,13 @@ const Basic = (props: Props) => {
                   <VideoLibraryIcon id="insertphotoicon" />
                   <input
                     type="file"
+                     accept="video/*"
                     id="input-file-upload"
                     value={video}
-                    onChange={(e) => {
+                    onChange={(e:any) => {
                       setVideo(e.target.value);
+                      formData.append("image", e.target.files[0]);
+                      
                     }}
                     style={{ opacity: 0 }}
                   />
