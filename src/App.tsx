@@ -33,6 +33,7 @@ import AdminDashboard from "./component/New Dashboard/AdminDashboard";
 import Admin from "./component/New Dashboard/Pages/Admin/Admin";
 import Project from "./component/New Dashboard/Pages/Project/Project";
 import ADashboard from "./component/New Dashboard/Pages/ADashboard/ADashboard";
+import DiscoveryOverlay from "./component/discoveryOverlay/discoveryOverlay";
 // type myProps = {
 //   ProjectId:string,
 //   ID:string
@@ -59,7 +60,7 @@ const App = () => {
   }}
 /> */}
 
-        <Route element={<PrivateCopmonent />}>
+        {/* <Route element={<PrivateCopmonent />}> */}
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/disbursment" element={<Disbursment />} />
           <Route path="/funding" element={<Funding />} />
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/myinvestment" element={<MyInvestment />} />
           <Route path="/myaccount" element={<MyAcount />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/discovery_overlay" element={<DiscoveryOverlay />} />
           <Route path="/myredux" element={<MyRedux />} />
           <Route path="/page2" element={<Page2 />} />
           //Create Project Tab Route///
@@ -87,7 +89,8 @@ const App = () => {
           <Route path="/admindashboard/adashboard" element={<ADashboard />} />
         <Route path="/admindashboard/admin" element={<Admin />} />
         <Route path="/admindashboard/projectdetails" element={<Project />} />
-        </Route>
+        
+        {/* </Route> */}
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
 

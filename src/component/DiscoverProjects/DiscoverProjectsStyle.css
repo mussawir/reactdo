@@ -1,3 +1,24 @@
+@font-face {font-family:"CircularStd-Book";
+    src:url('../../component/fonts/CircularStd-Book.otf') format('opentype') }
+    @font-face {font-family:"Circular-Air-Light";
+        src:url('../../component/fonts/Circular-Air-Light.ttf') format('truetype') }
+        @font-face {font-family:"Montserrat-Light";
+          src:url('../../component/fonts/Montserrat-Light.ttf') format('truetype') }
+          @font-face {font-family:"Montserrat-Regular";
+            src:url('../../component/fonts/Montserrat-Regular.ttf') format('truetype') }
+
+            @font-face {font-family:"Montserrat-Bold";
+                src:url('../../component/fonts/Montserrat-Bold.ttf') format('truetype') }
+*{
+    font-family:"CircularStd-Book"
+}
+
+#TopTitle{
+    font-size: 15px;
+    padding: 5px;
+    font-family: "Montserrat-Regular";
+    font-weight: 400;
+}
 #GridforWeLove{
     display: flex;
     text-align: center;
