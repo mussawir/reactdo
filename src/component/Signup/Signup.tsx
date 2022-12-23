@@ -13,10 +13,6 @@ import {
   Checkbox,
   Container,
 } from "@mui/material";
-
-import EmailField from "./../CustomTextField/EmailField";
-import NameField from "./../CustomTextField/NameField";
-import PasswordField from "./../CustomTextField/PasswordField";
 import axios from "axios";
 import "../Signup/SignupStyle.css";
 import CheckBoxFlied from "../CustomTextField/CheckBoxFlied";
@@ -29,6 +25,7 @@ const Signup = (props: Props) => {
   const [name, setName] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  // const [userId, setUserId] = useState("");
   const navigate = useNavigate();
 
   const [isCheckedA, setIsCheckedA] = useState(false);
@@ -48,6 +45,7 @@ const Signup = (props: Props) => {
       name,
       email,
       password,
+      //  userId
     })
    
     .then((res) => {
@@ -67,6 +65,8 @@ const Signup = (props: Props) => {
     if (auth) {
       navigate("/login");
     }
+
+   
   }, []);
     // console.log(name, email,password, isCheckedA, isCheckedB);
   // const OnformSubmit = () => {
@@ -108,7 +108,13 @@ const Signup = (props: Props) => {
           <form onSubmit={handleSubmit}>
             <Grid container direction="column" justifyContent="flex-start">
               <Typography className="Login">Signup</Typography>
-
+              {/* <input
+              type="hidden"
+              value={userId}
+                onChange={(e) => {
+                  setUserId(e.target.value);
+                }}
+              /> */}
               <TextField
                 required
                 id="outlined-required"
@@ -120,6 +126,8 @@ const Signup = (props: Props) => {
                   setName(e.target.value);
                 }}
               />
+
+         
               <p></p>
 
               <TextField

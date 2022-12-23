@@ -15,7 +15,7 @@ import TopBar from "./../../../Dashborad/TopBar/TopBar";
 type Props = {};
 
 let formData = new FormData();
-// let vd = new FormData();
+let videoData = new FormData();
 
 const Basic = (props: Props) => {
   const navigate = useNavigate();
@@ -31,6 +31,7 @@ const Basic = (props: Props) => {
   const [cDFixed, setCDFixed] = React.useState("");
 
   let imagefile: string;
+  let videoFile: string;
 
 
   const handleSubmit = (e: any) => {
@@ -38,7 +39,8 @@ const Basic = (props: Props) => {
     
     e.preventDefault();
     saveBasicInfo();
-   //updateFileName("newfile.jpg"); 
+  
+ 
   }
  
   const saveBasicInfo= () =>{
@@ -54,16 +56,18 @@ const Basic = (props: Props) => {
       cDFixed: cDFixed,
     })
     .then((res) => {
-   //   console.log(res, "Result");
-    //  console.log("Basic Screen image name", res.data.projectImage);
+
     uploadFile();
+    uploadVideo(); //video update Function Here////
+
     })
     .catch((err) => {
       console.log(err, "error");
     });
 
-  }
+    toFunding(projectId);
 
+  }
 
   const uploadFile = () =>{
     if(formData.get("image") !==null){
@@ -85,7 +89,7 @@ const Basic = (props: Props) => {
   //myfilename:string
   const updateFileName = (filename: string) => {
     axios
-    .patch("http://localhost:5000/project/updateProjectImage/" + projectId, {'projectImage' : filename,'video' : filename} )
+    .patch("http://localhost:5000/project/updateProjectImage/" + projectId, {'projectImage' : filename} )
     .then((response) => {
       console.log(response.data);
     })
@@ -95,24 +99,34 @@ const Basic = (props: Props) => {
   };
  
 
-  const [formats, setFormats] = React.useState(() => [
-    "bold",
-    "italic",
-    "underlined",
-  ]);
+//video 
+const uploadVideo = () =>{
+  if(videoData.get("video") !==null){
+    axios
+    .post("http://localhost:5000/project/uploadvideo/" + projectId ,videoData)
+    .then((response) => {
 
-  const handleFormat = (
-    event: React.MouseEvent<HTMLElement>,
-    newFormats: string[]
-  ) => {
-    setFormats(newFormats);
-  };
- 
-  const [currency, setCurrency] = React.useState("EUR");
+      videoFile = response.data.originalname;
+   console.log(videoFile,"Video Name Here");
+   updateVideoName(videoFile);
+    })
+    .catch((error) => {
+      console.log("Error", error);
+    });
+};
+}
+//myfilename:string
+const updateVideoName = (originalname: string) => {
+  axios
+  .patch("http://localhost:5000/project/updateProjectVideo/" + projectId, {'video' : originalname} )
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log("Error", error);
+  });
+};
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrency(event.target.value);
-  };
 
   const toFunding = (projectId: any) => {
     // 👇️ navigate to /
@@ -455,7 +469,7 @@ const Basic = (props: Props) => {
                     value={video}
                     onChange={(e:any) => {
                       setVideo(e.target.value);
-                      formData.append("image", e.target.files[0]);
+                      videoData.append("video", e.target.files[0]);
                       
                     }}
                     style={{ opacity: 0 }}

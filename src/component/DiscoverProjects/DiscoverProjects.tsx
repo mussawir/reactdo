@@ -11,19 +11,22 @@ import Button from "@mui/material/Button";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useEffect } from "react";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import axios from "axios";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
+import { __PATH } from "../../component/env";
 
 type Props = {};
 
 const DiscoverProjects = (props: Props) => {
   const [project, SetProject] = React.useState<[]>([]);
-
+  // const imgpath = "http://localhost:5000/";
   useEffect(() => {
     axios
-      .get("http://localhost:5000/project")
+      //.get("`_PATH` +project")
+     .get(`${__PATH}project`)
       .then((res) => {
         console.log(res, "Get Data");
         SetProject(res?.data);
@@ -32,9 +35,6 @@ const DiscoverProjects = (props: Props) => {
         console.log(err, "error");
       });
   }, []);
-
-  const projectImage =
-    "http://localhost:5000/dickens-lin-aIME5bDuANI-unsplash-64df.jpg";
 
   const Root = styled("div")(({ theme }) => ({
     padding: theme.spacing(1),
@@ -52,63 +52,78 @@ const DiscoverProjects = (props: Props) => {
         <Typography id="Typo2forWeLove">56,015 projects</Typography>
       </Grid>
       <Divider />
-      <Box p={5} id="Gridforwelovecards">
+   
+
+
+
+
+
+  <Box sx={{ flexGrow: 1 }} >
+      <Grid container spacing={4} id="cardContainer">
+      <Grid xs sm={4} md={4} lg={4}> 
         {project.map((item: any) => (
-            <Link to="/discovery_overlay">
-          <Grid sx={{ flexGrow: 1 }} columns={12}>
-            <Grid xs={12} lg={2} style={{ margin: "20px" }}>
-              <Card style={{ padding: "10px" }}>
-                <Typography id="TopTitle">{item?.title}</Typography>
-                {/* {item?.targetLaunchDate} */}
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={projectImage}
-                    alt="Card Image"
-                  />
-                </CardActionArea>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {item?.subTitle}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {item?.description}
-                  </Typography>
+          <Grid>
+<Link  to="/discovery_overlay">
+ <Card id="cardSection">
+                  {/* <Typography id="TopTitle">{item?.title}</Typography> */}
+                  {/* {item?.targetLaunchDate} */}
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image={__PATH + item?.projectImage}
+                      alt="Card Image"
+                    />
+                  </CardActionArea>
+                  <CardContent>
+                    <Typography id="CardSubTitle">{item?.subTitle}</Typography>
+                    <Typography id="CardDescription">
+                      {item?.description}
+                    </Typography>
 
-                  <br />
-                  <Divider />
-                  <br />
+                    <Typography id="CardProjectBy">by {item?.title}</Typography>
+                    <br />
+                    <Divider />
+                    <br />
 
-                  <Typography
-                    variant="body2"
-                    color="text.dark"
-                    style={{ padding: "5px" }}
-                  >
-                    <Grid>
-                      {" "}
-                      {item?.targetAmount}{" "}
-                      <span style={{ color: "gray" }}> pledged </span>{" "}
-                    </Grid>
-                    <Grid>
-                      {" "}
-                      {item?.investorShare}{" "}
-                      <span style={{ color: "gray" }}> funded </span>
-                    </Grid>
-                    <Grid>
-                      {" "}
-                      {item?.duration}{" "}
-                      <span style={{ color: "gray" }}> hours to go </span>
-                    </Grid>
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
+                    <Typography id="footerCard">
+                      <Grid id="footertext">
+                        {item?.targetAmount}
+                        <span id="footerSpan"> pledged </span>
+                      </Grid>
+                      <Grid id="footertext">
+                        {item?.investorShare}{" "}
+                        <span id="footerSpan"> funded </span>
+                      </Grid>
+                      <Grid id="footertext">
+                        {item?.duration}
+                        <span id="footerSpan"> hours to go </span>
+                      </Grid>
+                    </Typography>
+
+                    <Typography id="footerCard">
+                      <Grid id="footertext">
+                        Product Design
+                        <span id="footerSpan">
+                          {" "}
+                          <LocationOnIcon id="cardLocationIcon" /> Location{" "}
+                        </span>
+                      </Grid>
+                    </Typography>
+                  </CardContent>
+                </Card></Link>
           </Grid>
-          </Link>
-        ))}
-      </Box>
+
+))}
+        </Grid>
+
+      
+        
+      </Grid>
+    </Box>
       <br></br>
+
+ 
 
       <Button variant="contained" color="primary" id="ButtonofLoadmore">
         Load More
