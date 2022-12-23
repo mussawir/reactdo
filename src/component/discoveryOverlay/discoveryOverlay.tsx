@@ -14,6 +14,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Footer from "../Footer/Footer";
 import TopBar from "../Dashborad/TopBar/TopBar";
+import TabsDicover from "../discoveryOverlay/TabsDiscovers/TabsDicover";
 
 type Props = {};
 
@@ -114,7 +115,17 @@ function discoveryOverlay(props: Props) {
         </Grid>
       </Grid>
 
-      <Footer />
+     <TabsDicover/>
+
+
+
+
+<br/>
+
+<>
+{/* <Footer /> */}
+</>
+
     </>
   );
 }
