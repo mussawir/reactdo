@@ -12,6 +12,7 @@ import {
   Divider,
   FormControlLabel,
   Checkbox,
+  Container,
 } from "@mui/material";
 
 
@@ -87,8 +88,8 @@ const Login = () => {
   return (
     <>
       <Header />
-      <Box id="LoginFormContainer">
-        <Grid>
+      <Container maxWidth="sm" id='LoginContainer'>
+        <Grid xs={12}>
           <form onSubmit={handleSubmit}>
             <Grid container direction="column" justifyContent="flex-start">
               <Typography className="Login">Login</Typography>
@@ -185,7 +186,7 @@ const Login = () => {
             </small>
           </div>
         </Grid>
-      </Box>
+      </Container>
 
       <Footer />
     </>
