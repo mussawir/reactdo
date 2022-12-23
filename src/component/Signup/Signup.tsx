@@ -11,6 +11,7 @@ import {
   Divider,
   FormControlLabel,
   Checkbox,
+  Container,
 } from "@mui/material";
 
 import EmailField from "./../CustomTextField/EmailField";
@@ -92,7 +93,7 @@ const Signup = (props: Props) => {
   return (
     <>
       <Header />
-      <Box id="mainFormContainer">
+      <Container maxWidth="sm" id='SignupContainer'>
         <Grid>
           <Grid id="TopSection">
             <span>
@@ -185,7 +186,7 @@ const Signup = (props: Props) => {
             </Button>
           </form>
         </Grid>
-      </Box>
+      </Container>
 
       <Footer />
     </>
