@@ -11,7 +11,7 @@
     font-family: "Montserrat-Regular";
 }
 
-#FundingContainer{
+#projectList{
     display: flex;
     justify-content: center !important;
     font-family: "Montserrat-Bold";

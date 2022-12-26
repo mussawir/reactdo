@@ -1,62 +1,77 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import TopBar from './../../TopBar/TopBar';
-import SideBar from './../../Sidbar/SideBar';
+import React from "react";
+import Dashboard from "../../Dashboard";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import TopAppBar from "../../../New Dashboard/TopBarDashboard/TopAppBar";
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import "../../Layer/Promotion/PromotionStyle.css";
 
-function createData(
-  name: string,
-  calories: number,
-  fat: number,
-) {
-  return { name, calories, fat,};
-}
-
-const rows = [
-  createData('Project A', 10, 150000,),
-  createData('Project B', 20, 200000),
-  createData('Project C', 6, 100000),
+const columns: GridColDef[] = [
+  { field: 'id', headerName: 'ID', width: 70 },
+  { field: 'firstName', headerName: 'First name', width: 130 },
+  { field: 'lastName', headerName: 'Last name', width: 130 },
+  {
+    field: 'age',
+    headerName: 'Age',
+    type: 'number',
+    width: 90,
+  },
+  {
+    field: 'fullName',
+    headerName: 'Full name',
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (params: GridValueGetterParams) =>
+      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
 ];
 
-const  Promotion =() =>{
+const rows = [
+  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
+  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
+  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
+  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
+  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+];
+
+type Props = {};
+
+const Promotion = (props: Props) => {
   return (
     <>
-        <TopBar/>
- <SideBar />
- <div>Text here</div>
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Project</TableCell>
-            <TableCell align="right">Key Issues*</TableCell>
-            <TableCell align="right">Return of Investment(in $)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+      <TopAppBar />
 
+      <Box sx={{ flexGrow: 1, m: 2 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={5} sm={4} md={2} lg={2}>
+            <Dashboard />
+          </Grid>
+          <Grid item xs={7} sm={8} md={10} lg={10}>
+            <>
+            <Grid xs={12}>
+            <Grid id="ProContainer">
+       Promotion 
+    </Grid>
+    </Grid>
+            <div style={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={5}
+        rowsPerPageOptions={[5]}
+        checkboxSelection
+      />
+    </div></>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
-}
+};
 
 export default Promotion;

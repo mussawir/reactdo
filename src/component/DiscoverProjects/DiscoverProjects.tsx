@@ -21,12 +21,19 @@ import { __PATH } from "../../component/env";
 type Props = {};
 
 const DiscoverProjects = (props: Props) => {
+  const imagePerRow = 2;
+  const [loading, setLoading] = React.useState(true);
+  const [next, setNext] = React.useState(imagePerRow);
+  const handleMoreImage = () => {
+    setNext(next + imagePerRow);
+  };
+
   const [project, SetProject] = React.useState<[]>([]);
   // const imgpath = "http://localhost:5000/";
   useEffect(() => {
     axios
       //.get("`_PATH` +project")
-     .get(`${__PATH}project`)
+      .get(`${__PATH}project`)
       .then((res) => {
         console.log(res, "Get Data");
         SetProject(res?.data);
@@ -52,83 +59,93 @@ const DiscoverProjects = (props: Props) => {
         <Typography id="Typo2forWeLove">56,015 projects</Typography>
       </Grid>
       <Divider />
-   
 
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={4} id="cardContainer">
+          <Grid xs sm={4} md={4} lg={4}>
+            {project?.slice(0, next)?.map((item: any) => (
+              <Grid>
+                <Link to="/discovery_overlay">
+                  <Card id="cardSection">
+                    {/* <Typography id="TopTitle">{item?.title}</Typography> */}
+                    {/* {item?.targetLaunchDate} */}
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={__PATH + item?.projectImage}
+                        alt="Card Image"
+                      />
+                    </CardActionArea>
+                    <CardContent>
+                      <Typography id="CardSubTitle">
+                        {item?.subTitle}
+                      </Typography>
+                      <Typography id="CardDescription">
+                        {item?.description}
+                      </Typography>
 
+                      <Typography id="CardProjectBy">
+                        by {item?.title}
+                      </Typography>
+                      <br />
+                      <Divider />
+                      <br />
 
+                      <Typography id="footerCard">
+                        <Grid id="footertext">
+                          {item?.targetAmount}
+                          <span id="footerSpan"> pledged </span>
+                        </Grid>
+                        <Grid id="footertext">
+                          {item?.investorShare}{" "}
+                          <span id="footerSpan"> funded </span>
+                        </Grid>
+                        <Grid id="footertext">
+                          {item?.duration}
+                          <span id="footerSpan"> hours to go </span>
+                        </Grid>
+                      </Typography>
 
-
-  <Box sx={{ flexGrow: 1 }} >
-      <Grid container spacing={4} id="cardContainer">
-      <Grid xs sm={4} md={4} lg={4}> 
-        {project.map((item: any) => (
-          <Grid>
-<Link  to="/discovery_overlay">
- <Card id="cardSection">
-                  {/* <Typography id="TopTitle">{item?.title}</Typography> */}
-                  {/* {item?.targetLaunchDate} */}
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image={__PATH + item?.projectImage}
-                      alt="Card Image"
-                    />
-                  </CardActionArea>
-                  <CardContent>
-                    <Typography id="CardSubTitle">{item?.subTitle}</Typography>
-                    <Typography id="CardDescription">
-                      {item?.description}
-                    </Typography>
-
-                    <Typography id="CardProjectBy">by {item?.title}</Typography>
-                    <br />
-                    <Divider />
-                    <br />
-
-                    <Typography id="footerCard">
-                      <Grid id="footertext">
-                        {item?.targetAmount}
-                        <span id="footerSpan"> pledged </span>
-                      </Grid>
-                      <Grid id="footertext">
-                        {item?.investorShare}{" "}
-                        <span id="footerSpan"> funded </span>
-                      </Grid>
-                      <Grid id="footertext">
-                        {item?.duration}
-                        <span id="footerSpan"> hours to go </span>
-                      </Grid>
-                    </Typography>
-
-                    <Typography id="footerCard">
-                      <Grid id="footertext">
-                        Product Design
-                        <span id="footerSpan">
-                          {" "}
-                          <LocationOnIcon id="cardLocationIcon" /> Location{" "}
-                        </span>
-                      </Grid>
-                    </Typography>
-                  </CardContent>
-                </Card></Link>
+                      <Typography id="footerCard">
+                        <Grid id="footertext">
+                          Product Design
+                          <span id="footerSpan">
+                            {" "}
+                            <LocationOnIcon id="cardLocationIcon" /> Location{" "}
+                          </span>
+                        </Grid>
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Link>
+              </Grid>
+            ))}
           </Grid>
-
-))}
         </Grid>
-
-      
-        
-      </Grid>
-    </Box>
+      </Box>
       <br></br>
 
- 
 
-      <Button variant="contained" color="primary" id="ButtonofLoadmore">
-        Load More
-      </Button>
+<Grid xs={12}>
+  <Grid id="LoadMoreBtn">      
+    {next < project?.length && (
+        <Button
+          variant="contained"
+          color="primary"
+          id="ButtonofLoadmore"
+          onClick={handleMoreImage}
+        >
+          Load more
+        </Button>
+      )}
+      </Grid>
 
+      </Grid>
+
+
+
+      
       <Footer />
     </>
   );

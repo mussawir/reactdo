@@ -117,4 +117,4 @@ const AdminDashboard = (props: Props) => {
   )
 }
 
-export default AdminDashboard
+export default AdminDashboard;

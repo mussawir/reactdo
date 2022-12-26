@@ -1,9 +1,17 @@
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url('../fonts/Montserrat-Regular.ttf') format('opentype')
+}
+*{
+  font-family: "Montserrat-Regular";
+}
 #discoverBtn {
   color: #494949;
-  font-family: "CircularStd-Book";
+  font-family: "Montserrat-Regular";
   padding: 0px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 #modalStyle {
