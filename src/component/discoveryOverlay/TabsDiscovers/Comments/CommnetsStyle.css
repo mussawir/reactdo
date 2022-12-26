@@ -1,0 +1,54 @@
+#GRid1ofComment{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+#IteMofComment{
+    background-color: rgb(238, 233, 233);
+}
+#boxofcomment{
+    background-color: rgb(238, 233, 233);  
+}
+#secondGridinGrid1{
+    margin-left: 20px;
+font-size: 0.9rem;
+}
+#dividerdividedx{
+    margin-left: 20px;
+    color: grey;
+
+}
+#superbackercolor{
+    color: rgb(250, 169, 19);
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+#chotaonchotiscreen{
+    font-size: 0.9rem;
+}
+#NicolasFandall{
+    font-size: 1.1rem;
+}
+#poftypoofc{
+  text-align: left;
+    font-size: 0.8rem;
+    color: rgb(170, 169, 169);
+}
+@media (min-width:100px) and (max-width:560px) {
+    #superbackercolor{
+        color: rgb(250, 169, 19);
+        font-size: 0.5rem;
+        margin-left: 0px;
+    }
+    #chotaonchotiscreen{
+        font-size: 0.4rem;
+    }
+    #NicolasFandall{
+        font-size: 0.7rem;
+    }
+    #secondGridinGrid1{
+        margin-left: 20px;
+    font-size: 0.8rem;
+
+    }
+}

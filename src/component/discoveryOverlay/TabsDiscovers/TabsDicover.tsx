@@ -6,6 +6,11 @@ import Box from '@mui/material/Box';
 import { Button, Grid, TextField } from '@mui/material'
 import '../TabsDiscovers/TabDiscoverStyle.css';
 import Campaign from "../TabsDiscovers/TabsCampaign/Campaign";
+import { Faq } from './FAQ/Faq';
+import Updates from './Updates/Updates';
+import Comments from './Comments/Comments';
+import Community from './Community/Community';
+
 
 type Props = {}
 
@@ -14,6 +19,7 @@ interface TabPanelProps {
     index: number;
     value: number;
   }
+
   
   function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
@@ -87,16 +93,16 @@ const TabsDicover = (props: Props) => {
       <Campaign/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      FAQ
+         <Faq/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-      Updates
+      <Updates/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-      Comments
+      <Comments/>
       </TabPanel>
       <TabPanel value={value} index={4}>
-      Community
+      <Community/>
       </TabPanel>
      
 

@@ -1,0 +1,102 @@
+#We
+{
+    color: rgb(121, 121, 121);
+    font-size: 14px;
+    position: relative;
+    bottom:20px;
+    right: 45px;
+    font-weight: 600;
+}
+#btn-D
+{
+    font-size: 12px;
+    color: blue;
+    text-decoration: none;
+    position: relative;
+    bottom: 44px;
+    left: 140px;
+    
+}
+#cards-main
+{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    justify-content: center;
+    padding: 0px 20px 0px 20px;
+  
+}
+#card-1>img
+{
+    
+    height: 150px;
+    width: 270px;
+    padding: 0px 20px 0px 20px;
+    
+}
+#card-2>img
+{
+    
+    height: 150px;
+    width: 270px;
+    padding: 0px 20px 0px 20px;
+    
+}
+#card-3>img
+{
+    
+    height: 150px;
+    width: 270px;
+    padding: 0px 20px 0px 20px;
+    
+}
+#card-4>img
+{
+    height: 150px;
+    width: 270px;
+    padding: 0px 20px 0px 20px;
+}
+#T-1
+{
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(4, 92, 4);
+    
+}
+#Desc
+{
+    font-size: 12px;
+    text-align: center;
+    padding-top: 20px;
+}
+#T-2
+{
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(4, 92, 4);
+    
+}
+#T-3
+{
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(4, 92, 4);
+    
+}
+#T-4
+{
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(4, 92, 4);
+    
+}
+#By
+{
+    font-size: 10px;
+    padding-top: 20px;
+    color: rgb(4, 92, 4);
+}
