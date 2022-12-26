@@ -34,6 +34,7 @@ import Admin from "./component/New Dashboard/Pages/Admin/Admin";
 import Project from "./component/New Dashboard/Pages/Project/Project";
 import ADashboard from "./component/New Dashboard/Pages/ADashboard/ADashboard";
 import DiscoveryOverlay from "./component/discoveryOverlay/discoveryOverlay";
+import DashboardList from './component/Dashborad/Layer/Dashboard/DashboardList';
 // type myProps = {
 //   ProjectId:string,
 //   ID:string
@@ -62,10 +63,11 @@ const App = () => {
 
         {/* <Route element={<PrivateCopmonent />}> */}
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/disbursment" element={<Disbursment />} />
-          <Route path="/funding" element={<Funding />} />
-          <Route path="/promotion" element={<Promotion />} />
-          <Route path="/roi" element={<Roi />} />
+          <Route path="/dashboard/iv" element={<DashboardList />} />
+          <Route path="/dashboard/disbursment" element={<Disbursment />} />
+          <Route path="/dashboard/funding" element={<Funding />} />
+          <Route path="/dashboard/promotion" element={<Promotion />} />
+          <Route path="/dashboard/roi" element={<Roi />} />
           <Route path="/myprojects" element={<MyProjects />} />
           <Route path="/myinvestment" element={<MyInvestment />} />
           <Route path="/myaccount" element={<MyAcount />} />

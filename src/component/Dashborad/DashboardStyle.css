@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype')
+}
+
+*{
+    font-family: "Montserrat-Regular";
+}
+#adminContainer{
+    position: absolute;
+}
+
+#logoutBtn{
+    font-size: 15px;
+}
+
+#iconStyle{
+    color: #1976d2;
+}
+#color{
+    color: black;
+}
+.logoutBtn{
+    font-size: 10px;
+    text-transform: capitalize;
+    
+}

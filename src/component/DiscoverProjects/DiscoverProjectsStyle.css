@@ -101,8 +101,11 @@
 #ButtonofLoadmore{
     justify-content: center;
     align-items: center;
-    margin-left: 45%;
     margin-bottom: 20%;
-    margin-top: 7%;
+    
+}
+#LoadMoreBtn{
+    display: flex;
+    justify-content: center !important;
 }
 

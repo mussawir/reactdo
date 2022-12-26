@@ -1,309 +1,150 @@
 @font-face {
-    font-family: "CircularStd-Book";
-    src: url('../fonts/CircularStd-Book.otf') format('opentype')
+    font-family: "Montserrat-Regular";
+    src: url('../fonts/Montserrat-Regular.ttf') format('opentype')
 }
 
 @font-face {
-    font-family: "Circular-Air-Light";
-    src: url('../fonts/Circular-Air-Light.ttf') format('truetype')
+    font-family: "Montserrat-Bold";
+    src: url('../fonts/Montserrat-Bold.ttf') format('truetype')
 }
 
-#bar1 {
-    background-color: white;
+*{
+    font-family: "Montserrat-Regular";
+}
+#color{
     color: #494949;
-    /* font-family: "Circular-Air-Light"; */
-    box-shadow: none;
-    border-bottom: solid 1px #cccccc;
 }
-
-#h1 {
-    color: black;
-    text-align: center;
-}
-
-#mainLogo {
-    width: 10%;
-}
-
-#a1 {
-    color: #494949;
-    font-family: "CircularStd-Book";
-    text-decoration: none;
-    /* padding-right: 20px; */
-    margin-top: 10px;
-}
-
-#ax1 {
-    margin-top: 30px;
-}
-
-#h2 {
-    text-align: center;
-    padding-left: 5%;
-    padding-top: 18px;
-    padding-bottom: 15px;
-    color: #494949;
-    font-family: "CircularStd-Book";
-}
-
-#h3 {
-    padding-left: 25%;
-    padding-top: 18px;
-    padding-bottom: 15px;
-    color: #494949;
-    font-family: "CircularStd-Book";
-}
-
-#a3 {
-    color: #494949;
-    font-family: "CircularStd-Book";
-    text-decoration: none;
-    padding-left: 20px;
-    margin-top: 20px;
-}
-
-/* #button1x1 {
-    margin-top: 5%;
-    margin-left: 33%;
-} */
-
-#itemsysearch {
-    display: flex;
-    padding-left: 30%;
-    color: black;
-
-}
-
-#NavbarText {
-    color: black;
-    padding-top: 10px;
-    text-transform: none;
-    font-size: 1rem;
-}
-
-#NavbarTextx3 {
-    color: rgb(190, 188, 188);
-    padding-top: 10px;
-    text-transform: none;
-}
-
-#NavbarTextx {
-    color: black;
-    padding-top: 10px;
-    text-transform: none;
-    font-size: 1rem;
-}
-
-#Navbartextxx {
-    padding-top: 10px;
-
-}
-
-
-#h3ofbecomeinvest {
-    margin: 15px;
-    padding-top: 1px;
-    font-family: "CircularStd-Book";
-
-}
-
-#headformtopnext {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 1.3rem;
-}
-
-#searchicocss {
-    font-size: 1rem;
-    padding-bottom: 3px;
-}
-
 #imgsizeoflogo {
-    width: 40%;
-    padding-left: 120%;
-    padding-top: 14px;
+    width: 40% !important;
+    /* padding-left: 120%;
+    padding-top: 14px; */
 }
 
-#TopNavbarx12 {
-    background-color: rgb(255, 255, 255);
-}
-
-#TopBarx1 {
+#LogoStyling{
     display: flex;
+    justify-content: center !important;
+    padding: 16px 0px 0px 60px;
 }
 
-#itemsysearch2 {
-    padding-left: 10%;
-    margin-top: 20px;
-    color: black;
+#StartaProject {
+    color: #494949;
+    font-weight: 100;
+    display: flex;
+    justify-content: start !important;
+    font-family: "Montserrat-Regular";
+    padding: 25px 0px 0px 0px;
 }
 
-@media (min-width: 100px) and (max-width: 1770px) {
+#Discover{
+    color: #000000;
+    display: flex;
+    justify-content: center !important;
+    font-family: "Montserrat-Regular";
+    padding: 23px 0px 0px 0px;
+}
 
-    #itemsysearch {
-        display: flex;
-        padding-left: 35%;
-        color: black;
-        padding-right: 5%;
+#search{
+    color: #494949;
+    font-weight: 100;
+    display: flex;
+    justify-content: end !important;
+    font-family: "Montserrat-Regular";
+    padding: 25px 0px 0px 0px;
+}
+
+#searchField{
+    color: #494949;
+    font-weight: 100;
+    display: flex;
+    justify-content: end !important;
+    font-family: "Montserrat-Regular";
+    padding: 0px 0px 0px 8px;
+}
+
+
+
+#Login {
+    color: #494949 !important;
+    font-weight: 100;
+    display: flex;
+    justify-content: center !important;
+    font-family: "Montserrat-Regular";
+    padding: 25px 0px 0px 0px;
+}
+
+#loginLink{
+    color: #494949 !important;
+}
+
+#istSection{
+      padding: 15px 15px 30px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Montserrat-Regular" !important;
+}
+#iistSection{
+      padding: 15px 15px 30px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Montserrat-Regular" !important;
+}
+#iiistSection{
+      padding: 15px 15px 30px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Montserrat-Regular" !important;
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+
+    #imgsizeoflogo {
+        width: 55% !important;
+        /* padding-left: 120%;
+        padding-top: 14px; */
     }
+    
+    #LogoStyling{
+        display: flex;
+        justify-content: start!important;
+        padding: 22px 0px 8px 22px;
+    }
+    
+    #StartaProject {
+        display: none;
+    }
+    
+    #Discover{
+        display: none;
+    }
+    
+    #search{
+    display: none;
+    }
+    
+    #searchField{
+        display: none;
+    }
+    
+    
+    
+    #Login {
+       display: none;
+    }
+    #istSection{
+  
+    font-size: 10px;
+   
+}
+#iistSection{
+
+    font-size: 10px;
+ 
+}
+#iiistSection{
+ 
+    font-size: 10px;
+  
  
     
 }
-
-
-/* @media (min-width: 100px) and (max-width: 870px) {
-    #itemsysearch {
-        display: flex;
-        padding-left: 35%;
-        color: black;
-        padding-right: 5%;
-    }
-
-    #tbnubdyhv {
-        margin-top: 1%;
-    }
-    #itemsysearch2 {
-        padding-left: 10%;
-        margin-top: 0px;
-        color: black;
-    }
-    #h3ofbecomeinvest {
-        font-size: 2rem;
-        padding-top: 83px;
-        padding-right: 10%;
-
-    }
-
-    #headformtopnext {
-        padding-top: 28%;
-        padding-bottom: 20px;
-        justify-content: center;
-        font-size: 1.3rem;
-        margin-left: 50%;
-    }
-
-
-    #imgsizeoflogo {
-        width: 60%;
-        height: 60%;
-        padding-left: 120%;
-        padding-top: 20px;
-    }
-
-    #itemsysearch2 {
-        padding-left: 8%;
-        padding-top: 28px;
-        color: black;
-
-    }
-
-    #searchicocss {
-        font-size: 1rem;
-        padding-bottom: 75px;
-    }
-
-
-    #NavbarTextx {
-        color: black;
-        padding-top: 10px;
-        padding-left: 60px;
-        display: flex;
-    }
-
-    #NavbarText {
-        color: black;
-        padding-top: 10px;
-        display: flex;
-        padding-left: 60px;
-    }
-
-    #NavbarTextxx {
-        color: black;
-        padding-top: 2px;
-        padding-right: 20px;
-
-    }
-} */
-/* 
-@media (min-width: 870px) and (max-width: 1200px) {
-    #itemsysearch {
-        display: flex;
-        padding-left: 45%;
-
-        color: black;
-        padding-right: 5%;
-    }
-    #itemsysearch2 {
-        padding-left: 10%;
-        margin-top: 0px;
-        color: black;
-    }
-    #headformtopnext {
-        padding-top: 25%;
-        padding-bottom: 20px;
-        justify-content: center;
-        font-size: 1.3rem;
-        margin-left: 60%;
-    }
-
-    #tbnubdyhv {
-        margin-top: 1%;
-    }
-
-    #h3ofbecomeinvest {
-        padding-left: 30%;
-        padding-top: 50%;
-        font-size: 2rem;
-    }
-
-    #imgsizeoflogo {
-        width: 60%;
-        height: 60%;
-        padding-left: 120%;
-        padding-top: 20px;
-    }
-
-    #itemsysearch2 {
-        padding-left: 8%;
-        padding-top: 28px;
-        color: black;
-
-    }
-
-    #searchicocss {
-        font-size: 1rem;
-        padding-bottom: 126px;
-    }
-
-
-    #NavbarTextx {
-        color: black;
-        padding-top: 10px;
-        padding-left: 20px;
-        display: flex;
-    }
-
-    #NavbarText {
-        color: black;
-        padding-top: 10px;
-        display: flex;
-        padding-left: 60px;
-    }
-
-    #NavbarTextxx {
-        color: black;
-        padding-top: 2px;
-        padding-right: 20px;
-
-    }
-} */
-
-@media (min-width: 100px) and (max-width: 414px) {
-    /* #headformtopnext {
-        padding-top: 28%;
-        padding-bottom: 20px;
-        justify-content: center;
-        font-size: 1.3rem;
-        margin-left: 41%;
-    } */
 }

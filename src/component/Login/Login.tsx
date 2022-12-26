@@ -59,7 +59,7 @@ const Login = () => {
         if(email == "admin@gmail.com"){
           navigate("/admindashboard/adashboard");
         }else{
-          navigate("/dashboard");
+          navigate("/dashboard/iv");
         }
       })
       .catch((err: any) => {
