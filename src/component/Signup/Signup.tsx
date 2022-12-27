@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
+import Alert from '@mui/material/Alert';
 import {
   Box,
   Grid,
@@ -22,6 +23,7 @@ import Footer from "../Footer/Footer";
 type Props = {};
 
 const Signup = (props: Props) => {
+  const [error, setError] = useState(false)
   const [name, setName] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -56,7 +58,10 @@ const Signup = (props: Props) => {
       console.log(err, "error");
     });
 
+    if (email.length == 0 || password.length == 0 ||name.length == 0) {
+      setError(true)
 
+    }
   }
 
 
@@ -66,6 +71,7 @@ const Signup = (props: Props) => {
       navigate("/login");
     }
 
+  
    
   }, []);
     // console.log(name, email,password, isCheckedA, isCheckedB);
@@ -116,7 +122,7 @@ const Signup = (props: Props) => {
                 }}
               /> */}
               <TextField
-                required
+                
                 id="outlined-required"
                 label="Name"
                 type="text"
@@ -126,12 +132,14 @@ const Signup = (props: Props) => {
                   setName(e.target.value);
                 }}
               />
+              {error && name.length <= 0 ?
+                  <Alert severity="error">Name can't be Empty — check it out!</Alert> : ""}
 
          
               <p></p>
 
               <TextField
-                required
+                
                 id="outlined-number"
                 label="Email"
                 type="email"
@@ -141,9 +149,11 @@ const Signup = (props: Props) => {
                   setemail(e.target.value);
                 }}
               />
+              {error && email.length <= 0 ?
+                  <Alert severity="error">Email can't be Empty — check it out!</Alert> : ""}
  <p></p>
               <TextField
-                required
+                
                 id="outlined-password-input"
                 label="Password"
                 type="password"
@@ -153,6 +163,8 @@ const Signup = (props: Props) => {
                   setpassword(e.target.value);
                 }}
               />
+              {error && password.length <= 0 ?
+                  <Alert severity="error">Password can't be Empty — check it out!</Alert> : ""}
               <p id="checkBox"></p>
               <Grid justifyContent="flex-start">
                 <CheckBoxFlied

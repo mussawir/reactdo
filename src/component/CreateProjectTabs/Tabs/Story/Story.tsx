@@ -15,16 +15,39 @@ import { useParams, useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 import Footer from '../../../Footer/Footer';
 import TopBar from './../../../Dashborad/TopBar/TopBar';
+
+import { useQuill } from 'react-quilljs';
+import 'quill/dist/quill.snow.css';
+
+
 type Props = {}
 
 const Story = (props: Props) => {
+
+
+    const { quill, quillRef } = useQuill();
+    const [value , setValue]  = React.useState("");
+    const [description, setDescription] = React.useState("");
+    // setDescription(value)
+
+    React.useEffect(() => {
+        if (quill) {
+          quill.on('text-change', () => {
+            // console.log(quillRef.current.firstChild.innerHTML); 
+            setValue(quillRef.current.firstChild.innerHTML)
+          });
+        }
+        setDescription(value)
+
+        console.log(value,"TextValue");
+        console.log(description,"TextDisc");
+        
+      }, [quill]);
     const navigate = useNavigate();
     const { projectId } = useParams();
     const [risksChallenges, setRisksChallenges] = React.useState("");
-    const [description, setDescription] = React.useState("");
-    console.log('====================================');
-    console.log(risksChallenges,description);
-    console.log('====================================');
+  
+
     const handleSubmit = (e: any) => {
          e.preventDefault();
          console.log(projectId);
@@ -61,10 +84,16 @@ const Story = (props: Props) => {
                     <Typography id="typo1ofstory">
                         Introduce your project
                     </Typography>
-                    <Typography id="typo1ofstory2">Tell people why they should be excited about your project. Get specific but be clear and be brief.</Typography>
+                 <Typography id="textSubTittle">Tell people why they should be excited about your project. Get specific but be clear and be brief.</Typography> 
                 </Grid>
                 <Divider />
-                <Grid id="TypOofStory2">
+              
+
+                <div id="TypOofStory2">
+      <div ref={quillRef} />
+    </div>
+
+                {/* <Grid id="TypOofStory2">
                     <Typography id="Typoheadingofgrid2">
                         Project description
                     </Typography>
@@ -102,7 +131,7 @@ const Story = (props: Props) => {
                         </Box>
 
                     </Grid>
-                </Grid>
+                </Grid> */}
                 <br></br>
                 <br></br>
                 <Divider />

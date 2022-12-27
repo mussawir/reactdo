@@ -188,7 +188,7 @@ const Categories = (props: Props) => {
               </Grid>
             </Grid>
 
-            <Divider id="divider" />
+            {/* <Divider  /> */}
             <Box sx={{ flexGrow: 1 }}>
               <Grid container spacing={2} id="Grid2ndForCategory">
                 <Grid item xs={12} sm={6} md={6} lg={9}>
