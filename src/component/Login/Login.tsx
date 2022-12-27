@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import Alert from '@mui/material/Alert';
 import {
   Box,
   Grid,
@@ -32,6 +33,7 @@ const Login = () => {
   const [password, setpassword] = useState("");
   const [isCheckedA, setIsCheckedA] = useState(false);
   const [token, setToken] =useState("");
+  const [error, setError] = useState(false)
   const handleChangeA = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsCheckedA(e.target.checked);
   };
@@ -58,16 +60,24 @@ const Login = () => {
       
         if(email == "admin@gmail.com"){
           navigate("/admindashboard/adashboard");
-        }else{
+        } 
+        else{
           navigate("/dashboard/iv");
         }
+
+
+       
+        
       })
       .catch((err: any) => {
         console.log(err, "error");
       });
 
       
-
+      if (email.length == 0 || password.length == 0) {
+        setError(true)
+        console.log(email,password)
+      }
     // if(localStorage.getItem("token")){
     //   navigate("/dashboard");
     // }else{
@@ -82,6 +92,8 @@ const Login = () => {
     if(!token) {
       navigate("/login");
     }
+
+ 
    
   }, [])
 
@@ -96,7 +108,7 @@ const Login = () => {
               <p></p>
 
               <TextField
-                required
+                
                 id="outlined-number"
                 label="Email"
                 type="email"
@@ -106,9 +118,11 @@ const Login = () => {
                   setemail(e.target.value);
                 }}
               />
+               {error && email.length <= 0 ?
+                <Alert severity="error">Email can't be Empty — check it out!</Alert> : ""}
               <p></p>
               <TextField
-                required
+                
                 id="outlined-password-input"
                 label="Password"
                 type="password"
@@ -118,7 +132,8 @@ const Login = () => {
                   setpassword(e.target.value);
                 }}
               />
-
+{error && password.length <= 0 ?
+                  <Alert severity="error">Password can't be Empty — check it out!</Alert> : ""}
               <div>
                 <small>
                   <span>Forgot your password?</span>

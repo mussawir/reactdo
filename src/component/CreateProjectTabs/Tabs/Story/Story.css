@@ -1,3 +1,17 @@
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url('../../../fonts/Montserrat-Regular.ttf') format('truetype')
+}
+
+
+@font-face {
+    font-family: "Montserrat-Light";
+    src: url('../../../fonts/Montserrat-Light.ttf') format('truetype')
+}
+*{
+    font-family: "Montserrat-Regular";
+}
+
 #Grid1OfStoryScreen {
     justify-content: center;
     padding-top: 10%;
@@ -8,13 +22,27 @@
     font-size: 1.7rem;
 }
 
-#typo1ofstory2 {
-    text-align: center;
-    color: grey;
-    padding-top: 1%;
-    padding-bottom: 4%;
+#TypOofStory2 {
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 3%;
+    height: 300px !important;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
+
+#textSubTittle{
+    display: flex;
+    justify-content: center !important;
+    padding: 10px 10px;
+    margin: auto;
+    font-family: "Montserrat-Light" !important;
+    font-size: 15px;
+    font-weight: 400;
+}
 #TypOofStory2 {
     padding-left: 8%;
     padding-right: 8%;
