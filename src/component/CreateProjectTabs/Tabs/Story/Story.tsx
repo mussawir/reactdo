@@ -38,14 +38,16 @@ const Story = (props: Props) => {
           });
         }
         setDescription(value)
+
+        console.log(value,"TextValue");
+        console.log(description,"TextDisc");
+        
       }, [quill]);
     const navigate = useNavigate();
     const { projectId } = useParams();
     const [risksChallenges, setRisksChallenges] = React.useState("");
   
-    console.log('====================================');
-    console.log(risksChallenges,description);
-    console.log('====================================');
+
     const handleSubmit = (e: any) => {
          e.preventDefault();
          console.log(projectId);
