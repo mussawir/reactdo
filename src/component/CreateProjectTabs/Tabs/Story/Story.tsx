@@ -14,7 +14,6 @@ import TextField from '@mui/material/TextField';
 import { useParams, useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 import Footer from '../../../Footer/Footer';
-import Header from '../../../Header/Header';
 import TopBar from './../../../Dashborad/TopBar/TopBar';
 type Props = {}
 
