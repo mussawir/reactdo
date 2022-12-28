@@ -58,8 +58,7 @@ const App = () => {
 
 
  <MyGlobalContext.Provider value= {{userIdd, setUserIdd}}>  
- {/* <Categories /> */}
- <Location /> 
+
  </MyGlobalContext.Provider>
    
       <Routes>
