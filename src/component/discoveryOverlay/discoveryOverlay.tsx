@@ -15,6 +15,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import Footer from "../Footer/Footer";
 import TopBar from "../Dashborad/TopBar/TopBar";
 import TabsDicover from "../discoveryOverlay/TabsDiscovers/TabsDicover";
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -62,7 +63,8 @@ function discoveryOverlay(props: Props) {
                 id="buttonofbackthisproject"
                 color="primary"
               >
-                Back this project
+                <Link to="/investerinfo">     Back this project</Link>
+           
               </Button>
               <Grid id="ICONSALIGNED">
                 {" "}
