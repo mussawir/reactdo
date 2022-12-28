@@ -15,6 +15,8 @@ import Footer from "../Footer/Footer";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import axios from "axios";
 import TopBar from "../Dashborad/TopBar/TopBar";
+import { useGlobalContext } from './../../MyGlobalContext'
+
 type Props = { 
 };
 
@@ -24,6 +26,8 @@ const Location = (props: Props) => {
   const [countries, SetCountries] = React.useState<string[]>([]); 
   const [countryId, setCountryId] = React.useState<string>("");
   const {projectId} = useParams();
+  // const { email,setEmail } = useGlobalContext();
+  const { userIdd,setUserIdd } = useGlobalContext();
 
   const handleCountry = (event: SelectChangeEvent) => {
     console.clear();
@@ -84,6 +88,7 @@ const Location = (props: Props) => {
             nonprofit, select the<br></br> country where the entity’s tax ID is
             registered.
           </Typography>
+          <div>{userIdd}</div>
           <Box sx={{ flexGrow: 1 }} id="boxofdropdowns3">
             <Grid style={{ width: "100%" }}>
               <Grid item xs={12} lg={12}>

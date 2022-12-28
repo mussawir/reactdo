@@ -20,11 +20,13 @@ import CheckBoxFlied from "../CustomTextField/CheckBoxFlied";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
+
 type Props = {};
 
 const Signup = (props: Props) => {
   const [error, setError] = useState(false)
   const [name, setName] = useState("");
+  const [userId, setUserId] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   // const [userId, setUserId] = useState("");
@@ -52,7 +54,15 @@ const Signup = (props: Props) => {
    
     .then((res) => {
       console.log(res, "Result");
-      navigate("/login");
+      console.log(res.data.userId, "UserId");
+     const userID =(res.data.userId)
+     setUserId(userID)
+     console.log('====================================');
+     console.log(userId);
+     console.log('====================================');
+    //  localStorage.setItem("UserId" ,JSON.stringify(res.data.userId));
+      // navigate("/login");
+      
     })
     .catch((err) => {
       console.log(err, "error");
@@ -65,10 +75,11 @@ const Signup = (props: Props) => {
   }
 
 
+
   useEffect(() => {
     let auth = localStorage.getItem("user");
     if (auth) {
-      navigate("/login");
+      //  navigate("/login");
     }
 
   
@@ -214,3 +225,4 @@ const Signup = (props: Props) => {
 };
 
 export default Signup;
+

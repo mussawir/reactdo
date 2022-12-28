@@ -51,18 +51,19 @@ const Login = () => {
       })
 
       .then((res: any) => {
-        console.log("ResultResultResultResultResultResult", res);
-        console.log("token", res.data.token);
+        // console.log("ResultResultResultResultResultResult", res);
+        // console.log("token", res.data.token);
+         console.log("Output", res.data);
         localStorage.setItem("token" ,JSON.stringify(res.data.token));
          let getToken = res.data.token;
          setToken(getToken);
-         console.log(token,"Token");
+        //  console.log(token,"Token");
       
         if(email == "admin@gmail.com"){
-          navigate("/admindashboard/adashboard");
+           navigate("/admindashboard/adashboard");
         } 
         else{
-          navigate("/dashboard/iv");
+         navigate("/dashboard/iv");
         }
 
 
@@ -90,7 +91,7 @@ const Login = () => {
     // New Token Cheking Authentication Code
   useEffect(() => {
     if(!token) {
-      navigate("/login");
+     navigate("/login");
     }
 
  
@@ -99,6 +100,8 @@ const Login = () => {
 
   return (
     <>
+
+
       <Header />
       <Container maxWidth="sm" id='LoginContainer'>
         <Grid xs={12}>

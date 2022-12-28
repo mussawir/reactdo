@@ -35,13 +35,33 @@ import Project from "./component/New Dashboard/Pages/Project/Project";
 import ADashboard from "./component/New Dashboard/Pages/ADashboard/ADashboard";
 import DiscoveryOverlay from "./component/discoveryOverlay/discoveryOverlay";
 import DashboardList from './component/Dashborad/Layer/Dashboard/DashboardList';
+import Investerinfo from "./component/discoveryOverlay/TabsDiscovers/Investerinfo/Investerinfo";
+import { createContext, useContext } from "react"
+import { MyGlobalContext } from "./MyGlobalContext";
+
+
+
+
+
 // type myProps = {
 //   ProjectId:string,
 //   ID:string
 // };
 const App = () => {
+  const [userIdd, setUserIdd] = React.useState<string>('Not requried');
   return (
     <>
+ {/* <MyGlobalContext.Provider value= {{ userId, setUserId }}>
+    <Categories/>
+  </MyGlobalContext.Provider> */}
+ {/* <MyGlobalContext.Provider value = {userId,setUserId, email,setEmail }> */}
+
+
+ <MyGlobalContext.Provider value= {{userIdd, setUserIdd}}>  
+ {/* <Categories /> */}
+ <Location /> 
+ </MyGlobalContext.Provider>
+   
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
@@ -73,6 +93,7 @@ const App = () => {
           <Route path="/myaccount" element={<MyAcount />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/discovery_overlay" element={<DiscoveryOverlay />} />
+          <Route path="/investerinfo" element={<Investerinfo />} />
           <Route path="/myredux" element={<MyRedux />} />
           <Route path="/page2" element={<Page2 />} />
           //Create Project Tab Route///
@@ -96,7 +117,7 @@ const App = () => {
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Routes>
 
-     
+    
       
     
     </>

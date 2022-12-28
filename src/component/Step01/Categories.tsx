@@ -15,12 +15,14 @@ import Footer from "../Footer/Footer";
 import axios from "axios";
 import Location from "../Step02/Location";
 import TopBar from './../Dashborad/TopBar/TopBar';
+import { useGlobalContext } from './../../MyGlobalContext'
 
 type Props = {
 };
 
 const Categories = (props: Props) => {
-  
+  const { userIdd,setUserIdd } = useGlobalContext();
+  // const { email,setEmail } = useGlobalContext();
   const navigate = useNavigate();
   ////Category ////
   const [getCatData, SetCatData] = React.useState<any[]>([]);
@@ -33,10 +35,11 @@ const Categories = (props: Props) => {
   const [subcatId, setsubcatId] = React.useState("");
   const [docId, setdocId] = React.useState("");
   const [projectId, SetProjectId] = React.useState("");
-
+ 
 
   // On page load bring list of categories
   useEffect(() => {
+    setUserIdd('New User')
     axios
       .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
       .then((res) => {
@@ -48,6 +51,7 @@ const Categories = (props: Props) => {
       .catch((err) => {
         console.log(err, "error");
       });
+     
   }, []);
   ////Category End////
 
@@ -89,7 +93,10 @@ const Categories = (props: Props) => {
         setdocId(Id);
         // console.log("////////////");
         console.log(projectId);
-        // console.log(docId);
+        // setUserId(categoryId)
+        //  console.log("Project Id checking............",userId);
+        //  console.log("Project Id checking............",categoryId);
+         console.log("Project Id checking............");
         // console.log("///////////");
         Location(res?.data.projectId);
      
@@ -119,9 +126,18 @@ const Categories = (props: Props) => {
 
   return (
     <>
+
+
       <TopBar />
+
+
+
+      
       <Grid id="FirstGridForCategory">
         <Box>
+        <div>{userIdd}</div>
+        {/* <div>{email}</div> */}
+        
           <Typography id="headingofCatergoryscreen">
             First, let’s get you set up.
           </Typography>
