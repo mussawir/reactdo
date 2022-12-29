@@ -21,7 +21,7 @@ const Img = styled('img')({
 });
 const DashboardList = (props: Props) => {
 
-
+  const [user,setUser]=  React.useState<string[]>([]); 
   const [project, SetProject] = React.useState<[]>([]);
   // const imgpath = "http://localhost:5000/";
   useEffect(() => {
@@ -29,13 +29,35 @@ const DashboardList = (props: Props) => {
       //.get("`_PATH` +project")
       .get(`${__PATH}project`)
       .then((res) => {
-        console.log(res, "Get Data");
+        console.log(res, "Project List All");
         SetProject(res?.data);
       })
       .catch((err) => {
         console.log(err, "error");
       });
   }, []);
+
+
+
+
+  useEffect(() => {
+    axios
+      .get(`${__PATH}user`)
+      .then((res) => {
+         console.log(res , "User List");
+       
+        setUser(res?.data);
+         console.log(user, "userId Data......");
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      });
+
+
+  }, []);
+
+
+
 
   return (
     <>

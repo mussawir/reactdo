@@ -36,6 +36,10 @@ const Categories = (props: Props) => {
   const [docId, setdocId] = React.useState("");
   const [projectId, SetProjectId] = React.useState("");
  
+//Get All User DATA////////////////////
+
+const [user,setUser]=  React.useState<string[]>([]); 
+
 
   // On page load bring list of categories
   useEffect(() => {
@@ -104,9 +108,28 @@ const Categories = (props: Props) => {
       .catch((err) => {
         console.log(err, "error");
       });
-      
+
+     
   };
 
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/user")
+  //     .then((res) => {
+  //        console.log(res , "User List");
+       
+  //       setUser(res?.data);
+  //        console.log(user, "userId Data......");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err, "error");
+  //     });
+
+
+  // }, []);
+
+  
+  
   const Location = (projectid: string) => {
     // 👇️ navigate to / location
     navigate('/location/'+ projectid);
