@@ -63,7 +63,7 @@ const Location = (props: Props) => {
     axios
       .get("http://localhost:5000/country")
       .then((res) => {
-         console.log(res.data, "Countries List");
+         console.log(res?.data, "Countries List");
         // let CountryApi = res?.data.countryId;
         SetCountries(res?.data);
         // console.log(countryId, "country Data");
@@ -71,6 +71,12 @@ const Location = (props: Props) => {
       .catch((err) => {
         console.log(err, "error");
       });
+
+
+ 
+
+
+
   }, []);
 
   return (

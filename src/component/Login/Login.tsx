@@ -43,7 +43,13 @@ const Login = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(email, password, isCheckedA);
-
+   
+    if (email.length == 0 || password.length == 0) {
+      setError(true)
+      console.log(email,password)
+      return;
+    }
+    
     await axios
       .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", {
         email,
@@ -53,6 +59,9 @@ const Login = () => {
       .then((res: any) => {
         // console.log("ResultResultResultResultResultResult", res);
         // console.log("token", res.data.token);
+        const userEmail = (email);
+
+        
          console.log("Output", res.data);
         localStorage.setItem("token" ,JSON.stringify(res.data.token));
          let getToken = res.data.token;
@@ -63,10 +72,10 @@ const Login = () => {
            navigate("/admindashboard/adashboard");
         } 
         else{
-         navigate("/dashboard/iv");
+          navigate('/dashboard/iv/'+ userEmail);
         }
 
-
+        // DashboardList(userEmail);
        
         
       })
@@ -74,11 +83,12 @@ const Login = () => {
         console.log(err, "error");
       });
 
-      
-      if (email.length == 0 || password.length == 0) {
-        setError(true)
-        console.log(email,password)
-      }
+      // const DashboardList = (userEmail: string) => {
+      //   // 👇️ navigate to / location
+      //   navigate('/dashboard/iv/'+ userEmail);
+      // };
+
+ 
     // if(localStorage.getItem("token")){
     //   navigate("/dashboard");
     // }else{
