@@ -60,8 +60,12 @@ const Signup = (props: Props) => {
      console.log('====================================');
      console.log(userId);
      console.log('====================================');
-    //  localStorage.setItem("UserId" ,JSON.stringify(res.data.userId));
-      // navigate("/login");
+  //  localStorage.setItem("userId" ,JSON.stringify(res.data.userId));
+
+  //userId Set here//
+   localStorage.setItem("userId",(res.data.userId));
+
+      navigate("/login");
       
     })
     .catch((err) => {
