@@ -63,7 +63,12 @@ const Login = () => {
 
         
          console.log("Output", res.data);
+        //  const userId = localStorage.getItem('userId');
         localStorage.setItem("token" ,JSON.stringify(res.data.token));
+
+             
+
+        
          let getToken = res.data.token;
          setToken(getToken);
         //  console.log(token,"Token");
