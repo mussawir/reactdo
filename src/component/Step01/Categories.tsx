@@ -16,12 +16,12 @@ import axios from "axios";
 import Location from "../Step02/Location";
 import TopBar from './../Dashborad/TopBar/TopBar';
 import { useGlobalContext } from './../../MyGlobalContext'
-
+import Alert from '@mui/material/Alert';
 type Props = {
 };
 
 const Categories = (props: Props) => {
-  const { userIdd,setUserIdd } = useGlobalContext();
+  // const { userIdd,setUserIdd } = useGlobalContext();
   // const { email,setEmail } = useGlobalContext();
   const navigate = useNavigate();
   ////Category ////
@@ -35,11 +35,17 @@ const Categories = (props: Props) => {
   const [subcatId, setsubcatId] = React.useState("");
   const [docId, setdocId] = React.useState("");
   const [projectId, SetProjectId] = React.useState("");
+  const [error, setError] = React.useState(false)
+
  
+//Get All User DATA////////////////////
+
+// const [user,setUser]=  React.useState<string[]>([]); 
+
 
   // On page load bring list of categories
   useEffect(() => {
-    setUserIdd('New User')
+    // setUserIdd('New User')
     axios
       .get("https://sea-lion-app-en7u9.ondigitalocean.app/categories")
       .then((res) => {
@@ -76,7 +82,9 @@ const Categories = (props: Props) => {
       });
   };
   ////Sub Category End////
+  const userId = localStorage.getItem('userId');
 
+        console.log("userId ",userId);
 
   //Create a new project with categories and sub categories
   const handleCreateProject = (e: any) => {
@@ -84,9 +92,9 @@ const Categories = (props: Props) => {
     console.log();
 
     // axios.post("http://localhost:5000/project/create-project", { categoryId, subcatId})
-    axios.post("http://localhost:5000/project/create-project", { categoryId:categoryId, subcategoryId: subcatId})  
+    axios.post("http://localhost:5000/project/create-project", { categoryId:categoryId, subcategoryId: subcatId,userId:userId})  
     .then((res) => {
-        console.log(res, "Created ProjectCreated ProjectCreated Project");
+        console.log(res, "Created ProjectCreated");
         let Projectid = res?.data.projectId;
         SetProjectId(res?.data.projectId);
         let Id = res?.data._id;
@@ -99,14 +107,40 @@ const Categories = (props: Props) => {
          console.log("Project Id checking............");
         // console.log("///////////");
         Location(res?.data.projectId);
+
+        if (catId.length == 0 || SubcatId.length == 0) {
+          setError(true)
+          console.log(catId,SubcatId)
+          // return;
+        }
+        
      
       })
       .catch((err) => {
         console.log(err, "error");
       });
-      
+
+     
   };
 
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/user")
+  //     .then((res) => {
+  //        console.log(res , "User List");
+       
+  //       setUser(res?.data);
+  //        console.log(user, "userId Data......");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err, "error");
+  //     });
+
+
+  // }, []);
+
+  
+  
   const Location = (projectid: string) => {
     // 👇️ navigate to / location
     navigate('/location/'+ projectid);
@@ -135,7 +169,7 @@ const Categories = (props: Props) => {
       
       <Grid id="FirstGridForCategory">
         <Box>
-        <div>{userIdd}</div>
+        {/* <div>{userIdd}</div> */}
         {/* <div>{email}</div> */}
         
           <Typography id="headingofCatergoryscreen">
@@ -169,7 +203,14 @@ const Categories = (props: Props) => {
                           {item?.name}
                         </MenuItem>
                       ))}
-                    </Select>
+
+
+                  {error && catId.length <= 0 ?
+                <Alert severity="error">Select one Category can't be Empty — check it out!</Alert> : ""}
+                    
+                  </Select>
+
+                    
                   </FormControl>
                 </Grid>
               </Grid>
@@ -198,6 +239,11 @@ const Categories = (props: Props) => {
                           {item?.name}
                         </MenuItem>
                       ))}
+
+
+
+                {error && SubcatId.length <= 0 ?
+                <Alert severity="error">Select one Sub Category can't be Empty — check it out!</Alert> : ""}
                     </Select>
                   </FormControl>
                 </Grid>

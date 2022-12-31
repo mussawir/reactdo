@@ -58,7 +58,8 @@ const App = () => {
 
 
  <MyGlobalContext.Provider value= {{userIdd, setUserIdd}}>  
-
+ {/* <Categories /> */}
+ {/* <Location />  */}
  </MyGlobalContext.Provider>
    
       <Routes>
@@ -82,7 +83,7 @@ const App = () => {
 
         {/* <Route element={<PrivateCopmonent />}> */}
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard/iv" element={<DashboardList />} />
+          <Route path="/dashboard/iv/:userEmail" element={<DashboardList />} />
           <Route path="/dashboard/disbursment" element={<Disbursment />} />
           <Route path="/dashboard/funding" element={<Funding />} />
           <Route path="/dashboard/promotion" element={<Promotion />} />
