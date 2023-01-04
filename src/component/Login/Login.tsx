@@ -51,8 +51,9 @@ const Login = () => {
     }
     
     await axios
-      .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", {
-        email,
+      // .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", {
+        .post("http://localhost:5000/auth/login", {
+      email,
         password,
       })
 
@@ -60,16 +61,11 @@ const Login = () => {
         // console.log("ResultResultResultResultResultResult", res);
         // console.log("token", res.data.token);
         const userEmail = (email);
-
-        
-         console.log("Output", res.data);
-        //  const userId = localStorage.getItem('userId');
+        getUserId(userEmail);
+        //  console.log("Output", res.data);
+        //  const userId = localStorage.setItem('userId');
         localStorage.setItem("token" ,JSON.stringify(res.data.token));
-
-             
-
-        
-         let getToken = res.data.token;
+       let getToken = res.data.token;
          setToken(getToken);
         //  console.log(token,"Token");
       
@@ -79,30 +75,37 @@ const Login = () => {
         else{
           navigate('/dashboard/iv/'+ userEmail);
         }
-
-        // DashboardList(userEmail);
-       
-        
+   // DashboardList(userEmail);
       })
       .catch((err: any) => {
         console.log(err, "error");
       });
-
       // const DashboardList = (userEmail: string) => {
       //   // 👇️ navigate to / location
       //   navigate('/dashboard/iv/'+ userEmail);
       // };
-
  
     // if(localStorage.getItem("token")){
     //   navigate("/dashboard");
     // }else{
     //   navigate("/login");
     // }
-
-  
-
   };
+
+  const getUserId = async (email: string) => {
+    console.log("para", email);
+    await axios
+      // .post("https://sea-lion-app-en7u9.ondigitalocean.app/auth/login", {
+        .get("http://localhost:5000/user/getid/" + email)
+      .then((res: any) => {
+      console.log("UserId", res.data.userId);
+      localStorage.setItem("userId" ,JSON.stringify(res.data.userId));     
+      })
+      .catch((err: any) => {
+        console.log(err, "error");
+      });
+  };
+
     // New Token Cheking Authentication Code
   useEffect(() => {
     if(!token) {
